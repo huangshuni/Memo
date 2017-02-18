@@ -12,16 +12,148 @@
 		2A9E8C381E584F4900226C56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C361E584F4900226C56 /* Main.storyboard */; };
 		2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C391E584F4900226C56 /* Assets.xcassets */; };
 		2A9E8C3D1E584F4900226C56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C3B1E584F4900226C56 /* LaunchScreen.storyboard */; };
+		B9214B9919D1A90FE03C9188 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */; };
+		DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA211E58559400341E60 /* BaseNavigationController.swift */; };
+		DB22EA781E58559400341E60 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA221E58559400341E60 /* BaseViewController.swift */; };
+		DB22EA791E58559400341E60 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA241E58559400341E60 /* BaseService.swift */; };
+		DB22EA7A1E58559400341E60 /* HttpBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA251E58559400341E60 /* HttpBaseService.swift */; };
+		DB22EA7B1E58559400341E60 /* YHAppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA291E58559400341E60 /* YHAppInfoManager.swift */; };
+		DB22EA7C1E58559400341E60 /* YHDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA2B1E58559400341E60 /* YHDeviceInfo.swift */; };
+		DB22EA7D1E58559400341E60 /* YHDispatchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA2D1E58559400341E60 /* YHDispatchGroup.swift */; };
+		DB22EA7E1E58559400341E60 /* YHDispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA2E1E58559400341E60 /* YHDispatchTimer.swift */; };
+		DB22EA7F1E58559400341E60 /* FileDownloadDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA301E58559400341E60 /* FileDownloadDao.swift */; };
+		DB22EA801E58559400341E60 /* FileDownloadDBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA311E58559400341E60 /* FileDownloadDBConstants.swift */; };
+		DB22EA811E58559400341E60 /* FileDownloadDBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA321E58559400341E60 /* FileDownloadDBUtil.swift */; };
+		DB22EA821E58559400341E60 /* FileDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA331E58559400341E60 /* FileDownloadManager.swift */; };
+		DB22EA831E58559400341E60 /* FileDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA341E58559400341E60 /* FileDownloadOperation.swift */; };
+		DB22EA841E58559400341E60 /* FileDownloadVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA351E58559400341E60 /* FileDownloadVO.swift */; };
+		DB22EA851E58559400341E60 /* YHFileManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA371E58559400341E60 /* YHFileManger.swift */; };
+		DB22EA861E58559400341E60 /* YHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA391E58559400341E60 /* YHNetwork.swift */; };
+		DB22EA871E58559400341E60 /* YHNetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA3A1E58559400341E60 /* YHNetworkReachability.swift */; };
+		DB22EA881E58559400341E60 /* YHURLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA3B1E58559400341E60 /* YHURLCache.swift */; };
+		DB22EA891E58559400341E60 /* YHLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA3D1E58559400341E60 /* YHLogger.swift */; };
+		DB22EA8A1E58559400341E60 /* YHLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA3F1E58559400341E60 /* YHLoginService.swift */; };
+		DB22EA8B1E58559400341E60 /* YHLoginServiceDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA401E58559400341E60 /* YHLoginServiceDB.swift */; };
+		DB22EA8C1E58559400341E60 /* YHAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA421E58559400341E60 /* YHAssets.swift */; };
+		DB22EA8D1E58559400341E60 /* YHPhotoAlbumTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA431E58559400341E60 /* YHPhotoAlbumTableDelegate.swift */; };
+		DB22EA8E1E58559400341E60 /* YHPhotoAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA441E58559400341E60 /* YHPhotoAlbumTableViewCell.swift */; };
+		DB22EA8F1E58559400341E60 /* YHPhotoAlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA451E58559400341E60 /* YHPhotoAlbumTableViewCell.xib */; };
+		DB22EA901E58559400341E60 /* YHPhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA461E58559400341E60 /* YHPhotoAlbumViewController.swift */; };
+		DB22EA911E58559400341E60 /* YHPhotoAlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA471E58559400341E60 /* YHPhotoAlbumViewController.xib */; };
+		DB22EA921E58559400341E60 /* YHPhotoBrowseCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA481E58559400341E60 /* YHPhotoBrowseCollectionViewDelegate.swift */; };
+		DB22EA931E58559400341E60 /* YHPhotoBrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA491E58559400341E60 /* YHPhotoBrowseViewController.swift */; };
+		DB22EA941E58559400341E60 /* YHPhotoBrowseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA4A1E58559400341E60 /* YHPhotoBrowseViewController.xib */; };
+		DB22EA951E58559400341E60 /* YHPhotoHighImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA4B1E58559400341E60 /* YHPhotoHighImageCell.swift */; };
+		DB22EA961E58559400341E60 /* YHPhotoHighImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA4C1E58559400341E60 /* YHPhotoHighImageCell.xib */; };
+		DB22EA971E58559400341E60 /* YHPhotoPickCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA4D1E58559400341E60 /* YHPhotoPickCollectionDelegate.swift */; };
+		DB22EA981E58559400341E60 /* YHPhotoPickManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA4E1E58559400341E60 /* YHPhotoPickManagerViewController.swift */; };
+		DB22EA991E58559400341E60 /* YHPhotoPickThroughDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA4F1E58559400341E60 /* YHPhotoPickThroughDelegate.swift */; };
+		DB22EA9A1E58559400341E60 /* YHPhotoPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA501E58559400341E60 /* YHPhotoPickViewController.swift */; };
+		DB22EA9B1E58559400341E60 /* YHPhotoPickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA511E58559400341E60 /* YHPhotoPickViewController.xib */; };
+		DB22EA9C1E58559400341E60 /* YHPhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA521E58559400341E60 /* YHPhotoResult.swift */; };
+		DB22EA9D1E58559400341E60 /* YHPhotoThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA531E58559400341E60 /* YHPhotoThumbnailCell.swift */; };
+		DB22EA9E1E58559400341E60 /* YHPhotoThumbnailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA541E58559400341E60 /* YHPhotoThumbnailCell.xib */; };
+		DB22EA9F1E58559400341E60 /* YHPictureBrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA561E58559400341E60 /* YHPictureBrowseCell.swift */; };
+		DB22EAA01E58559400341E60 /* YHPictureBrowseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA571E58559400341E60 /* YHPictureBrowseCell.xib */; };
+		DB22EAA11E58559400341E60 /* YHPictureBrowseCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA581E58559400341E60 /* YHPictureBrowseCollectionDelegate.swift */; };
+		DB22EAA21E58559400341E60 /* YHPictureBrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA591E58559400341E60 /* YHPictureBrowseViewController.swift */; };
+		DB22EAA31E58559400341E60 /* YHPictureBrowseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB22EA5A1E58559400341E60 /* YHPictureBrowseViewController.xib */; };
+		DB22EAA41E58559400341E60 /* NSArray_ELoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA5C1E58559400341E60 /* NSArray_ELoad.swift */; };
+		DB22EAA51E58559400341E60 /* NSDate_EStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA5D1E58559400341E60 /* NSDate_EStamp.swift */; };
+		DB22EAA61E58559400341E60 /* NSDictionary_ELoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA5E1E58559400341E60 /* NSDictionary_ELoad.swift */; };
+		DB22EAA71E58559400341E60 /* NSNumber_EFromatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA5F1E58559400341E60 /* NSNumber_EFromatter.swift */; };
+		DB22EAA81E58559400341E60 /* NSObject_EAssist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA601E58559400341E60 /* NSObject_EAssist.swift */; };
+		DB22EAA91E58559400341E60 /* NSString_ERect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA611E58559400341E60 /* NSString_ERect.swift */; };
+		DB22EAAA1E58559400341E60 /* NSString_ERegularCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA621E58559400341E60 /* NSString_ERegularCheck.swift */; };
+		DB22EAAB1E58559400341E60 /* UIColor_EColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA631E58559400341E60 /* UIColor_EColor.swift */; };
+		DB22EAAC1E58559400341E60 /* UIImage_ELoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA641E58559400341E60 /* UIImage_ELoad.swift */; };
+		DB22EAAD1E58559400341E60 /* UIView_EAssist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA651E58559400341E60 /* UIView_EAssist.swift */; };
+		DB22EAAE1E58559400341E60 /* YHGlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA671E58559400341E60 /* YHGlobalFunc.swift */; };
+		DB22EAAF1E58559400341E60 /* YHGlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA681E58559400341E60 /* YHGlobalVariable.swift */; };
+		DB22EAB01E58559400341E60 /* YHWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA6B1E58559400341E60 /* YHWaterFallLayout.swift */; };
+		DB22EAB11E58559400341E60 /* YHPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA6D1E58559400341E60 /* YHPageControl.swift */; };
+		DB22EAB21E58559400341E60 /* YHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA6F1E58559400341E60 /* YHTextField.swift */; };
+		DB22EAB31E58559400341E60 /* YHTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA711E58559400341E60 /* YHTextView.swift */; };
+		DB22EAB41E58559400341E60 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA741E58559400341E60 /* SwiftyJSON.swift */; };
+		DB22EAB51E58559400341E60 /* AdsCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA761E58559400341E60 /* AdsCycleView.swift */; };
+		DB22EABC1E58582100341E60 /* String_EAssit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EABB1E58582100341E60 /* String_EAssit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A9E8C2F1E584F4900226C56 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A9E8C321E584F4900226C56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A9E8C341E584F4900226C56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2A9E8C321E584F4900226C56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../AppDelegate.swift; sourceTree = "<group>"; };
+		2A9E8C341E584F4900226C56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../ViewController.swift; sourceTree = "<group>"; };
 		2A9E8C371E584F4900226C56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A9E8C391E584F4900226C56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A9E8C391E584F4900226C56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		2A9E8C3C1E584F4900226C56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2A9E8C3E1E584F4900226C56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9E8C3E1E584F4900226C56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
+		8512E6FB682B4573DF69D19D /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
+		AF334D1011817B8C4215D870 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
+		DB22EA211E58559400341E60 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		DB22EA221E58559400341E60 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DB22EA241E58559400341E60 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		DB22EA251E58559400341E60 /* HttpBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpBaseService.swift; sourceTree = "<group>"; };
+		DB22EA291E58559400341E60 /* YHAppInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHAppInfoManager.swift; sourceTree = "<group>"; };
+		DB22EA2B1E58559400341E60 /* YHDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHDeviceInfo.swift; sourceTree = "<group>"; };
+		DB22EA2D1E58559400341E60 /* YHDispatchGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHDispatchGroup.swift; sourceTree = "<group>"; };
+		DB22EA2E1E58559400341E60 /* YHDispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHDispatchTimer.swift; sourceTree = "<group>"; };
+		DB22EA301E58559400341E60 /* FileDownloadDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadDao.swift; sourceTree = "<group>"; };
+		DB22EA311E58559400341E60 /* FileDownloadDBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadDBConstants.swift; sourceTree = "<group>"; };
+		DB22EA321E58559400341E60 /* FileDownloadDBUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadDBUtil.swift; sourceTree = "<group>"; };
+		DB22EA331E58559400341E60 /* FileDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadManager.swift; sourceTree = "<group>"; };
+		DB22EA341E58559400341E60 /* FileDownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadOperation.swift; sourceTree = "<group>"; };
+		DB22EA351E58559400341E60 /* FileDownloadVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadVO.swift; sourceTree = "<group>"; };
+		DB22EA371E58559400341E60 /* YHFileManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHFileManger.swift; sourceTree = "<group>"; };
+		DB22EA391E58559400341E60 /* YHNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHNetwork.swift; sourceTree = "<group>"; };
+		DB22EA3A1E58559400341E60 /* YHNetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHNetworkReachability.swift; sourceTree = "<group>"; };
+		DB22EA3B1E58559400341E60 /* YHURLCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHURLCache.swift; sourceTree = "<group>"; };
+		DB22EA3D1E58559400341E60 /* YHLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHLogger.swift; sourceTree = "<group>"; };
+		DB22EA3F1E58559400341E60 /* YHLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHLoginService.swift; sourceTree = "<group>"; };
+		DB22EA401E58559400341E60 /* YHLoginServiceDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHLoginServiceDB.swift; sourceTree = "<group>"; };
+		DB22EA421E58559400341E60 /* YHAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHAssets.swift; sourceTree = "<group>"; };
+		DB22EA431E58559400341E60 /* YHPhotoAlbumTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoAlbumTableDelegate.swift; sourceTree = "<group>"; };
+		DB22EA441E58559400341E60 /* YHPhotoAlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoAlbumTableViewCell.swift; sourceTree = "<group>"; };
+		DB22EA451E58559400341E60 /* YHPhotoAlbumTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPhotoAlbumTableViewCell.xib; sourceTree = "<group>"; };
+		DB22EA461E58559400341E60 /* YHPhotoAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		DB22EA471E58559400341E60 /* YHPhotoAlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPhotoAlbumViewController.xib; sourceTree = "<group>"; };
+		DB22EA481E58559400341E60 /* YHPhotoBrowseCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoBrowseCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		DB22EA491E58559400341E60 /* YHPhotoBrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoBrowseViewController.swift; sourceTree = "<group>"; };
+		DB22EA4A1E58559400341E60 /* YHPhotoBrowseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPhotoBrowseViewController.xib; sourceTree = "<group>"; };
+		DB22EA4B1E58559400341E60 /* YHPhotoHighImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoHighImageCell.swift; sourceTree = "<group>"; };
+		DB22EA4C1E58559400341E60 /* YHPhotoHighImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPhotoHighImageCell.xib; sourceTree = "<group>"; };
+		DB22EA4D1E58559400341E60 /* YHPhotoPickCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoPickCollectionDelegate.swift; sourceTree = "<group>"; };
+		DB22EA4E1E58559400341E60 /* YHPhotoPickManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoPickManagerViewController.swift; sourceTree = "<group>"; };
+		DB22EA4F1E58559400341E60 /* YHPhotoPickThroughDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoPickThroughDelegate.swift; sourceTree = "<group>"; };
+		DB22EA501E58559400341E60 /* YHPhotoPickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoPickViewController.swift; sourceTree = "<group>"; };
+		DB22EA511E58559400341E60 /* YHPhotoPickViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPhotoPickViewController.xib; sourceTree = "<group>"; };
+		DB22EA521E58559400341E60 /* YHPhotoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoResult.swift; sourceTree = "<group>"; };
+		DB22EA531E58559400341E60 /* YHPhotoThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPhotoThumbnailCell.swift; sourceTree = "<group>"; };
+		DB22EA541E58559400341E60 /* YHPhotoThumbnailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPhotoThumbnailCell.xib; sourceTree = "<group>"; };
+		DB22EA561E58559400341E60 /* YHPictureBrowseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPictureBrowseCell.swift; sourceTree = "<group>"; };
+		DB22EA571E58559400341E60 /* YHPictureBrowseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPictureBrowseCell.xib; sourceTree = "<group>"; };
+		DB22EA581E58559400341E60 /* YHPictureBrowseCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPictureBrowseCollectionDelegate.swift; sourceTree = "<group>"; };
+		DB22EA591E58559400341E60 /* YHPictureBrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPictureBrowseViewController.swift; sourceTree = "<group>"; };
+		DB22EA5A1E58559400341E60 /* YHPictureBrowseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YHPictureBrowseViewController.xib; sourceTree = "<group>"; };
+		DB22EA5C1E58559400341E60 /* NSArray_ELoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArray_ELoad.swift; sourceTree = "<group>"; };
+		DB22EA5D1E58559400341E60 /* NSDate_EStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate_EStamp.swift; sourceTree = "<group>"; };
+		DB22EA5E1E58559400341E60 /* NSDictionary_ELoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionary_ELoad.swift; sourceTree = "<group>"; };
+		DB22EA5F1E58559400341E60 /* NSNumber_EFromatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber_EFromatter.swift; sourceTree = "<group>"; };
+		DB22EA601E58559400341E60 /* NSObject_EAssist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject_EAssist.swift; sourceTree = "<group>"; };
+		DB22EA611E58559400341E60 /* NSString_ERect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString_ERect.swift; sourceTree = "<group>"; };
+		DB22EA621E58559400341E60 /* NSString_ERegularCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString_ERegularCheck.swift; sourceTree = "<group>"; };
+		DB22EA631E58559400341E60 /* UIColor_EColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_EColor.swift; sourceTree = "<group>"; };
+		DB22EA641E58559400341E60 /* UIImage_ELoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage_ELoad.swift; sourceTree = "<group>"; };
+		DB22EA651E58559400341E60 /* UIView_EAssist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_EAssist.swift; sourceTree = "<group>"; };
+		DB22EA671E58559400341E60 /* YHGlobalFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHGlobalFunc.swift; sourceTree = "<group>"; };
+		DB22EA681E58559400341E60 /* YHGlobalVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHGlobalVariable.swift; sourceTree = "<group>"; };
+		DB22EA6B1E58559400341E60 /* YHWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHWaterFallLayout.swift; sourceTree = "<group>"; };
+		DB22EA6D1E58559400341E60 /* YHPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHPageControl.swift; sourceTree = "<group>"; };
+		DB22EA6F1E58559400341E60 /* YHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHTextField.swift; sourceTree = "<group>"; };
+		DB22EA711E58559400341E60 /* YHTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YHTextView.swift; sourceTree = "<group>"; };
+		DB22EA741E58559400341E60 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		DB22EA761E58559400341E60 /* AdsCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsCycleView.swift; sourceTree = "<group>"; };
+		DB22EABB1E58582100341E60 /* String_EAssit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_EAssit.swift; sourceTree = "<group>"; };
+		EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9214B9919D1A90FE03C9188 /* Pods_Memo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +173,8 @@
 			children = (
 				2A9E8C311E584F4900226C56 /* Memo */,
 				2A9E8C301E584F4900226C56 /* Products */,
+				4A5746E6E5AAA0B8C51DE43C /* Pods */,
+				E3565594FBFDCD0B9ACDE605 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +189,344 @@
 		2A9E8C311E584F4900226C56 /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				DB22EAB61E5855AB00341E60 /* classses */,
+				DB22EA1E1E58559400341E60 /* framework */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		4A5746E6E5AAA0B8C51DE43C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8512E6FB682B4573DF69D19D /* Pods-Memo.debug.xcconfig */,
+				AF334D1011817B8C4215D870 /* Pods-Memo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB22EA1E1E58559400341E60 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA1F1E58559400341E60 /* baseObject */,
+				DB22EA271E58559400341E60 /* component */,
+				DB22EA5B1E58559400341E60 /* extension */,
+				DB22EA661E58559400341E60 /* global */,
+				DB22EA691E58559400341E60 /* subClass */,
+				DB22EA721E58559400341E60 /* thirdParts */,
+				DB22EA751E58559400341E60 /* viewContent */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		DB22EA1F1E58559400341E60 /* baseObject */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA201E58559400341E60 /* controller */,
+				DB22EA231E58559400341E60 /* service */,
+				DB22EA261E58559400341E60 /* view */,
+			);
+			path = baseObject;
+			sourceTree = "<group>";
+		};
+		DB22EA201E58559400341E60 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA211E58559400341E60 /* BaseNavigationController.swift */,
+				DB22EA221E58559400341E60 /* BaseViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		DB22EA231E58559400341E60 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA241E58559400341E60 /* BaseService.swift */,
+				DB22EA251E58559400341E60 /* HttpBaseService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		DB22EA261E58559400341E60 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		DB22EA271E58559400341E60 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA281E58559400341E60 /* appInfo */,
+				DB22EA2A1E58559400341E60 /* deviceInfo */,
+				DB22EA2C1E58559400341E60 /* dipatch */,
+				DB22EA2F1E58559400341E60 /* fileDownload */,
+				DB22EA361E58559400341E60 /* fileManager */,
+				DB22EA381E58559400341E60 /* http */,
+				DB22EA3C1E58559400341E60 /* logger */,
+				DB22EA3E1E58559400341E60 /* loginService */,
+				DB22EA411E58559400341E60 /* photoPicker */,
+				DB22EA551E58559400341E60 /* pictureBrowse */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		DB22EA281E58559400341E60 /* appInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA291E58559400341E60 /* YHAppInfoManager.swift */,
+			);
+			path = appInfo;
+			sourceTree = "<group>";
+		};
+		DB22EA2A1E58559400341E60 /* deviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA2B1E58559400341E60 /* YHDeviceInfo.swift */,
+			);
+			path = deviceInfo;
+			sourceTree = "<group>";
+		};
+		DB22EA2C1E58559400341E60 /* dipatch */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA2D1E58559400341E60 /* YHDispatchGroup.swift */,
+				DB22EA2E1E58559400341E60 /* YHDispatchTimer.swift */,
+			);
+			path = dipatch;
+			sourceTree = "<group>";
+		};
+		DB22EA2F1E58559400341E60 /* fileDownload */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA301E58559400341E60 /* FileDownloadDao.swift */,
+				DB22EA311E58559400341E60 /* FileDownloadDBConstants.swift */,
+				DB22EA321E58559400341E60 /* FileDownloadDBUtil.swift */,
+				DB22EA331E58559400341E60 /* FileDownloadManager.swift */,
+				DB22EA341E58559400341E60 /* FileDownloadOperation.swift */,
+				DB22EA351E58559400341E60 /* FileDownloadVO.swift */,
+			);
+			path = fileDownload;
+			sourceTree = "<group>";
+		};
+		DB22EA361E58559400341E60 /* fileManager */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA371E58559400341E60 /* YHFileManger.swift */,
+			);
+			path = fileManager;
+			sourceTree = "<group>";
+		};
+		DB22EA381E58559400341E60 /* http */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA391E58559400341E60 /* YHNetwork.swift */,
+				DB22EA3A1E58559400341E60 /* YHNetworkReachability.swift */,
+				DB22EA3B1E58559400341E60 /* YHURLCache.swift */,
+			);
+			path = http;
+			sourceTree = "<group>";
+		};
+		DB22EA3C1E58559400341E60 /* logger */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA3D1E58559400341E60 /* YHLogger.swift */,
+			);
+			path = logger;
+			sourceTree = "<group>";
+		};
+		DB22EA3E1E58559400341E60 /* loginService */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA3F1E58559400341E60 /* YHLoginService.swift */,
+				DB22EA401E58559400341E60 /* YHLoginServiceDB.swift */,
+			);
+			path = loginService;
+			sourceTree = "<group>";
+		};
+		DB22EA411E58559400341E60 /* photoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA421E58559400341E60 /* YHAssets.swift */,
+				DB22EA431E58559400341E60 /* YHPhotoAlbumTableDelegate.swift */,
+				DB22EA441E58559400341E60 /* YHPhotoAlbumTableViewCell.swift */,
+				DB22EA451E58559400341E60 /* YHPhotoAlbumTableViewCell.xib */,
+				DB22EA461E58559400341E60 /* YHPhotoAlbumViewController.swift */,
+				DB22EA471E58559400341E60 /* YHPhotoAlbumViewController.xib */,
+				DB22EA481E58559400341E60 /* YHPhotoBrowseCollectionViewDelegate.swift */,
+				DB22EA491E58559400341E60 /* YHPhotoBrowseViewController.swift */,
+				DB22EA4A1E58559400341E60 /* YHPhotoBrowseViewController.xib */,
+				DB22EA4B1E58559400341E60 /* YHPhotoHighImageCell.swift */,
+				DB22EA4C1E58559400341E60 /* YHPhotoHighImageCell.xib */,
+				DB22EA4D1E58559400341E60 /* YHPhotoPickCollectionDelegate.swift */,
+				DB22EA4E1E58559400341E60 /* YHPhotoPickManagerViewController.swift */,
+				DB22EA4F1E58559400341E60 /* YHPhotoPickThroughDelegate.swift */,
+				DB22EA501E58559400341E60 /* YHPhotoPickViewController.swift */,
+				DB22EA511E58559400341E60 /* YHPhotoPickViewController.xib */,
+				DB22EA521E58559400341E60 /* YHPhotoResult.swift */,
+				DB22EA531E58559400341E60 /* YHPhotoThumbnailCell.swift */,
+				DB22EA541E58559400341E60 /* YHPhotoThumbnailCell.xib */,
+			);
+			path = photoPicker;
+			sourceTree = "<group>";
+		};
+		DB22EA551E58559400341E60 /* pictureBrowse */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA561E58559400341E60 /* YHPictureBrowseCell.swift */,
+				DB22EA571E58559400341E60 /* YHPictureBrowseCell.xib */,
+				DB22EA581E58559400341E60 /* YHPictureBrowseCollectionDelegate.swift */,
+				DB22EA591E58559400341E60 /* YHPictureBrowseViewController.swift */,
+				DB22EA5A1E58559400341E60 /* YHPictureBrowseViewController.xib */,
+			);
+			path = pictureBrowse;
+			sourceTree = "<group>";
+		};
+		DB22EA5B1E58559400341E60 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA5C1E58559400341E60 /* NSArray_ELoad.swift */,
+				DB22EA5D1E58559400341E60 /* NSDate_EStamp.swift */,
+				DB22EA5E1E58559400341E60 /* NSDictionary_ELoad.swift */,
+				DB22EA5F1E58559400341E60 /* NSNumber_EFromatter.swift */,
+				DB22EA601E58559400341E60 /* NSObject_EAssist.swift */,
+				DB22EA611E58559400341E60 /* NSString_ERect.swift */,
+				DB22EA621E58559400341E60 /* NSString_ERegularCheck.swift */,
+				DB22EA631E58559400341E60 /* UIColor_EColor.swift */,
+				DB22EA641E58559400341E60 /* UIImage_ELoad.swift */,
+				DB22EA651E58559400341E60 /* UIView_EAssist.swift */,
+				DB22EABB1E58582100341E60 /* String_EAssit.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		DB22EA661E58559400341E60 /* global */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA671E58559400341E60 /* YHGlobalFunc.swift */,
+				DB22EA681E58559400341E60 /* YHGlobalVariable.swift */,
+			);
+			path = global;
+			sourceTree = "<group>";
+		};
+		DB22EA691E58559400341E60 /* subClass */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA6A1E58559400341E60 /* collectionLayout */,
+				DB22EA6C1E58559400341E60 /* pageControl */,
+				DB22EA6E1E58559400341E60 /* textField */,
+				DB22EA701E58559400341E60 /* textView */,
+			);
+			path = subClass;
+			sourceTree = "<group>";
+		};
+		DB22EA6A1E58559400341E60 /* collectionLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA6B1E58559400341E60 /* YHWaterFallLayout.swift */,
+			);
+			path = collectionLayout;
+			sourceTree = "<group>";
+		};
+		DB22EA6C1E58559400341E60 /* pageControl */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA6D1E58559400341E60 /* YHPageControl.swift */,
+			);
+			path = pageControl;
+			sourceTree = "<group>";
+		};
+		DB22EA6E1E58559400341E60 /* textField */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA6F1E58559400341E60 /* YHTextField.swift */,
+			);
+			path = textField;
+			sourceTree = "<group>";
+		};
+		DB22EA701E58559400341E60 /* textView */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA711E58559400341E60 /* YHTextView.swift */,
+			);
+			path = textView;
+			sourceTree = "<group>";
+		};
+		DB22EA721E58559400341E60 /* thirdParts */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA731E58559400341E60 /* SwiftyJSON */,
+			);
+			path = thirdParts;
+			sourceTree = "<group>";
+		};
+		DB22EA731E58559400341E60 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA741E58559400341E60 /* SwiftyJSON.swift */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		DB22EA751E58559400341E60 /* viewContent */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EA761E58559400341E60 /* AdsCycleView.swift */,
+			);
+			path = viewContent;
+			sourceTree = "<group>";
+		};
+		DB22EAB61E5855AB00341E60 /* classses */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EAB91E58560500341E60 /* deploy */,
+				DB22EAB81E5855EE00341E60 /* resources */,
+				DB22EAB71E5855BD00341E60 /* modules */,
+			);
+			name = classses;
+			path = classes;
+			sourceTree = "<group>";
+		};
+		DB22EAB71E5855BD00341E60 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				DB22EABA1E58563D00341E60 /* appDelegate */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		DB22EAB81E5855EE00341E60 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A9E8C391E584F4900226C56 /* Assets.xcassets */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		DB22EAB91E58560500341E60 /* deploy */ = {
+			isa = PBXGroup;
+			children = (
+				2A9E8C3E1E584F4900226C56 /* Info.plist */,
+			);
+			path = deploy;
+			sourceTree = "<group>";
+		};
+		DB22EABA1E58563D00341E60 /* appDelegate */ = {
+			isa = PBXGroup;
+			children = (
 				2A9E8C321E584F4900226C56 /* AppDelegate.swift */,
 				2A9E8C341E584F4900226C56 /* ViewController.swift */,
 				2A9E8C361E584F4900226C56 /* Main.storyboard */,
-				2A9E8C391E584F4900226C56 /* Assets.xcassets */,
 				2A9E8C3B1E584F4900226C56 /* LaunchScreen.storyboard */,
-				2A9E8C3E1E584F4900226C56 /* Info.plist */,
 			);
-			path = Memo;
+			path = appDelegate;
+			sourceTree = "<group>";
+		};
+		E3565594FBFDCD0B9ACDE605 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +536,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A9E8C411E584F4900226C56 /* Build configuration list for PBXNativeTarget "Memo" */;
 			buildPhases = (
+				3E886519F71EF01F8026CDC0 /* [CP] Check Pods Manifest.lock */,
 				2A9E8C2B1E584F4900226C56 /* Sources */,
 				2A9E8C2C1E584F4900226C56 /* Frameworks */,
 				2A9E8C2D1E584F4900226C56 /* Resources */,
+				06649F22CE4E979334C39E7A /* [CP] Embed Pods Frameworks */,
+				ECE6F3D6C52E8086029189F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +564,8 @@
 				TargetAttributes = {
 					2A9E8C2E1E584F4900226C56 = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 3X434F5U2F;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -123,21 +592,133 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB22EA941E58559400341E60 /* YHPhotoBrowseViewController.xib in Resources */,
+				DB22EAA31E58559400341E60 /* YHPictureBrowseViewController.xib in Resources */,
+				DB22EAA01E58559400341E60 /* YHPictureBrowseCell.xib in Resources */,
 				2A9E8C3D1E584F4900226C56 /* LaunchScreen.storyboard in Resources */,
+				DB22EA911E58559400341E60 /* YHPhotoAlbumViewController.xib in Resources */,
+				DB22EA8F1E58559400341E60 /* YHPhotoAlbumTableViewCell.xib in Resources */,
 				2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */,
+				DB22EA961E58559400341E60 /* YHPhotoHighImageCell.xib in Resources */,
+				DB22EA9E1E58559400341E60 /* YHPhotoThumbnailCell.xib in Resources */,
 				2A9E8C381E584F4900226C56 /* Main.storyboard in Resources */,
+				DB22EA9B1E58559400341E60 /* YHPhotoPickViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06649F22CE4E979334C39E7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Memo/Pods-Memo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E886519F71EF01F8026CDC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE6F3D6C52E8086029189F3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Memo/Pods-Memo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A9E8C2B1E584F4900226C56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB22EAA51E58559400341E60 /* NSDate_EStamp.swift in Sources */,
 				2A9E8C351E584F4900226C56 /* ViewController.swift in Sources */,
+				DB22EA891E58559400341E60 /* YHLogger.swift in Sources */,
+				DB22EAAC1E58559400341E60 /* UIImage_ELoad.swift in Sources */,
+				DB22EA991E58559400341E60 /* YHPhotoPickThroughDelegate.swift in Sources */,
+				DB22EA781E58559400341E60 /* BaseViewController.swift in Sources */,
+				DB22EA9D1E58559400341E60 /* YHPhotoThumbnailCell.swift in Sources */,
+				DB22EAA61E58559400341E60 /* NSDictionary_ELoad.swift in Sources */,
+				DB22EA7C1E58559400341E60 /* YHDeviceInfo.swift in Sources */,
+				DB22EA901E58559400341E60 /* YHPhotoAlbumViewController.swift in Sources */,
+				DB22EA951E58559400341E60 /* YHPhotoHighImageCell.swift in Sources */,
+				DB22EAA71E58559400341E60 /* NSNumber_EFromatter.swift in Sources */,
+				DB22EA861E58559400341E60 /* YHNetwork.swift in Sources */,
+				DB22EAA81E58559400341E60 /* NSObject_EAssist.swift in Sources */,
+				DB22EAAD1E58559400341E60 /* UIView_EAssist.swift in Sources */,
+				DB22EAB51E58559400341E60 /* AdsCycleView.swift in Sources */,
+				DB22EAAF1E58559400341E60 /* YHGlobalVariable.swift in Sources */,
+				DB22EAAE1E58559400341E60 /* YHGlobalFunc.swift in Sources */,
+				DB22EA8C1E58559400341E60 /* YHAssets.swift in Sources */,
+				DB22EAA41E58559400341E60 /* NSArray_ELoad.swift in Sources */,
+				DB22EAB41E58559400341E60 /* SwiftyJSON.swift in Sources */,
+				DB22EAAA1E58559400341E60 /* NSString_ERegularCheck.swift in Sources */,
+				DB22EA9A1E58559400341E60 /* YHPhotoPickViewController.swift in Sources */,
+				DB22EA9C1E58559400341E60 /* YHPhotoResult.swift in Sources */,
+				DB22EA7B1E58559400341E60 /* YHAppInfoManager.swift in Sources */,
+				DB22EAB01E58559400341E60 /* YHWaterFallLayout.swift in Sources */,
+				DB22EAB11E58559400341E60 /* YHPageControl.swift in Sources */,
+				DB22EA7A1E58559400341E60 /* HttpBaseService.swift in Sources */,
+				DB22EAB31E58559400341E60 /* YHTextView.swift in Sources */,
+				DB22EA831E58559400341E60 /* FileDownloadOperation.swift in Sources */,
+				DB22EA8A1E58559400341E60 /* YHLoginService.swift in Sources */,
 				2A9E8C331E584F4900226C56 /* AppDelegate.swift in Sources */,
+				DB22EA981E58559400341E60 /* YHPhotoPickManagerViewController.swift in Sources */,
+				DB22EAA91E58559400341E60 /* NSString_ERect.swift in Sources */,
+				DB22EAA11E58559400341E60 /* YHPictureBrowseCollectionDelegate.swift in Sources */,
+				DB22EAAB1E58559400341E60 /* UIColor_EColor.swift in Sources */,
+				DB22EA7E1E58559400341E60 /* YHDispatchTimer.swift in Sources */,
+				DB22EA851E58559400341E60 /* YHFileManger.swift in Sources */,
+				DB22EA801E58559400341E60 /* FileDownloadDBConstants.swift in Sources */,
+				DB22EA921E58559400341E60 /* YHPhotoBrowseCollectionViewDelegate.swift in Sources */,
+				DB22EA7D1E58559400341E60 /* YHDispatchGroup.swift in Sources */,
+				DB22EABC1E58582100341E60 /* String_EAssit.swift in Sources */,
+				DB22EA791E58559400341E60 /* BaseService.swift in Sources */,
+				DB22EA811E58559400341E60 /* FileDownloadDBUtil.swift in Sources */,
+				DB22EA971E58559400341E60 /* YHPhotoPickCollectionDelegate.swift in Sources */,
+				DB22EA871E58559400341E60 /* YHNetworkReachability.swift in Sources */,
+				DB22EA881E58559400341E60 /* YHURLCache.swift in Sources */,
+				DB22EA9F1E58559400341E60 /* YHPictureBrowseCell.swift in Sources */,
+				DB22EA8E1E58559400341E60 /* YHPhotoAlbumTableViewCell.swift in Sources */,
+				DB22EA8D1E58559400341E60 /* YHPhotoAlbumTableDelegate.swift in Sources */,
+				DB22EA841E58559400341E60 /* FileDownloadVO.swift in Sources */,
+				DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */,
+				DB22EAB21E58559400341E60 /* YHTextField.swift in Sources */,
+				DB22EA7F1E58559400341E60 /* FileDownloadDao.swift in Sources */,
+				DB22EA821E58559400341E60 /* FileDownloadManager.swift in Sources */,
+				DB22EAA21E58559400341E60 /* YHPictureBrowseViewController.swift in Sources */,
+				DB22EA931E58559400341E60 /* YHPhotoBrowseViewController.swift in Sources */,
+				DB22EA8B1E58559400341E60 /* YHLoginServiceDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +731,7 @@
 				2A9E8C371E584F4900226C56 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		2A9E8C3B1E584F4900226C56 /* LaunchScreen.storyboard */ = {
@@ -158,6 +740,7 @@
 				2A9E8C3C1E584F4900226C56 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -256,24 +839,38 @@
 		};
 		2A9E8C421E584F4900226C56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8512E6FB682B4573DF69D19D /* Pods-Memo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: yehui tang (UGRU94YD7T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yehui tang (UGRU94YD7T)";
+				DEVELOPMENT_TEAM = 3X434F5U2F;
 				INFOPLIST_FILE = Memo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhsn.memo.Memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yhsn.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "75f642a4-8d88-476d-a5f9-b9ba8e3160f2";
+				PROVISIONING_PROFILE_SPECIFIER = memoDevelop;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		2A9E8C431E584F4900226C56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF334D1011817B8C4215D870 /* Pods-Memo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yehui tang (3X434F5U2F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yehui tang (3X434F5U2F)";
+				DEVELOPMENT_TEAM = 3X434F5U2F;
 				INFOPLIST_FILE = Memo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yhsn.memo.Memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yhsn.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c67bda5f-aacc-45a8-9eba-aa2950e4fab1";
+				PROVISIONING_PROFILE_SPECIFIER = memoDistribution;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +894,7 @@
 				2A9E8C431E584F4900226C56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
