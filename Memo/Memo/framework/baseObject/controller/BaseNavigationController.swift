@@ -10,10 +10,17 @@ import UIKit
 
 class BaseNavigationController: UINavigationController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return .lightContent
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.isTranslucent = false
-        navigationBar.tintColor = UIColor.black
+        navigationBar.tintColor = UIColor.getColor(rgb: whiteColor)
+        navigationBar.barTintColor = UIColor.getColor(rgb: blueColor)
         interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
     }
 
@@ -26,4 +33,5 @@ class BaseNavigationController: UINavigationController {
     func back() {
         popViewController(animated: true)
     }
+    
 }

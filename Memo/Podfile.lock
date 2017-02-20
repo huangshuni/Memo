@@ -6,6 +6,7 @@ PODS:
   - IQKeyboardManagerSwift (4.0.6)
   - KeychainAccess (3.0.0)
   - Kingfisher (3.1.3)
+  - RESideMenu (4.0.7)
   - Spring (1.0.3)
   - SwiftyJSON (3.1.0)
   - XCGLogger (4.0.0):
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 4.0.6)
   - KeychainAccess (= 3.0.0)
   - Kingfisher (= 3.1.3)
+  - RESideMenu (= 4.0.7)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwiftyJSON (= 3.1.0)
   - XCGLogger (= 4.0.0)
@@ -38,10 +40,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
   KeychainAccess: 412bf2650d9aebfc8135a58103b90ec38caad7f8
   Kingfisher: 007f5851c18c81e7cc106c9cbac1bafea1cce5dc
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 6c6644ff37965f6a9021e76abfee86b5078b7e0b
+PODFILE CHECKSUM: 437fb69d42eeaa771dc4c2ed8dfdded11b681250
 
 COCOAPODS: 1.1.0.rc.3

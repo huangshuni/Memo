@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A9E8C381E584F4900226C56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C361E584F4900226C56 /* Main.storyboard */; };
 		2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C391E584F4900226C56 /* Assets.xcassets */; };
-		2A9E8C3D1E584F4900226C56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C3B1E584F4900226C56 /* LaunchScreen.storyboard */; };
 		B9214B9919D1A90FE03C9188 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */; };
 		DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA211E58559400341E60 /* BaseNavigationController.swift */; };
 		DB22EA781E58559400341E60 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA221E58559400341E60 /* BaseViewController.swift */; };
@@ -78,13 +76,21 @@
 		DB22EABF1E585CA500341E60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EABD1E585CA500341E60 /* ViewController.swift */; };
 		DB22EAC01E585CA500341E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EABE1E585CA500341E60 /* AppDelegate.swift */; };
 		DB22EAC41E585D2E00341E60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB22EAC31E585D2E00341E60 /* Info.plist */; };
+		DBC625EA1E5ABF6F00914197 /* AppDelegate_EAssit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625E91E5ABF6F00914197 /* AppDelegate_EAssit.swift */; };
+		DBC625F61E5AC23100914197 /* MELeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625F41E5AC23100914197 /* MELeftMenuViewController.swift */; };
+		DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC625F51E5AC23100914197 /* MELeftMenuViewController.xib */; };
+		DBC625FA1E5AC24A00914197 /* MEHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625F81E5AC24A00914197 /* MEHomeViewController.swift */; };
+		DBC625FB1E5AC24A00914197 /* MEHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC625F91E5AC24A00914197 /* MEHomeViewController.xib */; };
+		DBC625FE1E5AC51300914197 /* UIColor_EMemoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625FD1E5AC51300914197 /* UIColor_EMemoColor.swift */; };
+		DBC626001E5AD6B600914197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC625FF1E5AD6B600914197 /* Main.storyboard */; };
+		DBC626051E5AE02000914197 /* MEStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC626041E5AE02000914197 /* MEStrings.swift */; };
+		DBC626071E5AE43D00914197 /* MEAttributeStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */; };
+		DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A9E8C2F1E584F4900226C56 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A9E8C371E584F4900226C56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A9E8C391E584F4900226C56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
-		2A9E8C3C1E584F4900226C56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8512E6FB682B4573DF69D19D /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF334D1011817B8C4215D870 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		DB22EA211E58559400341E60 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -154,6 +160,16 @@
 		DB22EABD1E585CA500341E60 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB22EABE1E585CA500341E60 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB22EAC31E585D2E00341E60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBC625E91E5ABF6F00914197 /* AppDelegate_EAssit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate_EAssit.swift; sourceTree = "<group>"; };
+		DBC625F41E5AC23100914197 /* MELeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MELeftMenuViewController.swift; sourceTree = "<group>"; };
+		DBC625F51E5AC23100914197 /* MELeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MELeftMenuViewController.xib; sourceTree = "<group>"; };
+		DBC625F81E5AC24A00914197 /* MEHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEHomeViewController.swift; sourceTree = "<group>"; };
+		DBC625F91E5AC24A00914197 /* MEHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MEHomeViewController.xib; sourceTree = "<group>"; };
+		DBC625FD1E5AC51300914197 /* UIColor_EMemoColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_EMemoColor.swift; sourceTree = "<group>"; };
+		DBC625FF1E5AD6B600914197 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DBC626041E5AE02000914197 /* MEStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEStrings.swift; sourceTree = "<group>"; };
+		DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAttributeStrings.swift; sourceTree = "<group>"; };
+		DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsModel.swift; sourceTree = "<group>"; };
 		EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -490,6 +506,10 @@
 		DB22EAB71E5855BD00341E60 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				DBC626081E5AE90B00914197 /* settings */,
+				DBC626011E5ADFD400914197 /* strings */,
+				DBC625FC1E5AC4D800914197 /* category */,
+				DBC625EC1E5AC11F00914197 /* home */,
 				DB22EABA1E58563D00341E60 /* appDelegate */,
 			);
 			path = modules;
@@ -508,10 +528,103 @@
 			children = (
 				DB22EABD1E585CA500341E60 /* ViewController.swift */,
 				DB22EABE1E585CA500341E60 /* AppDelegate.swift */,
-				2A9E8C361E584F4900226C56 /* Main.storyboard */,
-				2A9E8C3B1E584F4900226C56 /* LaunchScreen.storyboard */,
+				DBC625E91E5ABF6F00914197 /* AppDelegate_EAssit.swift */,
+				DBC625FF1E5AD6B600914197 /* Main.storyboard */,
 			);
 			path = appDelegate;
+			sourceTree = "<group>";
+		};
+		DBC625EC1E5AC11F00914197 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				DBC625EF1E5AC18600914197 /* service */,
+				DBC625EE1E5AC18200914197 /* view */,
+				DBC625ED1E5AC17900914197 /* viewController */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		DBC625ED1E5AC17900914197 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBC625F41E5AC23100914197 /* MELeftMenuViewController.swift */,
+				DBC625F51E5AC23100914197 /* MELeftMenuViewController.xib */,
+				DBC625F81E5AC24A00914197 /* MEHomeViewController.swift */,
+				DBC625F91E5AC24A00914197 /* MEHomeViewController.xib */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		DBC625EE1E5AC18200914197 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		DBC625EF1E5AC18600914197 /* service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		DBC625FC1E5AC4D800914197 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				DBC625FD1E5AC51300914197 /* UIColor_EMemoColor.swift */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		DBC626011E5ADFD400914197 /* strings */ = {
+			isa = PBXGroup;
+			children = (
+				DBC626041E5AE02000914197 /* MEStrings.swift */,
+				DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */,
+			);
+			path = strings;
+			sourceTree = "<group>";
+		};
+		DBC626081E5AE90B00914197 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				DBC6260C1E5AE9D700914197 /* model */,
+				DBC6260B1E5AE99000914197 /* service */,
+				DBC6260A1E5AE98800914197 /* View */,
+				DBC626091E5AE97E00914197 /* viewController */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		DBC626091E5AE97E00914197 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		DBC6260A1E5AE98800914197 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = view;
+			sourceTree = "<group>";
+		};
+		DBC6260B1E5AE99000914197 /* service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		DBC6260C1E5AE9D700914197 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		E3565594FBFDCD0B9ACDE605 /* Frameworks */ = {
@@ -588,14 +701,15 @@
 				DB22EA941E58559400341E60 /* YHPhotoBrowseViewController.xib in Resources */,
 				DB22EAA31E58559400341E60 /* YHPictureBrowseViewController.xib in Resources */,
 				DB22EAA01E58559400341E60 /* YHPictureBrowseCell.xib in Resources */,
-				2A9E8C3D1E584F4900226C56 /* LaunchScreen.storyboard in Resources */,
+				DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */,
+				DBC625FB1E5AC24A00914197 /* MEHomeViewController.xib in Resources */,
 				DB22EA911E58559400341E60 /* YHPhotoAlbumViewController.xib in Resources */,
 				DB22EA8F1E58559400341E60 /* YHPhotoAlbumTableViewCell.xib in Resources */,
+				DBC626001E5AD6B600914197 /* Main.storyboard in Resources */,
 				2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */,
 				DB22EA961E58559400341E60 /* YHPhotoHighImageCell.xib in Resources */,
 				DB22EAC41E585D2E00341E60 /* Info.plist in Resources */,
 				DB22EA9E1E58559400341E60 /* YHPhotoThumbnailCell.xib in Resources */,
-				2A9E8C381E584F4900226C56 /* Main.storyboard in Resources */,
 				DB22EA9B1E58559400341E60 /* YHPhotoPickViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,8 +774,10 @@
 				DB22EAAC1E58559400341E60 /* UIImage_ELoad.swift in Sources */,
 				DB22EA991E58559400341E60 /* YHPhotoPickThroughDelegate.swift in Sources */,
 				DB22EA781E58559400341E60 /* BaseViewController.swift in Sources */,
+				DBC625FE1E5AC51300914197 /* UIColor_EMemoColor.swift in Sources */,
 				DB22EA9D1E58559400341E60 /* YHPhotoThumbnailCell.swift in Sources */,
 				DB22EAA61E58559400341E60 /* NSDictionary_ELoad.swift in Sources */,
+				DBC625FA1E5AC24A00914197 /* MEHomeViewController.swift in Sources */,
 				DB22EA7C1E58559400341E60 /* YHDeviceInfo.swift in Sources */,
 				DB22EA901E58559400341E60 /* YHPhotoAlbumViewController.swift in Sources */,
 				DB22EA951E58559400341E60 /* YHPhotoHighImageCell.swift in Sources */,
@@ -688,10 +804,13 @@
 				DB22EA8A1E58559400341E60 /* YHLoginService.swift in Sources */,
 				DB22EA981E58559400341E60 /* YHPhotoPickManagerViewController.swift in Sources */,
 				DB22EAA91E58559400341E60 /* NSString_ERect.swift in Sources */,
+				DBC626071E5AE43D00914197 /* MEAttributeStrings.swift in Sources */,
 				DB22EAA11E58559400341E60 /* YHPictureBrowseCollectionDelegate.swift in Sources */,
+				DBC625EA1E5ABF6F00914197 /* AppDelegate_EAssit.swift in Sources */,
 				DB22EAAB1E58559400341E60 /* UIColor_EColor.swift in Sources */,
 				DB22EA7E1E58559400341E60 /* YHDispatchTimer.swift in Sources */,
 				DB22EA851E58559400341E60 /* YHFileManger.swift in Sources */,
+				DBC625F61E5AC23100914197 /* MELeftMenuViewController.swift in Sources */,
 				DB22EA801E58559400341E60 /* FileDownloadDBConstants.swift in Sources */,
 				DB22EA921E58559400341E60 /* YHPhotoBrowseCollectionViewDelegate.swift in Sources */,
 				DB22EA7D1E58559400341E60 /* YHDispatchGroup.swift in Sources */,
@@ -702,6 +821,8 @@
 				DB22EA871E58559400341E60 /* YHNetworkReachability.swift in Sources */,
 				DB22EA881E58559400341E60 /* YHURLCache.swift in Sources */,
 				DB22EAC01E585CA500341E60 /* AppDelegate.swift in Sources */,
+				DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */,
+				DBC626051E5AE02000914197 /* MEStrings.swift in Sources */,
 				DB22EA9F1E58559400341E60 /* YHPictureBrowseCell.swift in Sources */,
 				DB22EA8E1E58559400341E60 /* YHPhotoAlbumTableViewCell.swift in Sources */,
 				DB22EA8D1E58559400341E60 /* YHPhotoAlbumTableDelegate.swift in Sources */,
@@ -717,27 +838,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2A9E8C361E584F4900226C56 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A9E8C371E584F4900226C56 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ../../..;
-			sourceTree = "<group>";
-		};
-		2A9E8C3B1E584F4900226C56 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A9E8C3C1E584F4900226C56 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ../../..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2A9E8C3F1E584F4900226C56 /* Debug */ = {
