@@ -16,7 +16,7 @@ enum MEFontSize: CGFloat {
 
 class MESettingsModel {
     
-    var font = ""
+    var font = "DFWaWaSC-W5"
     var size = MEFontSize.normal.rawValue
     var soundsOpen = true
     var version = YHDeviceInfo.appVersion
@@ -24,8 +24,8 @@ class MESettingsModel {
     static let settingsModel = MESettingsModel()
     private init() { }
     
-    public func getAttribute() -> [String: UIFont] {
+    public func getAttribute() -> [String: Any] {
     
-        return [NSFontAttributeName : UIFont.init(name: font, size: size)!]
+        return [NSFontAttributeName: UIFont.init(name: font, size: size)!]
     }
 }

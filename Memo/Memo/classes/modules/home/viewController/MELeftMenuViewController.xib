@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MELeftMenuViewController" customModule="Memo" customModuleProvider="target">
             <connections>
-                <outlet property="menuLabel" destination="bRp-qd-sJd" id="Dyd-Qc-mLc"/>
+                <outlet property="menuTitleLabel" destination="bRp-qd-sJd" id="Mbh-pD-m8y"/>
                 <outlet property="tableView" destination="Z4b-dL-sEA" id="ijy-cD-Cr6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-dL-sEA">
-                    <rect key="frame" x="10" y="188" width="150" height="430"/>
+                    <rect key="frame" x="1" y="188" width="150" height="430"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="nxc-BX-aP3"/>
@@ -65,7 +65,7 @@
                 <constraint firstAttribute="bottom" secondItem="Z4b-dL-sEA" secondAttribute="bottom" constant="49" id="WoN-Uv-dXz"/>
                 <constraint firstItem="PKg-aE-umX" firstAttribute="top" secondItem="bRp-qd-sJd" secondAttribute="bottom" id="aHN-dn-FkQ"/>
                 <constraint firstItem="Z4b-dL-sEA" firstAttribute="top" secondItem="PKg-aE-umX" secondAttribute="bottom" constant="8" id="lUn-Mh-eam"/>
-                <constraint firstItem="Z4b-dL-sEA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="xb6-tR-4NJ"/>
+                <constraint firstItem="Z4b-dL-sEA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="1" id="xb6-tR-4NJ"/>
             </constraints>
             <point key="canvasLocation" x="25.5" y="52.5"/>
         </view>

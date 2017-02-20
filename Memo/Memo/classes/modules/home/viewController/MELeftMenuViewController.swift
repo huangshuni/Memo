@@ -10,14 +10,15 @@ import UIKit
 
 class MELeftMenuViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var menuTitleLabel: UILabel!
     let menuList = [menu_All_Title, menu_Wait_Title, menu_Finsh_Title, menu_OverDate_Title, menu_Setting_Title]
     var selectItem = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        menuTitleLabel.attributedText = MEAttributeStrings.getMenuAttributeString(string: menu_Title, size: 22.0, color: UIColor.black)
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
     }
@@ -31,18 +32,13 @@ class MELeftMenuViewController: BaseViewController, UITableViewDelegate, UITable
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.selectionStyle = .none
-        cell?.textLabel?.text = menuList[indexPath.row]
-        var fontColor: UIColor!
-        var fontSize: CGFloat = 17.0
-        
+        var attributesStr: NSAttributedString!
         if indexPath.row == selectItem {
-             fontColor = UIColor.getColor(rgb: greenColor)
-             fontSize = 21.0
+             attributesStr = MEAttributeStrings.getMenuAttributeString(string: menuList[indexPath.row], size: 21.0, color: UIColor.getColor(rgb: greenColor))
         } else {
-             fontColor = UIColor.black
+            attributesStr = MEAttributeStrings.getMenuAttributeString(string: menuList[indexPath.row], size: 17.0, color: UIColor.black)
         }
-        cell?.textLabel?.textColor = fontColor
-        cell?.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        cell?.textLabel?.attributedText = attributesStr
         return cell!
     }
     // MARK: - UITableViewDelegate
