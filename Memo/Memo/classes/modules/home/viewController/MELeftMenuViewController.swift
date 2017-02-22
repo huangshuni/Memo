@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import RESideMenu
+
+public enum MEMenuItem: Int {
+    case MenuAll, MenuWait, MenuFinsh, MenuOverDate, MenuSetting
+}
 
 class MELeftMenuViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -14,7 +19,6 @@ class MELeftMenuViewController: BaseViewController, UITableViewDelegate, UITable
     @IBOutlet weak var menuTitleLabel: UILabel!
     let menuList = [menu_All_Title, menu_Wait_Title, menu_Finsh_Title, menu_OverDate_Title, menu_Setting_Title]
     var selectItem = 1
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,5 +50,6 @@ class MELeftMenuViewController: BaseViewController, UITableViewDelegate, UITable
         
         selectItem = indexPath.row
         tableView.reloadData()
+        MEDispatchCenter.dispatchContent(menuIndex: MEMenuItem(rawValue: indexPath.row)!)
     }
 }

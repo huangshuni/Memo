@@ -76,8 +76,6 @@
 		DB22EABF1E585CA500341E60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EABD1E585CA500341E60 /* ViewController.swift */; };
 		DB22EAC01E585CA500341E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EABE1E585CA500341E60 /* AppDelegate.swift */; };
 		DB22EAC41E585D2E00341E60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB22EAC31E585D2E00341E60 /* Info.plist */; };
-		DB6617BF1E5B21D100375D84 /* STLITI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617BE1E5B21D100375D84 /* STLITI.ttf */; };
-		DB6617C11E5B241B00375D84 /* WawaSC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C01E5B241B00375D84 /* WawaSC-Regular.otf */; };
 		DB6617C31E5B2ABE00375D84 /* SimHei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C21E5B2ABE00375D84 /* SimHei.ttf */; };
 		DB6617C51E5B2B3B00375D84 /* MEFont.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C41E5B2B3B00375D84 /* MEFont.plist */; };
 		DB6617C71E5B2C0700375D84 /* STXINWEI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C61E5B2C0700375D84 /* STXINWEI.ttf */; };
@@ -86,10 +84,18 @@
 		DB6617CD1E5B2C9300375D84 /* Libian.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617CC1E5B2C9300375D84 /* Libian.ttc */; };
 		DB6617CF1E5B2CC000375D84 /* Hanzipen.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617CE1E5B2CC000375D84 /* Hanzipen.ttc */; };
 		DB6617D11E5B2CE300375D84 /* Hannotate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D01E5B2CE300375D84 /* Hannotate.ttc */; };
-		DB6617D31E5B2D1500375D84 /* PingFang.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D21E5B2D1500375D84 /* PingFang.ttc */; };
 		DB6617D51E5B2D6200375D84 /* Songti.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D41E5B2D6200375D84 /* Songti.ttc */; };
 		DB6617D71E5B2D7F00375D84 /* Microsoft Yahei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D61E5B2D7F00375D84 /* Microsoft Yahei.ttf */; };
 		DB6617D91E5B2DBA00375D84 /* WeibeiSC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D81E5B2DBA00375D84 /* WeibeiSC-Bold.otf */; };
+		DB8E83A91E5D5E400080998A /* PingFang.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83A61E5D5E400080998A /* PingFang.ttc */; };
+		DB8E83AA1E5D5E400080998A /* STLITI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83A71E5D5E400080998A /* STLITI.ttf */; };
+		DB8E83AB1E5D5E400080998A /* WawaSC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */; };
+		DB8E83AE1E5D61C70080998A /* METableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E83AC1E5D61C70080998A /* METableViewCell.swift */; };
+		DB8E83AF1E5D61C70080998A /* METableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83AD1E5D61C70080998A /* METableViewCell.xib */; };
+		DBB7ACA51E5D6A020049478D /* MEDispatchCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACA41E5D6A020049478D /* MEDispatchCenter.swift */; };
+		DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */; };
+		DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */; };
+		DBB7ACB01E5D7C360049478D /* MEItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */; };
 		DBC625EA1E5ABF6F00914197 /* AppDelegate_EAssit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625E91E5ABF6F00914197 /* AppDelegate_EAssit.swift */; };
 		DBC625F61E5AC23100914197 /* MELeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625F41E5AC23100914197 /* MELeftMenuViewController.swift */; };
 		DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC625F51E5AC23100914197 /* MELeftMenuViewController.xib */; };
@@ -100,6 +106,8 @@
 		DBC626051E5AE02000914197 /* MEStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC626041E5AE02000914197 /* MEStrings.swift */; };
 		DBC626071E5AE43D00914197 /* MEAttributeStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */; };
 		DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */; };
+		DBFA7EF71E5C28F900BD9E00 /* METableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */; };
+		DBFA7EF81E5C28F900BD9E00 /* METableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,8 +182,6 @@
 		DB22EABD1E585CA500341E60 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB22EABE1E585CA500341E60 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB22EAC31E585D2E00341E60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB6617BE1E5B21D100375D84 /* STLITI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STLITI.ttf; sourceTree = "<group>"; };
-		DB6617C01E5B241B00375D84 /* WawaSC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WawaSC-Regular.otf"; sourceTree = "<group>"; };
 		DB6617C21E5B2ABE00375D84 /* SimHei.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimHei.ttf; sourceTree = "<group>"; };
 		DB6617C41E5B2B3B00375D84 /* MEFont.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MEFont.plist; sourceTree = "<group>"; };
 		DB6617C61E5B2C0700375D84 /* STXINWEI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINWEI.ttf; sourceTree = "<group>"; };
@@ -184,10 +190,18 @@
 		DB6617CC1E5B2C9300375D84 /* Libian.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Libian.ttc; sourceTree = "<group>"; };
 		DB6617CE1E5B2CC000375D84 /* Hanzipen.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hanzipen.ttc; sourceTree = "<group>"; };
 		DB6617D01E5B2CE300375D84 /* Hannotate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hannotate.ttc; sourceTree = "<group>"; };
-		DB6617D21E5B2D1500375D84 /* PingFang.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang.ttc; sourceTree = "<group>"; };
 		DB6617D41E5B2D6200375D84 /* Songti.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Songti.ttc; sourceTree = "<group>"; };
 		DB6617D61E5B2D7F00375D84 /* Microsoft Yahei.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Microsoft Yahei.ttf"; sourceTree = "<group>"; };
 		DB6617D81E5B2DBA00375D84 /* WeibeiSC-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WeibeiSC-Bold.otf"; sourceTree = "<group>"; };
+		DB8E83A61E5D5E400080998A /* PingFang.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang.ttc; sourceTree = "<group>"; };
+		DB8E83A71E5D5E400080998A /* STLITI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STLITI.ttf; sourceTree = "<group>"; };
+		DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WawaSC-Regular.otf"; sourceTree = "<group>"; };
+		DB8E83AC1E5D61C70080998A /* METableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewCell.swift; sourceTree = "<group>"; };
+		DB8E83AD1E5D61C70080998A /* METableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = METableViewCell.xib; sourceTree = "<group>"; };
+		DBB7ACA41E5D6A020049478D /* MEDispatchCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDispatchCenter.swift; sourceTree = "<group>"; };
+		DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsViewController.swift; sourceTree = "<group>"; };
+		DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingsViewController.xib; sourceTree = "<group>"; };
+		DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEItemModel.swift; sourceTree = "<group>"; };
 		DBC625E91E5ABF6F00914197 /* AppDelegate_EAssit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate_EAssit.swift; sourceTree = "<group>"; };
 		DBC625F41E5AC23100914197 /* MELeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MELeftMenuViewController.swift; sourceTree = "<group>"; };
 		DBC625F51E5AC23100914197 /* MELeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MELeftMenuViewController.xib; sourceTree = "<group>"; };
@@ -198,6 +212,8 @@
 		DBC626041E5AE02000914197 /* MEStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEStrings.swift; sourceTree = "<group>"; };
 		DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAttributeStrings.swift; sourceTree = "<group>"; };
 		DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsModel.swift; sourceTree = "<group>"; };
+		DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewController.swift; sourceTree = "<group>"; };
+		DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = METableViewController.xib; sourceTree = "<group>"; };
 		EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -534,6 +550,8 @@
 		DB22EAB71E5855BD00341E60 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				DBB7ACA31E5D69DB0049478D /* dispatch */,
+				DBFA7EF41E5C280E00BD9E00 /* search */,
 				DBC626081E5AE90B00914197 /* settings */,
 				DBC626011E5ADFD400914197 /* strings */,
 				DBC625FC1E5AC4D800914197 /* category */,
@@ -566,27 +584,44 @@
 		DB6617BD1E5B21A200375D84 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				DB8E83A61E5D5E400080998A /* PingFang.ttc */,
+				DB8E83A71E5D5E400080998A /* STLITI.ttf */,
+				DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */,
 				DB6617D81E5B2DBA00375D84 /* WeibeiSC-Bold.otf */,
 				DB6617D61E5B2D7F00375D84 /* Microsoft Yahei.ttf */,
 				DB6617D41E5B2D6200375D84 /* Songti.ttc */,
 				DB6617D01E5B2CE300375D84 /* Hannotate.ttc */,
 				DB6617CE1E5B2CC000375D84 /* Hanzipen.ttc */,
 				DB6617C21E5B2ABE00375D84 /* SimHei.ttf */,
-				DB6617BE1E5B21D100375D84 /* STLITI.ttf */,
-				DB6617C01E5B241B00375D84 /* WawaSC-Regular.otf */,
 				DB6617C61E5B2C0700375D84 /* STXINWEI.ttf */,
 				DB6617C81E5B2C3400375D84 /* STXINGKA.ttf */,
 				DB6617CA1E5B2C6300375D84 /* Kaiti.ttf */,
 				DB6617CC1E5B2C9300375D84 /* Libian.ttc */,
-				DB6617D21E5B2D1500375D84 /* PingFang.ttc */,
 				DB6617C41E5B2B3B00375D84 /* MEFont.plist */,
 			);
 			path = font;
 			sourceTree = "<group>";
 		};
+		DBB7ACA31E5D69DB0049478D /* dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7ACA41E5D6A020049478D /* MEDispatchCenter.swift */,
+			);
+			path = dispatch;
+			sourceTree = "<group>";
+		};
+		DBB7ACAE1E5D7BFC0049478D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		DBC625EC1E5AC11F00914197 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				DBB7ACAE1E5D7BFC0049478D /* model */,
 				DBC625EF1E5AC18600914197 /* service */,
 				DBC625EE1E5AC18200914197 /* view */,
 				DBC625ED1E5AC17900914197 /* viewController */,
@@ -650,6 +685,8 @@
 		DBC626091E5AE97E00914197 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */,
+				DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -675,6 +712,17 @@
 				DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		DBFA7EF41E5C280E00BD9E00 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */,
+				DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */,
+				DB8E83AC1E5D61C70080998A /* METableViewCell.swift */,
+				DB8E83AD1E5D61C70080998A /* METableViewCell.xib */,
+			);
+			path = search;
 			sourceTree = "<group>";
 		};
 		E3565594FBFDCD0B9ACDE605 /* Frameworks */ = {
@@ -753,7 +801,9 @@
 				DB22EA941E58559400341E60 /* YHPhotoBrowseViewController.xib in Resources */,
 				DB22EAA31E58559400341E60 /* YHPictureBrowseViewController.xib in Resources */,
 				DB22EAA01E58559400341E60 /* YHPictureBrowseCell.xib in Resources */,
+				DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */,
 				DB6617CB1E5B2C6300375D84 /* Kaiti.ttf in Resources */,
+				DB8E83AB1E5D5E400080998A /* WawaSC-Regular.otf in Resources */,
 				DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */,
 				DBC625FB1E5AC24A00914197 /* MEHomeViewController.xib in Resources */,
 				DB6617D71E5B2D7F00375D84 /* Microsoft Yahei.ttf in Resources */,
@@ -761,19 +811,20 @@
 				DB6617C31E5B2ABE00375D84 /* SimHei.ttf in Resources */,
 				DB22EA911E58559400341E60 /* YHPhotoAlbumViewController.xib in Resources */,
 				DB22EA8F1E58559400341E60 /* YHPhotoAlbumTableViewCell.xib in Resources */,
+				DB8E83AF1E5D61C70080998A /* METableViewCell.xib in Resources */,
 				DB6617CF1E5B2CC000375D84 /* Hanzipen.ttc in Resources */,
 				DBC626001E5AD6B600914197 /* Main.storyboard in Resources */,
+				DB8E83AA1E5D5E400080998A /* STLITI.ttf in Resources */,
 				DB6617C91E5B2C3400375D84 /* STXINGKA.ttf in Resources */,
 				DB6617C51E5B2B3B00375D84 /* MEFont.plist in Resources */,
-				DB6617D31E5B2D1500375D84 /* PingFang.ttc in Resources */,
 				2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */,
 				DB22EA961E58559400341E60 /* YHPhotoHighImageCell.xib in Resources */,
 				DB22EAC41E585D2E00341E60 /* Info.plist in Resources */,
 				DB6617D51E5B2D6200375D84 /* Songti.ttc in Resources */,
+				DB8E83A91E5D5E400080998A /* PingFang.ttc in Resources */,
 				DB22EA9E1E58559400341E60 /* YHPhotoThumbnailCell.xib in Resources */,
 				DB22EA9B1E58559400341E60 /* YHPhotoPickViewController.xib in Resources */,
-				DB6617C11E5B241B00375D84 /* WawaSC-Regular.otf in Resources */,
-				DB6617BF1E5B21D100375D84 /* STLITI.ttf in Resources */,
+				DBFA7EF81E5C28F900BD9E00 /* METableViewController.xib in Resources */,
 				DB6617C71E5B2C0700375D84 /* STXINWEI.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,12 +886,15 @@
 			files = (
 				DB22EAA51E58559400341E60 /* NSDate_EStamp.swift in Sources */,
 				DB22EA891E58559400341E60 /* YHLogger.swift in Sources */,
+				DB8E83AE1E5D61C70080998A /* METableViewCell.swift in Sources */,
 				DB22EAAC1E58559400341E60 /* UIImage_ELoad.swift in Sources */,
+				DBB7ACA51E5D6A020049478D /* MEDispatchCenter.swift in Sources */,
 				DB22EA991E58559400341E60 /* YHPhotoPickThroughDelegate.swift in Sources */,
 				DB22EA781E58559400341E60 /* BaseViewController.swift in Sources */,
 				DBC625FE1E5AC51300914197 /* UIColor_EMemoColor.swift in Sources */,
 				DB22EA9D1E58559400341E60 /* YHPhotoThumbnailCell.swift in Sources */,
 				DB22EAA61E58559400341E60 /* NSDictionary_ELoad.swift in Sources */,
+				DBFA7EF71E5C28F900BD9E00 /* METableViewController.swift in Sources */,
 				DBC625FA1E5AC24A00914197 /* MEHomeViewController.swift in Sources */,
 				DB22EA7C1E58559400341E60 /* YHDeviceInfo.swift in Sources */,
 				DB22EA901E58559400341E60 /* YHPhotoAlbumViewController.swift in Sources */,
@@ -888,9 +942,11 @@
 				DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */,
 				DBC626051E5AE02000914197 /* MEStrings.swift in Sources */,
 				DB22EA9F1E58559400341E60 /* YHPictureBrowseCell.swift in Sources */,
+				DBB7ACB01E5D7C360049478D /* MEItemModel.swift in Sources */,
 				DB22EA8E1E58559400341E60 /* YHPhotoAlbumTableViewCell.swift in Sources */,
 				DB22EA8D1E58559400341E60 /* YHPhotoAlbumTableDelegate.swift in Sources */,
 				DB22EA841E58559400341E60 /* FileDownloadVO.swift in Sources */,
+				DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */,
 				DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */,
 				DB22EAB21E58559400341E60 /* YHTextField.swift in Sources */,
 				DB22EA7F1E58559400341E60 /* FileDownloadDao.swift in Sources */,

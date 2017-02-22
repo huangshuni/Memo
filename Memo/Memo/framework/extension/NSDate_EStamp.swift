@@ -95,4 +95,11 @@ extension NSDate {
         endDate = beginDate?.addingTimeInterval(inteval - 1)
         return (beginDate,endDate)
     }
+    //根据格式和时间戳字符串返回NSDate对象
+    static func getNSDateFromDateString(dateFormatStr: String, dateString: String) -> NSDate? {
+        
+        let dateFormat = DateFormatter();
+        dateFormat.dateFormat = dateFormatStr
+        return dateFormat.date(from: dateString) as NSDate?
+    }
 }

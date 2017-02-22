@@ -22,7 +22,6 @@ class BaseNavigationController: UINavigationController {
         navigationBar.tintColor = UIColor.getColor(rgb: whiteColor)
         navigationBar.barTintColor = UIColor.getColor(rgb: blueColor)
         interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
-        navaigationTitle()
     }
 
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -34,10 +33,5 @@ class BaseNavigationController: UINavigationController {
     
     func back() {
         popViewController(animated: true)
-    }
-    
-    func navaigationTitle() {
-    
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.init(name: MESettingsModel.settingsModel.font, size: 23.0)!, NSForegroundColorAttributeName: UIColor.getColor(rgb: whiteColor)]
     }
 }

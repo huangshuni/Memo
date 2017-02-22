@@ -13,6 +13,9 @@ let textBGColor: RGBColor = (247, 247, 247)
 let blueColor: RGBColor = (18, 183, 246)
 let whiteColor: RGBColor = (255, 255, 255)
 let greenColor: RGBColor = (30, 161, 20)
+let waitColor: RGBColor = (18, 183, 246)
+let finshColor: RGBColor = (30, 161, 20)
+let overDateColor: RGBColor = (251, 31, 42)
 
 extension UIColor {
 
