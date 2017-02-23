@@ -21,6 +21,8 @@ extension AppDelegate {
         let sideMenu = RESideMenu.init(contentViewController: nav, leftMenuViewController: leftMenu, rightMenuViewController: nil)
         sideMenu?.backgroundImage = UIImage.init(named: "Stars")
         sideMenu?.contentViewScaleValue = 1
+        sideMenu?.panGestureEnabled = false
+//        sideMenu?.interactivePopGestureRecognizerEnabled = true
         sideMenu?.panFromEdge = false
         sideMenu?.contentViewShadowEnabled = true
         sideMenu?.contentViewShadowColor = UIColor.black

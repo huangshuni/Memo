@@ -23,11 +23,12 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.getColor(rgb: textBGColor)
         deploySearchViewController()
         tableView.register(UINib.init(nibName: "METableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.tableHeaderView = searchViewController?.searchBar
         tableView.separatorStyle = .none
-        resultList = dataList
+        dataList = MEDispatchService.service.getWaitItem()
     }
     //设置搜索框
     func deploySearchViewController() -> Void {
@@ -53,6 +54,14 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     private func updateValue() -> Void {
         
         resultList = dataList
+        if dataList.count == 0 {
+            //无数据
+            let noDataBGView = UIView.init(frame: tableView.bounds)
+            noDataBGView.backgroundColor = UIColor.white
+            tableView.backgroundView = noDataBGView
+        } else {
+            tableView.backgroundView = nil
+        }
         tableView.reloadData()
     }
     
@@ -83,6 +92,26 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         })
         
     }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        log.debug("commit editing Style")
+    }
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        var list: [UITableViewRowAction] = []
+        let finshRow = UITableViewRowAction.init(style: .default, title: row_Finsh, handler: cellFinsh)
+        finshRow.backgroundColor = UIColor.getColor(rgb: greenColor)
+        let editRow = UITableViewRowAction.init(style: .default, title: row_Edit, handler: cellEdit)
+        editRow.backgroundColor = UIColor.getColor(rgb: blueColor)
+        let delRow = UITableViewRowAction.init(style: .default, title: row_Del, handler: cellDel)
+        delRow.backgroundColor = UIColor.getColor(rgb: overDateColor)
+        list.append(delRow)
+        list.append(editRow)
+        list.append(finshRow)
+        return list
+    }
     
     // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
@@ -104,4 +133,36 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         searchBar.text = ""
         searchViewController?.searchBar.setShowsCancelButton(false, animated: true)
     }
+    // MARK: - cell rowAction
+    //完成
+    private func cellFinsh(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        log.debug("cell Finsh")
+        tableView.setEditing(false, animated: true)
+        self.tableView.reloadRows(at: [indexPath], with: .automatic);
+    }
+    //删除
+    private func cellDel(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        log.debug("cell Del")
+        let alert = UIAlertController.init(title: "删除", message: "确认是否删除", preferredStyle: .alert)
+        let okAction = UIAlertAction.init(title: "是", style: .default, handler: {action in
+            alert.dismiss(animated: true, completion: nil)
+            self.tableView.reloadRows(at: [indexPath], with: .automatic);
+        })
+        let cancelAction = UIAlertAction.init(title: "否", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    //编辑
+    private func cellEdit(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        log.debug("cell Edit")
+        tableView.setEditing(false, animated: true)
+        self.tableView.reloadRows(at: [indexPath], with: .automatic);
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        log.debug("move \(touches), \(event)")
+    }
+
 }

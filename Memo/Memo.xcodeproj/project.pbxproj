@@ -106,6 +106,8 @@
 		DBC626051E5AE02000914197 /* MEStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC626041E5AE02000914197 /* MEStrings.swift */; };
 		DBC626071E5AE43D00914197 /* MEAttributeStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */; };
 		DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */; };
+		DBD183361E5EDD73006E8CB0 /* MENotifyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */; };
+		DBE88B071E5EC78300FEEC7A /* MEDispatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE88B061E5EC78300FEEC7A /* MEDispatchService.swift */; };
 		DBFA7EF71E5C28F900BD9E00 /* METableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */; };
 		DBFA7EF81E5C28F900BD9E00 /* METableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */; };
 /* End PBXBuildFile section */
@@ -212,6 +214,8 @@
 		DBC626041E5AE02000914197 /* MEStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEStrings.swift; sourceTree = "<group>"; };
 		DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAttributeStrings.swift; sourceTree = "<group>"; };
 		DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsModel.swift; sourceTree = "<group>"; };
+		DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MENotifyCenter.swift; sourceTree = "<group>"; };
+		DBE88B061E5EC78300FEEC7A /* MEDispatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDispatchService.swift; sourceTree = "<group>"; };
 		DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewController.swift; sourceTree = "<group>"; };
 		DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = METableViewController.xib; sourceTree = "<group>"; };
 		EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -550,6 +554,7 @@
 		DB22EAB71E5855BD00341E60 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				DBD183341E5EDD4B006E8CB0 /* notify */,
 				DBB7ACA31E5D69DB0049478D /* dispatch */,
 				DBFA7EF41E5C280E00BD9E00 /* search */,
 				DBC626081E5AE90B00914197 /* settings */,
@@ -605,6 +610,7 @@
 		DBB7ACA31E5D69DB0049478D /* dispatch */ = {
 			isa = PBXGroup;
 			children = (
+				DBE88B051E5EC76000FEEC7A /* service */,
 				DBB7ACA41E5D6A020049478D /* MEDispatchCenter.swift */,
 			);
 			path = dispatch;
@@ -712,6 +718,22 @@
 				DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		DBD183341E5EDD4B006E8CB0 /* notify */ = {
+			isa = PBXGroup;
+			children = (
+				DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */,
+			);
+			path = notify;
+			sourceTree = "<group>";
+		};
+		DBE88B051E5EC76000FEEC7A /* service */ = {
+			isa = PBXGroup;
+			children = (
+				DBE88B061E5EC78300FEEC7A /* MEDispatchService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		DBFA7EF41E5C280E00BD9E00 /* search */ = {
@@ -900,6 +922,7 @@
 				DB22EA901E58559400341E60 /* YHPhotoAlbumViewController.swift in Sources */,
 				DB22EA951E58559400341E60 /* YHPhotoHighImageCell.swift in Sources */,
 				DB22EABF1E585CA500341E60 /* ViewController.swift in Sources */,
+				DBE88B071E5EC78300FEEC7A /* MEDispatchService.swift in Sources */,
 				DB22EAA71E58559400341E60 /* NSNumber_EFromatter.swift in Sources */,
 				DB22EA861E58559400341E60 /* YHNetwork.swift in Sources */,
 				DB22EAA81E58559400341E60 /* NSObject_EAssist.swift in Sources */,
@@ -942,6 +965,7 @@
 				DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */,
 				DBC626051E5AE02000914197 /* MEStrings.swift in Sources */,
 				DB22EA9F1E58559400341E60 /* YHPictureBrowseCell.swift in Sources */,
+				DBD183361E5EDD73006E8CB0 /* MENotifyCenter.swift in Sources */,
 				DBB7ACB01E5D7C360049478D /* MEItemModel.swift in Sources */,
 				DB22EA8E1E58559400341E60 /* YHPhotoAlbumTableViewCell.swift in Sources */,
 				DB22EA8D1E58559400341E60 /* YHPhotoAlbumTableDelegate.swift in Sources */,

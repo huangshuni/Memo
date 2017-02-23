@@ -35,13 +35,23 @@ public struct MEItemModel {
     //提醒日期
     var notifyDate: String?
     //是否开启提醒
-    var isTurnNotify: Bool = false
+    var isTurnNotify: Bool
     //是否已经完成
     var isFinsh: Bool = false
     //是否过期
     var overDate: Bool = false
     //状态
     var state: ModelStates = ModelStates.ModelStatesWait
+    
+//    init(title: String, content: String?, imgList: [String]?, editDate: String, notifyDate: String?, isTurnNotify: Bool) {
+//        
+//        self.title = title
+//        self.content = content
+//        self.imgList = imgList
+//        self.editDate = editDate
+//        self.notifyDate = notifyDate
+//        self.isTurnNotify = isTurnNotify
+//    }
     
     //更新模型状态
     public mutating func updateModelStatus() -> Void {

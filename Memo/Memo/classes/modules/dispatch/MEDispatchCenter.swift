@@ -15,30 +15,33 @@ public class MEDispatchCenter: NSObject {
     
         return UIApplication.shared.keyWindow?.rootViewController as! RESideMenu
     }()
+    static let service = MEDispatchService.service
     
     public static func dispatchContent(menuIndex: MEMenuItem) -> Void {
     
         let homeViewController = (sideMenu.contentViewController as! BaseNavigationController).viewControllers.first as! MEHomeViewController
-        if menuIndex == .MenuSetting {
-            //设置
-            prepareShowSettings(homeViewController: homeViewController)
-        } else {
-            //列表
-            prepareShowList(homeViewController: homeViewController)
-            
-        }
         var title: String
+        var dataList:[MEItemModel] = []
         switch menuIndex {
         case .MenuAll:
             title = menu_All_Title
+            dataList = service.getAllItem()
+            prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuWait:
             title = menu_Wait_Title
+            dataList = service.getWaitItem()
+            prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuFinsh:
             title = menu_Finsh_Title
+            dataList = service.getFinshItem()
+            prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuOverDate:
             title = menu_OverDate_Title
+            dataList = service.getOverDateItem()
+            prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuSetting:
             title = menu_Setting_Title
+            prepareShowSettings(homeViewController: homeViewController)
         }
         homeViewController.title = title
         sideMenu.hideViewController()
@@ -51,18 +54,15 @@ public class MEDispatchCenter: NSObject {
         if !homeViewController.currentViewController!.isKind(of: MESettingsViewController.classForCoder()) {
             homeViewController.changeController(toViewController: MESettingsViewController())
         }
-        
     }
     
-    static func prepareShowList(homeViewController: MEHomeViewController) -> Void {
+    static func prepareShowList(homeViewController: MEHomeViewController, dataList: [MEItemModel]) -> Void {
     
         //准备数据
         //若当前视图不是目标视图，则切换
-        let item1 = MEItemModel(title: "1111", content: "撒娇圣诞节啊打电话就撒娇和打开的贺卡和大伙啥时候大红大红大点哈宽宏大度哈哈等哈看的哈客户端煎熬撒娇圣诞节啊打电话就撒娇和打开的贺卡和大伙啥时候大红大红大点哈宽宏大度哈哈等哈看的哈客户端煎熬撒娇圣诞节啊打电话就撒娇和打开的贺卡和大伙啥时候大红大红大点哈宽宏大度哈哈等哈看的哈客户端煎熬", imgList: ["Stars", "Stars"], editDate: "1487756989", notifyDate: nil, isTurnNotify: false, isFinsh: false, overDate: false, state: .ModelStatesWait)
-        let item2 = MEItemModel(title: "说就哈德建设大街很深刻的哈哈是打火机刷卡号地块啥都开会撒谎的哭声", content: "撒娇圣诞节啊打电话就撒娇和打开的贺卡和大伙啥时候大红大红大点哈宽宏大度哈哈等哈看的哈客户端煎熬撒娇圣诞节啊打电话就", imgList: ["add", "back"], editDate: "1487756989", notifyDate: "1487756989", isTurnNotify: true, isFinsh: true, overDate: false, state: .ModelStatesFinsh)
-        let dataList = [item1, item2]
         if !homeViewController.currentViewController!.isKind(of: METableViewController.classForCoder()) {
             let searchTable = METableViewController()
+            searchTable.dataList = dataList
             homeViewController.changeController(toViewController: searchTable)
         } else {
             let searchTable = homeViewController.childViewControllers.first as! METableViewController

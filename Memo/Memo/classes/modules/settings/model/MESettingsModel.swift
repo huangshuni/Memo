@@ -9,8 +9,8 @@
 import UIKit
 
 enum MEFontSize: CGFloat {
-    case small = 13.0
-    case normal = 17.0
+    case small = 11.0
+    case normal = 15.0
     case big = 21.0
 }
 

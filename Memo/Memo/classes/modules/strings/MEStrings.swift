@@ -16,4 +16,9 @@ let menu_Wait_Title = "待办事项"
 let menu_Finsh_Title = "完成事项"
 let menu_OverDate_Title = "过期事项"
 
+let date_Edit = "编辑日期:"
+let date_Notify = "提醒日期:"
 
+let row_Finsh = "完成"
+let row_Edit = "编辑"
+let row_Del = "删除"

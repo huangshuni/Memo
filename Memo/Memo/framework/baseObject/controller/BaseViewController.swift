@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.init(name: MESettingsModel.settingsModel.font, size: 23.0)!, NSForegroundColorAttributeName: UIColor.getColor(rgb: whiteColor)]
         automaticallyAdjustsScrollViewInsets = false
+        view.backgroundColor = UIColor.getColor(rgb: textBGColor)
     }
     
     override func viewWillAppear(_ animated: Bool) {
