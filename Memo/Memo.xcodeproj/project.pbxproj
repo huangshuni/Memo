@@ -92,6 +92,10 @@
 		DB8E83AB1E5D5E400080998A /* WawaSC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */; };
 		DB8E83AE1E5D61C70080998A /* METableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E83AC1E5D61C70080998A /* METableViewCell.swift */; };
 		DB8E83AF1E5D61C70080998A /* METableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83AD1E5D61C70080998A /* METableViewCell.xib */; };
+		DB9F6F7D1E5FE1010027B063 /* Stars.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9F6F7C1E5FE1010027B063 /* Stars.png */; };
+		DB9F6F7F1E5FE2740027B063 /* MENotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F6F7E1E5FE2740027B063 /* MENotificationHandler.swift */; };
+		DB9F6F821E602F0C0027B063 /* MESpotlightCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F6F811E602F0C0027B063 /* MESpotlightCenter.swift */; };
+		DB9F6F841E60300C0027B063 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9F6F831E60300C0027B063 /* CoreSpotlight.framework */; };
 		DBB7ACA51E5D6A020049478D /* MEDispatchCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACA41E5D6A020049478D /* MEDispatchCenter.swift */; };
 		DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */; };
 		DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */; };
@@ -107,6 +111,7 @@
 		DBC626071E5AE43D00914197 /* MEAttributeStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */; };
 		DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */; };
 		DBD183361E5EDD73006E8CB0 /* MENotifyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */; };
+		DBD183381E5EE46C006E8CB0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD183371E5EE46C006E8CB0 /* UserNotifications.framework */; };
 		DBE88B071E5EC78300FEEC7A /* MEDispatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE88B061E5EC78300FEEC7A /* MEDispatchService.swift */; };
 		DBFA7EF71E5C28F900BD9E00 /* METableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */; };
 		DBFA7EF81E5C28F900BD9E00 /* METableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */; };
@@ -200,6 +205,10 @@
 		DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WawaSC-Regular.otf"; sourceTree = "<group>"; };
 		DB8E83AC1E5D61C70080998A /* METableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewCell.swift; sourceTree = "<group>"; };
 		DB8E83AD1E5D61C70080998A /* METableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = METableViewCell.xib; sourceTree = "<group>"; };
+		DB9F6F7C1E5FE1010027B063 /* Stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stars.png; sourceTree = "<group>"; };
+		DB9F6F7E1E5FE2740027B063 /* MENotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MENotificationHandler.swift; sourceTree = "<group>"; };
+		DB9F6F811E602F0C0027B063 /* MESpotlightCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESpotlightCenter.swift; sourceTree = "<group>"; };
+		DB9F6F831E60300C0027B063 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		DBB7ACA41E5D6A020049478D /* MEDispatchCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDispatchCenter.swift; sourceTree = "<group>"; };
 		DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsViewController.swift; sourceTree = "<group>"; };
 		DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingsViewController.xib; sourceTree = "<group>"; };
@@ -215,6 +224,7 @@
 		DBC626061E5AE43D00914197 /* MEAttributeStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAttributeStrings.swift; sourceTree = "<group>"; };
 		DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsModel.swift; sourceTree = "<group>"; };
 		DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MENotifyCenter.swift; sourceTree = "<group>"; };
+		DBD183371E5EE46C006E8CB0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		DBE88B061E5EC78300FEEC7A /* MEDispatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDispatchService.swift; sourceTree = "<group>"; };
 		DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewController.swift; sourceTree = "<group>"; };
 		DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = METableViewController.xib; sourceTree = "<group>"; };
@@ -226,6 +236,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9F6F841E60300C0027B063 /* CoreSpotlight.framework in Frameworks */,
+				DBD183381E5EE46C006E8CB0 /* UserNotifications.framework in Frameworks */,
 				B9214B9919D1A90FE03C9188 /* Pods_Memo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +566,7 @@
 		DB22EAB71E5855BD00341E60 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				DB9F6F801E602D750027B063 /* spotlight */,
 				DBD183341E5EDD4B006E8CB0 /* notify */,
 				DBB7ACA31E5D69DB0049478D /* dispatch */,
 				DBFA7EF41E5C280E00BD9E00 /* search */,
@@ -569,6 +582,7 @@
 		DB22EAB81E5855EE00341E60 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB9F6F7C1E5FE1010027B063 /* Stars.png */,
 				DB6617BD1E5B21A200375D84 /* font */,
 				2A9E8C391E584F4900226C56 /* Assets.xcassets */,
 			);
@@ -605,6 +619,14 @@
 				DB6617C41E5B2B3B00375D84 /* MEFont.plist */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		DB9F6F801E602D750027B063 /* spotlight */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F6F811E602F0C0027B063 /* MESpotlightCenter.swift */,
+			);
+			path = spotlight;
 			sourceTree = "<group>";
 		};
 		DBB7ACA31E5D69DB0049478D /* dispatch */ = {
@@ -724,6 +746,7 @@
 			isa = PBXGroup;
 			children = (
 				DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */,
+				DB9F6F7E1E5FE2740027B063 /* MENotificationHandler.swift */,
 			);
 			path = notify;
 			sourceTree = "<group>";
@@ -750,6 +773,8 @@
 		E3565594FBFDCD0B9ACDE605 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB9F6F831E60300C0027B063 /* CoreSpotlight.framework */,
+				DBD183371E5EE46C006E8CB0 /* UserNotifications.framework */,
 				EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */,
 			);
 			name = Frameworks;
@@ -842,6 +867,7 @@
 				2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */,
 				DB22EA961E58559400341E60 /* YHPhotoHighImageCell.xib in Resources */,
 				DB22EAC41E585D2E00341E60 /* Info.plist in Resources */,
+				DB9F6F7D1E5FE1010027B063 /* Stars.png in Resources */,
 				DB6617D51E5B2D6200375D84 /* Songti.ttc in Resources */,
 				DB8E83A91E5D5E400080998A /* PingFang.ttc in Resources */,
 				DB22EA9E1E58559400341E60 /* YHPhotoThumbnailCell.xib in Resources */,
@@ -962,12 +988,14 @@
 				DB22EA871E58559400341E60 /* YHNetworkReachability.swift in Sources */,
 				DB22EA881E58559400341E60 /* YHURLCache.swift in Sources */,
 				DB22EAC01E585CA500341E60 /* AppDelegate.swift in Sources */,
+				DB9F6F7F1E5FE2740027B063 /* MENotificationHandler.swift in Sources */,
 				DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */,
 				DBC626051E5AE02000914197 /* MEStrings.swift in Sources */,
 				DB22EA9F1E58559400341E60 /* YHPictureBrowseCell.swift in Sources */,
 				DBD183361E5EDD73006E8CB0 /* MENotifyCenter.swift in Sources */,
 				DBB7ACB01E5D7C360049478D /* MEItemModel.swift in Sources */,
 				DB22EA8E1E58559400341E60 /* YHPhotoAlbumTableViewCell.swift in Sources */,
+				DB9F6F821E602F0C0027B063 /* MESpotlightCenter.swift in Sources */,
 				DB22EA8D1E58559400341E60 /* YHPhotoAlbumTableDelegate.swift in Sources */,
 				DB22EA841E58559400341E60 /* FileDownloadVO.swift in Sources */,
 				DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */,

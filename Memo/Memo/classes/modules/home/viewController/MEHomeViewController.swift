@@ -26,6 +26,14 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
         sideMenu.delegate = self
         addSearchTableViewController()
         addNavigationBarButton()
+    
+        //测试代码
+        let item = MEDispatchService.service.getFinshItem().first
+        MENotifyCenter.center.registerNotification(model: item!)
+        //测试代码
+        for item in MEDispatchService.service.getAllItem() {
+            MESpotlightCenter.center.addSearchItem(model: item)
+        }
     }
 
     func addSearchTableViewController() -> Void {

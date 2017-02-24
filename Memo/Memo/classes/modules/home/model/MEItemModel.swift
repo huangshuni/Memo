@@ -63,14 +63,14 @@ public struct MEItemModel {
         let nowDate = NSDate()
         if let date = notifyDate {
             //存在提醒时间
-            let notiDate = NSDate.getNSDateFromDateString(dateFormatStr: dateFormatStr, dateString: date)
+            let notiDate = NSDate.getNSDateFromDateString(dateString: date)
             let timeInterval = nowDate.timeIntervalSince(notiDate as! Date)
             if timeInterval > 0, isFinsh == false {
                 state = .ModelStatesOverdDate
             }
         } else {
             //不存在
-            let editDate = NSDate.getNSDateFromDateString(dateFormatStr: dateFormatStr, dateString: self.editDate)
+            let editDate = NSDate.getNSDateFromDateString(dateString: self.editDate)
             let timeInterval = nowDate.timeIntervalSince(editDate as! Date)
             if timeInterval > threeDaySeconds {
                 state = .ModelStatesOverdDate

@@ -96,10 +96,16 @@ extension NSDate {
         return (beginDate,endDate)
     }
     //根据格式和时间戳字符串返回NSDate对象
-    static func getNSDateFromDateString(dateFormatStr: String, dateString: String) -> NSDate? {
+    static func getNSDateFromDateString(dateString: String) -> NSDate? {
         
-        let dateFormat = DateFormatter();
-        dateFormat.dateFormat = dateFormatStr
-        return dateFormat.date(from: dateString) as NSDate?
+        let timeInterval = Double(dateString)! as TimeInterval
+        return NSDate.init(timeIntervalSince1970: timeInterval)
+    }
+    //根据时间戳返回年月日时分秒
+    static func getCalendar(date: NSDate) -> (Int, Int, Int, Int, Int, Int) {
+        
+        let calendar = Calendar.current
+        let dateCompent = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date as Date)
+        return (dateCompent.year!, dateCompent.month!, dateCompent.day!, dateCompent.hour!, dateCompent.second!, dateCompent.month!)
     }
 }

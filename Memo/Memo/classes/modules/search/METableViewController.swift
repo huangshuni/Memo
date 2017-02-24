@@ -101,15 +101,18 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         var list: [UITableViewRowAction] = []
-        let finshRow = UITableViewRowAction.init(style: .default, title: row_Finsh, handler: cellFinsh)
-        finshRow.backgroundColor = UIColor.getColor(rgb: greenColor)
+        let model = resultList[indexPath.row]
+        if model.state != .ModelStatesFinsh {
+            let finshRow = UITableViewRowAction.init(style: .default, title: row_Finsh, handler: cellFinsh)
+            finshRow.backgroundColor = UIColor.getColor(rgb: greenColor)
+            list.append(finshRow)
+        }
         let editRow = UITableViewRowAction.init(style: .default, title: row_Edit, handler: cellEdit)
         editRow.backgroundColor = UIColor.getColor(rgb: blueColor)
         let delRow = UITableViewRowAction.init(style: .default, title: row_Del, handler: cellDel)
         delRow.backgroundColor = UIColor.getColor(rgb: overDateColor)
-        list.append(delRow)
         list.append(editRow)
-        list.append(finshRow)
+        list.append(delRow)
         return list
     }
     

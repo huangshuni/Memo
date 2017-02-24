@@ -22,3 +22,11 @@ let date_Notify = "提醒日期:"
 let row_Finsh = "完成"
 let row_Edit = "编辑"
 let row_Del = "删除"
+
+let notification_alert_title = "通知"
+let notification_alert_content = "通知相关权限未开，可能会影响功能的正常使用，建议开启"
+let notification_alert_cancel = "取消"
+let notification_alert_ok = "去开启"
+
+let notification_category_ok = "知道了"
+let notification_category_cancel = "取消"

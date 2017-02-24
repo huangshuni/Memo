@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         deployRootViewController()
         deployGlobalStyle()
         deployLog()
+        MENotifyCenter.center.deployNotification()
         return true
     }
 
@@ -45,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    //apotlight回调
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        
+        return MESpotlightCenter.center.handleSpotlight(application, continue: userActivity, restorationHandler: restorationHandler)
+    }
 }
 
