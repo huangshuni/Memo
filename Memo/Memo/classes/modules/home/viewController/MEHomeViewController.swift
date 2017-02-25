@@ -28,6 +28,9 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
         addNavigationBarButton()
     
         //测试代码
+        MENotifyCenter.center.getNotificationAuth()
+        MENotifyCenter.center.checkNotificationAuth()
+        //测试代码
         let item = MEDispatchService.service.getFinshItem().first
         MENotifyCenter.center.registerNotification(model: item!)
         //测试代码
