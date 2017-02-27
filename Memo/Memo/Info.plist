@@ -2,22 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>WeibeiSC-Bold.otf</string>
-		<string>Microsoft Yahei.ttf</string>
-		<string>Songti.ttc</string>
-		<string>Hannotate.ttc</string>
-		<string>Hanzipen.ttc</string>
-		<string>SimHei.ttf</string>
-		<string>STXINWEI.ttf</string>
-		<string>STXINGKA.ttf</string>
-		<string>Kaiti.ttf</string>
-		<string>Libian.ttc</string>
-		<string>PingFang.ttc</string>
-		<string>STLITI.ttf</string>
-		<string>WawaSC-Regular.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>

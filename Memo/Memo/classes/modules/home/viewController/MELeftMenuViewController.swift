@@ -32,10 +32,13 @@ class MELeftMenuViewController: BaseViewController, UITableViewDelegate, UITable
         
         return menuList.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.selectionStyle = .none
+        cell?.contentView.backgroundColor = UIColor.clear
+        cell?.backgroundColor = UIColor.clear
         var attributesStr: NSAttributedString!
         if indexPath.row == selectItem {
              attributesStr = MEAttributeStrings.getMenuAttributeString(string: menuList[indexPath.row], size: 21.0, color: UIColor.getColor(rgb: greenColor))

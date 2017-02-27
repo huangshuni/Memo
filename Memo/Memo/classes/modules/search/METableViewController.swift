@@ -28,7 +28,6 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         tableView.register(UINib.init(nibName: "METableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.tableHeaderView = searchViewController?.searchBar
         tableView.separatorStyle = .none
-        dataList = MEDispatchService.service.getWaitItem()
     }
     //设置搜索框
     func deploySearchViewController() -> Void {

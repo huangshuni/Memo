@@ -76,20 +76,7 @@
 		DB22EABF1E585CA500341E60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EABD1E585CA500341E60 /* ViewController.swift */; };
 		DB22EAC01E585CA500341E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EABE1E585CA500341E60 /* AppDelegate.swift */; };
 		DB22EAC41E585D2E00341E60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB22EAC31E585D2E00341E60 /* Info.plist */; };
-		DB6617C31E5B2ABE00375D84 /* SimHei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C21E5B2ABE00375D84 /* SimHei.ttf */; };
 		DB6617C51E5B2B3B00375D84 /* MEFont.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C41E5B2B3B00375D84 /* MEFont.plist */; };
-		DB6617C71E5B2C0700375D84 /* STXINWEI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C61E5B2C0700375D84 /* STXINWEI.ttf */; };
-		DB6617C91E5B2C3400375D84 /* STXINGKA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617C81E5B2C3400375D84 /* STXINGKA.ttf */; };
-		DB6617CB1E5B2C6300375D84 /* Kaiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617CA1E5B2C6300375D84 /* Kaiti.ttf */; };
-		DB6617CD1E5B2C9300375D84 /* Libian.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617CC1E5B2C9300375D84 /* Libian.ttc */; };
-		DB6617CF1E5B2CC000375D84 /* Hanzipen.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617CE1E5B2CC000375D84 /* Hanzipen.ttc */; };
-		DB6617D11E5B2CE300375D84 /* Hannotate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D01E5B2CE300375D84 /* Hannotate.ttc */; };
-		DB6617D51E5B2D6200375D84 /* Songti.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D41E5B2D6200375D84 /* Songti.ttc */; };
-		DB6617D71E5B2D7F00375D84 /* Microsoft Yahei.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D61E5B2D7F00375D84 /* Microsoft Yahei.ttf */; };
-		DB6617D91E5B2DBA00375D84 /* WeibeiSC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB6617D81E5B2DBA00375D84 /* WeibeiSC-Bold.otf */; };
-		DB8E83A91E5D5E400080998A /* PingFang.ttc in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83A61E5D5E400080998A /* PingFang.ttc */; };
-		DB8E83AA1E5D5E400080998A /* STLITI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83A71E5D5E400080998A /* STLITI.ttf */; };
-		DB8E83AB1E5D5E400080998A /* WawaSC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */; };
 		DB8E83AE1E5D61C70080998A /* METableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E83AC1E5D61C70080998A /* METableViewCell.swift */; };
 		DB8E83AF1E5D61C70080998A /* METableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8E83AD1E5D61C70080998A /* METableViewCell.xib */; };
 		DB9F6F7D1E5FE1010027B063 /* Stars.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9F6F7C1E5FE1010027B063 /* Stars.png */; };
@@ -100,6 +87,12 @@
 		DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */; };
 		DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */; };
 		DBB7ACB01E5D7C360049478D /* MEItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */; };
+		DBC427CB1E63D67A002B2D6A /* MESettingSoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC427C91E63D67A002B2D6A /* MESettingSoundCell.swift */; };
+		DBC427CC1E63D67A002B2D6A /* MESettingSoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC427CA1E63D67A002B2D6A /* MESettingSoundCell.xib */; };
+		DBC427CF1E640038002B2D6A /* MESettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC427CD1E640038002B2D6A /* MESettingDetailViewController.swift */; };
+		DBC427D01E640038002B2D6A /* MESettingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC427CE1E640038002B2D6A /* MESettingDetailViewController.xib */; };
+		DBC427D31E6409D9002B2D6A /* MEAboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC427D11E6409D9002B2D6A /* MEAboutAppViewController.swift */; };
+		DBC427D41E6409D9002B2D6A /* MEAboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC427D21E6409D9002B2D6A /* MEAboutAppViewController.xib */; };
 		DBC625EA1E5ABF6F00914197 /* AppDelegate_EAssit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625E91E5ABF6F00914197 /* AppDelegate_EAssit.swift */; };
 		DBC625F61E5AC23100914197 /* MELeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC625F41E5AC23100914197 /* MELeftMenuViewController.swift */; };
 		DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC625F51E5AC23100914197 /* MELeftMenuViewController.xib */; };
@@ -189,20 +182,7 @@
 		DB22EABD1E585CA500341E60 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB22EABE1E585CA500341E60 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB22EAC31E585D2E00341E60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB6617C21E5B2ABE00375D84 /* SimHei.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimHei.ttf; sourceTree = "<group>"; };
 		DB6617C41E5B2B3B00375D84 /* MEFont.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MEFont.plist; sourceTree = "<group>"; };
-		DB6617C61E5B2C0700375D84 /* STXINWEI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINWEI.ttf; sourceTree = "<group>"; };
-		DB6617C81E5B2C3400375D84 /* STXINGKA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINGKA.ttf; sourceTree = "<group>"; };
-		DB6617CA1E5B2C6300375D84 /* Kaiti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kaiti.ttf; sourceTree = "<group>"; };
-		DB6617CC1E5B2C9300375D84 /* Libian.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Libian.ttc; sourceTree = "<group>"; };
-		DB6617CE1E5B2CC000375D84 /* Hanzipen.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hanzipen.ttc; sourceTree = "<group>"; };
-		DB6617D01E5B2CE300375D84 /* Hannotate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hannotate.ttc; sourceTree = "<group>"; };
-		DB6617D41E5B2D6200375D84 /* Songti.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Songti.ttc; sourceTree = "<group>"; };
-		DB6617D61E5B2D7F00375D84 /* Microsoft Yahei.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Microsoft Yahei.ttf"; sourceTree = "<group>"; };
-		DB6617D81E5B2DBA00375D84 /* WeibeiSC-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WeibeiSC-Bold.otf"; sourceTree = "<group>"; };
-		DB8E83A61E5D5E400080998A /* PingFang.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingFang.ttc; sourceTree = "<group>"; };
-		DB8E83A71E5D5E400080998A /* STLITI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STLITI.ttf; sourceTree = "<group>"; };
-		DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WawaSC-Regular.otf"; sourceTree = "<group>"; };
 		DB8E83AC1E5D61C70080998A /* METableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewCell.swift; sourceTree = "<group>"; };
 		DB8E83AD1E5D61C70080998A /* METableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = METableViewCell.xib; sourceTree = "<group>"; };
 		DB9F6F7C1E5FE1010027B063 /* Stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stars.png; sourceTree = "<group>"; };
@@ -213,6 +193,12 @@
 		DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsViewController.swift; sourceTree = "<group>"; };
 		DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingsViewController.xib; sourceTree = "<group>"; };
 		DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEItemModel.swift; sourceTree = "<group>"; };
+		DBC427C91E63D67A002B2D6A /* MESettingSoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingSoundCell.swift; sourceTree = "<group>"; };
+		DBC427CA1E63D67A002B2D6A /* MESettingSoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingSoundCell.xib; sourceTree = "<group>"; };
+		DBC427CD1E640038002B2D6A /* MESettingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingDetailViewController.swift; sourceTree = "<group>"; };
+		DBC427CE1E640038002B2D6A /* MESettingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingDetailViewController.xib; sourceTree = "<group>"; };
+		DBC427D11E6409D9002B2D6A /* MEAboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAboutAppViewController.swift; sourceTree = "<group>"; };
+		DBC427D21E6409D9002B2D6A /* MEAboutAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MEAboutAppViewController.xib; sourceTree = "<group>"; };
 		DBC625E91E5ABF6F00914197 /* AppDelegate_EAssit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate_EAssit.swift; sourceTree = "<group>"; };
 		DBC625F41E5AC23100914197 /* MELeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MELeftMenuViewController.swift; sourceTree = "<group>"; };
 		DBC625F51E5AC23100914197 /* MELeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MELeftMenuViewController.xib; sourceTree = "<group>"; };
@@ -603,19 +589,6 @@
 		DB6617BD1E5B21A200375D84 /* font */ = {
 			isa = PBXGroup;
 			children = (
-				DB8E83A61E5D5E400080998A /* PingFang.ttc */,
-				DB8E83A71E5D5E400080998A /* STLITI.ttf */,
-				DB8E83A81E5D5E400080998A /* WawaSC-Regular.otf */,
-				DB6617D81E5B2DBA00375D84 /* WeibeiSC-Bold.otf */,
-				DB6617D61E5B2D7F00375D84 /* Microsoft Yahei.ttf */,
-				DB6617D41E5B2D6200375D84 /* Songti.ttc */,
-				DB6617D01E5B2CE300375D84 /* Hannotate.ttc */,
-				DB6617CE1E5B2CC000375D84 /* Hanzipen.ttc */,
-				DB6617C21E5B2ABE00375D84 /* SimHei.ttf */,
-				DB6617C61E5B2C0700375D84 /* STXINWEI.ttf */,
-				DB6617C81E5B2C3400375D84 /* STXINGKA.ttf */,
-				DB6617CA1E5B2C6300375D84 /* Kaiti.ttf */,
-				DB6617CC1E5B2C9300375D84 /* Libian.ttc */,
 				DB6617C41E5B2B3B00375D84 /* MEFont.plist */,
 			);
 			path = font;
@@ -715,6 +688,12 @@
 			children = (
 				DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */,
 				DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */,
+				DBC427C91E63D67A002B2D6A /* MESettingSoundCell.swift */,
+				DBC427CA1E63D67A002B2D6A /* MESettingSoundCell.xib */,
+				DBC427CD1E640038002B2D6A /* MESettingDetailViewController.swift */,
+				DBC427CE1E640038002B2D6A /* MESettingDetailViewController.xib */,
+				DBC427D11E6409D9002B2D6A /* MEAboutAppViewController.swift */,
+				DBC427D21E6409D9002B2D6A /* MEAboutAppViewController.xib */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -843,37 +822,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB6617D91E5B2DBA00375D84 /* WeibeiSC-Bold.otf in Resources */,
-				DB6617D11E5B2CE300375D84 /* Hannotate.ttc in Resources */,
+				DBC427D01E640038002B2D6A /* MESettingDetailViewController.xib in Resources */,
 				DB22EA941E58559400341E60 /* YHPhotoBrowseViewController.xib in Resources */,
 				DB22EAA31E58559400341E60 /* YHPictureBrowseViewController.xib in Resources */,
 				DB22EAA01E58559400341E60 /* YHPictureBrowseCell.xib in Resources */,
 				DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */,
-				DB6617CB1E5B2C6300375D84 /* Kaiti.ttf in Resources */,
-				DB8E83AB1E5D5E400080998A /* WawaSC-Regular.otf in Resources */,
 				DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */,
 				DBC625FB1E5AC24A00914197 /* MEHomeViewController.xib in Resources */,
-				DB6617D71E5B2D7F00375D84 /* Microsoft Yahei.ttf in Resources */,
-				DB6617CD1E5B2C9300375D84 /* Libian.ttc in Resources */,
-				DB6617C31E5B2ABE00375D84 /* SimHei.ttf in Resources */,
+				DBC427CC1E63D67A002B2D6A /* MESettingSoundCell.xib in Resources */,
 				DB22EA911E58559400341E60 /* YHPhotoAlbumViewController.xib in Resources */,
 				DB22EA8F1E58559400341E60 /* YHPhotoAlbumTableViewCell.xib in Resources */,
 				DB8E83AF1E5D61C70080998A /* METableViewCell.xib in Resources */,
-				DB6617CF1E5B2CC000375D84 /* Hanzipen.ttc in Resources */,
 				DBC626001E5AD6B600914197 /* Main.storyboard in Resources */,
-				DB8E83AA1E5D5E400080998A /* STLITI.ttf in Resources */,
-				DB6617C91E5B2C3400375D84 /* STXINGKA.ttf in Resources */,
 				DB6617C51E5B2B3B00375D84 /* MEFont.plist in Resources */,
 				2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */,
 				DB22EA961E58559400341E60 /* YHPhotoHighImageCell.xib in Resources */,
 				DB22EAC41E585D2E00341E60 /* Info.plist in Resources */,
 				DB9F6F7D1E5FE1010027B063 /* Stars.png in Resources */,
-				DB6617D51E5B2D6200375D84 /* Songti.ttc in Resources */,
-				DB8E83A91E5D5E400080998A /* PingFang.ttc in Resources */,
 				DB22EA9E1E58559400341E60 /* YHPhotoThumbnailCell.xib in Resources */,
 				DB22EA9B1E58559400341E60 /* YHPhotoPickViewController.xib in Resources */,
+				DBC427D41E6409D9002B2D6A /* MEAboutAppViewController.xib in Resources */,
 				DBFA7EF81E5C28F900BD9E00 /* METableViewController.xib in Resources */,
-				DB6617C71E5B2C0700375D84 /* STXINWEI.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,6 +904,7 @@
 				DB22EAA51E58559400341E60 /* NSDate_EStamp.swift in Sources */,
 				DB22EA891E58559400341E60 /* YHLogger.swift in Sources */,
 				DB8E83AE1E5D61C70080998A /* METableViewCell.swift in Sources */,
+				DBC427CB1E63D67A002B2D6A /* MESettingSoundCell.swift in Sources */,
 				DB22EAAC1E58559400341E60 /* UIImage_ELoad.swift in Sources */,
 				DBB7ACA51E5D6A020049478D /* MEDispatchCenter.swift in Sources */,
 				DB22EA991E58559400341E60 /* YHPhotoPickThroughDelegate.swift in Sources */,
@@ -943,6 +913,7 @@
 				DB22EA9D1E58559400341E60 /* YHPhotoThumbnailCell.swift in Sources */,
 				DB22EAA61E58559400341E60 /* NSDictionary_ELoad.swift in Sources */,
 				DBFA7EF71E5C28F900BD9E00 /* METableViewController.swift in Sources */,
+				DBC427CF1E640038002B2D6A /* MESettingDetailViewController.swift in Sources */,
 				DBC625FA1E5AC24A00914197 /* MEHomeViewController.swift in Sources */,
 				DB22EA7C1E58559400341E60 /* YHDeviceInfo.swift in Sources */,
 				DB22EA901E58559400341E60 /* YHPhotoAlbumViewController.swift in Sources */,
@@ -1001,6 +972,7 @@
 				DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */,
 				DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */,
 				DB22EAB21E58559400341E60 /* YHTextField.swift in Sources */,
+				DBC427D31E6409D9002B2D6A /* MEAboutAppViewController.swift in Sources */,
 				DB22EA7F1E58559400341E60 /* FileDownloadDao.swift in Sources */,
 				DB22EA821E58559400341E60 /* FileDownloadManager.swift in Sources */,
 				DB22EAA21E58559400341E60 /* YHPictureBrowseViewController.swift in Sources */,

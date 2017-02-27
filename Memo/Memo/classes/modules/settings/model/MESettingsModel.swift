@@ -16,7 +16,7 @@ enum MEFontSize: CGFloat {
 
 class MESettingsModel {
     
-    var font = "DFWaWaSC-W5"
+    var font = "PingFang SC"
     var size = MEFontSize.normal.rawValue
     var soundsOpen = true
     var version = YHDeviceInfo.appVersion

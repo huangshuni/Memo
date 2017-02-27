@@ -60,7 +60,7 @@ class METableViewCell: UITableViewCell {
             color = UIColor.getColor(rgb: waitColor)
         } else if state == .ModelStatesFinsh {
             //完成
-            color = UIColor.getColor(rgb: blueColor)
+            color = UIColor.getColor(rgb: finshColor)
         } else if state == .ModelStatesOverdDate {
             //过期
             color = UIColor.getColor(rgb: overDateColor)

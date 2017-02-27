@@ -4,81 +4,15 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>隶书</string>
+		<string>繁体</string>
 		<key>code</key>
-		<string>STLiti</string>
+		<string>PingFang TC</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>黑体</string>
+		<string>简体</string>
 		<key>code</key>
-		<string>SimHei</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>新魏</string>
-		<key>code</key>
-		<string>STXinwei</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>行楷</string>
-		<key>code</key>
-		<string>STXingkai</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>楷体</string>
-		<key>code</key>
-		<string>KaiTi</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>隶变</string>
-		<key>code</key>
-		<string>STLibian-SC-Regular</string>
-	</dict>
-    <dict>
-        <key>name</key>
-        <string>苹方</string>
-        <key>code</key>
-        <string>PingFangSC-Regular</string>
-    </dict>
-    <dict>
-        <key>name</key>
-        <string>宋体</string>
-        <key>code</key>
-        <string>STSongti-SC-Regular</string>
-    </dict>
-    <dict>
-        <key>name</key>
-        <string>魏碑</string>
-        <key>code</key>
-        <string>Weibei-SC-Bold</string>
-    </dict>
-	<dict>
-		<key>name</key>
-		<string>翩翩体</string>
-		<key>code</key>
-		<string>HanziPenSC-W3</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>手札体</string>
-		<key>code</key>
-		<string>HannotateSC-W5</string>
-	</dict>
-    <dict>
-        <key>name</key>
-        <string>娃娃体</string>
-        <key>code</key>
-        <string>DFWaWaSC-W5</string>
-    </dict>
-	<dict>
-		<key>name</key>
-		<string>微软雅黑</string>
-		<key>code</key>
-		<string>MicrosoftYaHei</string>
+		<string>PingFang SC</string>
 	</dict>
 </array>
 </plist>

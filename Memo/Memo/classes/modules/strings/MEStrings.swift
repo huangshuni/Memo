@@ -27,6 +27,22 @@ let notification_alert_title = "通知"
 let notification_alert_content = "通知相关权限未开，可能会影响功能的正常使用，建议开启"
 let notification_alert_cancel = "取消"
 let notification_alert_ok = "去开启"
-
 let notification_category_ok = "知道了"
 let notification_category_cancel = "取消"
+
+let setting_item_sound = "是否开启声音"
+let setting_item_font = "字体"
+let setting_item_fontSize = "字号"
+let setting_item_about = "关于App"
+let setting_font_title = "字体"
+let setting_fontsize_title = "字号"
+
+let setting_app_version = "当前版本:"
+let setting_app_updateBtnTitle = "检查更新"
+let setting_app_alertTitle = "提示"
+let setting_app_alertbody = "暂无新版本可供使用"
+let setting_app_alertOKBtnTitle = "去更新"
+let setting_app_alertOKBtn2Title = "知道了"
+let setting_app_alertCancelBtnTitle = "下次再说"
+
+

@@ -46,11 +46,12 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
         searchTable.didMove(toParentViewController: self)
         view.addSubview(searchTable.view)
         currentViewController = searchTable
+        MEDispatchCenter.dispatchContent(menuIndex: .MenuWait)
     }
     
     func addNavigationBarButton() -> Void {
     
-        let leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .organize, target: self, action: #selector(clickMenu))
+        let leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "list"), style: .plain, target: self, action: #selector(clickMenu))
         navigationItem.leftBarButtonItem = leftBarButtonItem
         let rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(clickAdd))
         navigationItem.rightBarButtonItem = rightBarButtonItem
@@ -89,7 +90,8 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .stop, target: self, action: #selector(showContent))
     }
     func sideMenu(_ sideMenu: RESideMenu!, didHideMenuViewController menuViewController: UIViewController!) {
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .organize, target: self, action: #selector(clickMenu))
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "list"), style: .plain, target: self, action: #selector(clickMenu))
+        
     }
     
     
