@@ -32,7 +32,7 @@ class MEAttributeStrings {
     //获取菜单富文本
     public static func getMenuAttributeString(string: String, size: CGFloat, color: UIColor) -> NSAttributedString {
     
-        let attribute = [NSFontAttributeName: UIFont.init(name: settingsModel.font, size: size), NSForegroundColorAttributeName: color]
+        let attribute = [NSFontAttributeName: UIFont.init(name: settingsModel.font, size: size), NSForegroundColorAttributeName: color] as [String : Any]
         return NSAttributedString.init(string: string, attributes: attribute)
     }
     

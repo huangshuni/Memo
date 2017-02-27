@@ -37,6 +37,9 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
         for item in MEDispatchService.service.getAllItem() {
             MESpotlightCenter.center.addSearchItem(model: item)
         }
+        
+        //测试代码
+        MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: item!)
     }
 
     func addSearchTableViewController() -> Void {
@@ -79,6 +82,7 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
     func clickAdd() -> Void {
     
         log.debug("add ..")
+        
     }
     func showContent() -> Void {
         

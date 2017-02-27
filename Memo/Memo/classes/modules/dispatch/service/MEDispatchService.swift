@@ -56,11 +56,6 @@ class MEDispatchService {
         return dataList
     }
     
-    
-    
-    
-    
-    
 }
 
 

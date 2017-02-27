@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C391E584F4900226C56 /* Assets.xcassets */; };
+		2AEA7CEB1E615E8C00B6F041 /* MEDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */; };
 		B9214B9919D1A90FE03C9188 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */; };
 		DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA211E58559400341E60 /* BaseNavigationController.swift */; };
 		DB22EA781E58559400341E60 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA221E58559400341E60 /* BaseViewController.swift */; };
@@ -113,6 +114,7 @@
 /* Begin PBXFileReference section */
 		2A9E8C2F1E584F4900226C56 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9E8C391E584F4900226C56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
+		2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDataBase.swift; sourceTree = "<group>"; };
 		8512E6FB682B4573DF69D19D /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF334D1011817B8C4215D870 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		DB22EA211E58559400341E60 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,14 @@
 				DB22EA1E1E58559400341E60 /* framework */,
 			);
 			path = Memo;
+			sourceTree = "<group>";
+		};
+		2AEA7CE91E615E2D00B6F041 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 		4A5746E6E5AAA0B8C51DE43C /* Pods */ = {
@@ -552,6 +562,7 @@
 		DB22EAB71E5855BD00341E60 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				2AEA7CE91E615E2D00B6F041 /* fmdb */,
 				DB9F6F801E602D750027B063 /* spotlight */,
 				DBD183341E5EDD4B006E8CB0 /* notify */,
 				DBB7ACA31E5D69DB0049478D /* dispatch */,
@@ -970,6 +981,7 @@
 				DB22EA8D1E58559400341E60 /* YHPhotoAlbumTableDelegate.swift in Sources */,
 				DB22EA841E58559400341E60 /* FileDownloadVO.swift in Sources */,
 				DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */,
+				2AEA7CEB1E615E8C00B6F041 /* MEDataBase.swift in Sources */,
 				DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */,
 				DB22EAB21E58559400341E60 /* YHTextField.swift in Sources */,
 				DBC427D31E6409D9002B2D6A /* MEAboutAppViewController.swift in Sources */,
