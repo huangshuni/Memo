@@ -10,7 +10,7 @@ import UIKit
 
 class YHAppInfoManager: NSObject {
     
-    private static let queryUrl = "http://itunes.apple.com/lookup?id=%@"
+    private static let queryUrl = "https://itunes.apple.com/lookup?id=%@"
     private static let entryApp = "itms-apps://itunes.apple.com/app/id%@"
     private static let entryApp2 = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@"
     private static let mainQueue = DispatchQueue.main
