@@ -81,6 +81,11 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         
         log.debug(indexPath.row)
         self.searchViewController?.searchBar.resignFirstResponder()
+        let vc = MEAddMemoViewController()
+        vc.memoModel = resultList[indexPath.row]
+//        vc.reloadMemoModel(resultList[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+       
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -118,15 +123,15 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
 
-        if searchController.isActive {
-            let result = dataList.filter { (str) -> Bool in
-                return true
-            }
-            resultList = result
-        } else {
-            resultList = dataList
-        }
-        tableView.reloadData()
+//        if searchController.isActive {
+//            let result = dataList.filter { (str) -> Bool in
+//                return true
+//            }
+//            resultList = result
+//        } else {
+//            resultList = dataList
+//        }
+//        tableView.reloadData()
     }
     
     // MARK: - UISearchBarDelegate
@@ -135,12 +140,23 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         searchBar.text = ""
         searchViewController?.searchBar.setShowsCancelButton(false, animated: true)
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+       resultList =  MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, keyword: searchBar.text!) as! [MEItemModel]
+        tableView.reloadData()
+    }
+    
     // MARK: - cell rowAction
     //完成
     private func cellFinsh(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
         log.debug("cell Finsh")
         tableView.setEditing(false, animated: true)
-        self.tableView.reloadRows(at: [indexPath], with: .automatic);
+        var model = self.resultList[indexPath.row] 
+        model.isFinsh = true
+        MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: model)
+        self.resultList.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     //删除
     private func cellDel(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
@@ -148,7 +164,9 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         let alert = UIAlertController.init(title: "删除", message: "确认是否删除", preferredStyle: .alert)
         let okAction = UIAlertAction.init(title: "是", style: .default, handler: {action in
             alert.dismiss(animated: true, completion: nil)
-            self.tableView.reloadRows(at: [indexPath], with: .automatic);
+            MEDataBase.defaultDB.deleteModelInDatabase(model: self.resultList[indexPath.row])
+            self.resultList.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
         })
         let cancelAction = UIAlertAction.init(title: "否", style: .cancel, handler: nil)
         alert.addAction(okAction)
@@ -159,7 +177,11 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     private func cellEdit(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
         log.debug("cell Edit")
         tableView.setEditing(false, animated: true)
-        self.tableView.reloadRows(at: [indexPath], with: .automatic);
+//        self.tableView.reloadRows(at: [indexPath], with: .automatic);
+        let vc = MEAddMemoViewController.init()
+        vc.memoModel = self.resultList[indexPath.row]
+        vc.memoEditing = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

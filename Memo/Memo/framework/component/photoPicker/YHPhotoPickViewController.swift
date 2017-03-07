@@ -63,7 +63,7 @@ public class YHPhotoPickViewController: UIViewController {
             //exist,
             getAssetsImage()
         }
-        collectionView.reloadData()
+//        collectionView.reloadData()
     }
     public override var prefersStatusBarHidden: Bool {
         return false
@@ -141,13 +141,13 @@ public class YHPhotoPickViewController: UIViewController {
     //get image with asset
     private func getAssetsImage() {
     
-        DispatchQueue.global().async {
+//        DispatchQueue.global().async {
             self.getThumbnail = self.asset.getThumbnailImage(self.assetsList!, targetSize: self.flowLayout.itemSize)
             self.getHighImage = self.asset.getHighImage(self.assetsList!, targetSize: UIScreen.main.bounds.size)
-            DispatchQueue.main.async {
+//            DispatchQueue.main.async {
                 self.collectionView.reloadData()
-            }
-        }
+//            }
+//        }
     }
     // MARK: - custom view
     private func initializeCollectionView() {

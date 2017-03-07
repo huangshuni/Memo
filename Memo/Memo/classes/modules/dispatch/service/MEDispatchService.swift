@@ -43,13 +43,13 @@ class MEDispatchService {
         
         switch index {
         case .MenuAll:
-            dataList = [item1, item2, item3]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase()//[item1, item2, item3]
         case .MenuWait:
-            dataList = [item1]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase("state", value: "0")//[item1]
         case .MenuFinsh:
-            dataList = [item2]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase("isFinsh", value: "true")//[item2]
         case .MenuOverDate:
-            dataList = [item3]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase("overDate", value: "true")//[item3]
         default:
             dataList = []
         }

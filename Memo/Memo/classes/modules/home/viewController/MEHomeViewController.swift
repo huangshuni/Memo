@@ -28,18 +28,32 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
         addNavigationBarButton()
     
         //测试代码
-        MENotifyCenter.center.getNotificationAuth()
-        MENotifyCenter.center.checkNotificationAuth()
+//        MENotifyCenter.center.getNotificationAuth()
+//        MENotifyCenter.center.checkNotificationAuth()
         //测试代码
-        let item = MEDispatchService.service.getFinshItem().first
-        MENotifyCenter.center.registerNotification(model: item!)
+//        let item = MEDispatchService.service.getFinshItem().first
+//        MENotifyCenter.center.registerNotification(model: item!)
         //测试代码
-        for item in MEDispatchService.service.getAllItem() {
-            MESpotlightCenter.center.addSearchItem(model: item)
-        }
+//        for item in MEDispatchService.service.getAllItem() {
+//            MESpotlightCenter.center.addSearchItem(model: item)
+//        }
         
         //测试代码
-        MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: item!)
+//        MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: item!)
+        
+        //测试代码
+//       let arr = MEDataBase.defaultDB.selectModelArrayInDatabase()
+//        print(arr)
+        
+        //测试代码
+//        let arr = MEDataBase.defaultDB.selectModelArrayInDatabase("isFinsh", value: "1")
+//        print(arr)
+        
+        //测试代码
+//        MEDataBase.defaultDB.deleteModelInDatabase("isFinsh", value: "1")
+//        let arr1 = MEDataBase.defaultDB.selectModelArrayInDatabase()
+//        MEDataBase.defaultDB.deleteModelInDatabase(model: arr1[0] as!MEItemModel)
+//        print(arr1)
     }
 
     func addSearchTableViewController() -> Void {
@@ -83,6 +97,8 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
     
         log.debug("add ..")
         
+        let vc = MEAddMemoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     func showContent() -> Void {
         

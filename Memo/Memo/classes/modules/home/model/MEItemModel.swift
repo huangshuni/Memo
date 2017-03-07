@@ -23,7 +23,7 @@ public struct MEItemModel {
         开启提醒：1.待办；2.完成；3.过期
      */
     //编号
-    let id = NSDate.getCurrentDateStamp()
+    var id: String!
     //标题
     var title: String!
     //内容
@@ -43,15 +43,19 @@ public struct MEItemModel {
     //状态
     var state: ModelStates = ModelStates.ModelStatesWait
     
-//    init(title: String, content: String?, imgList: [String]?, editDate: String, notifyDate: String?, isTurnNotify: Bool) {
-//        
-//        self.title = title
-//        self.content = content
-//        self.imgList = imgList
-//        self.editDate = editDate
-//        self.notifyDate = notifyDate
-//        self.isTurnNotify = isTurnNotify
-//    }
+    init(id: String = NSDate.getCurrentDateStamp(), title: String, content: String?, imgList: [String]?, editDate: String, notifyDate: String?, isTurnNotify: Bool, isFinsh: Bool = false, overDate: Bool = false, state: ModelStates = .ModelStatesWait) {
+        
+        self.id = id
+        self.title = title
+        self.content = content
+        self.imgList = imgList
+        self.editDate = editDate
+        self.notifyDate = notifyDate
+        self.isTurnNotify = isTurnNotify
+        self.isFinsh = isFinsh
+        self.overDate = overDate
+        self.state = .ModelStatesWait
+    }
     
     //更新模型状态
     public mutating func updateModelStatus() -> Void {

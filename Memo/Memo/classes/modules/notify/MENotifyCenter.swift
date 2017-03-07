@@ -88,7 +88,7 @@ public class MENotifyCenter {
         let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)
         
         let identifier = model.id
-        let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest.init(identifier: identifier!, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
