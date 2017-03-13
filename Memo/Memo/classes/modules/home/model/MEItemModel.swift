@@ -36,14 +36,10 @@ public struct MEItemModel {
     var notifyDate: String?
     //是否开启提醒
     var isTurnNotify: Bool
-    //是否已经完成
-    var isFinsh: Bool = false
-    //是否过期
-    var overDate: Bool = false
     //状态
     var state: ModelStates = ModelStates.ModelStatesWait
     
-    init(id: String = NSDate.getCurrentDateStamp(), title: String, content: String?, imgList: [String]?, editDate: String, notifyDate: String?, isTurnNotify: Bool, isFinsh: Bool = false, overDate: Bool = false, state: ModelStates = .ModelStatesWait) {
+    init(id: String = NSDate.getCurrentDateStamp(), title: String, content: String?, imgList: [String]?, editDate: String, notifyDate: String?, isTurnNotify: Bool, state: ModelStates = .ModelStatesWait) {
         
         self.id = id
         self.title = title
@@ -52,35 +48,9 @@ public struct MEItemModel {
         self.editDate = editDate
         self.notifyDate = notifyDate
         self.isTurnNotify = isTurnNotify
-        self.isFinsh = isFinsh
-        self.overDate = overDate
         self.state = .ModelStatesWait
     }
     
-    //更新模型状态
-    public mutating func updateModelStatus() -> Void {
-        //完成或过期 则不再改变状态
-        if state == .ModelStatesFinsh || state == .ModelStatesOverdDate {
-            return;
-        }
-        //未设置提醒的默认最后一次编辑时间后三天过期
-        let nowDate = NSDate()
-        if let date = notifyDate {
-            //存在提醒时间
-            let notiDate = NSDate.getNSDateFromDateString(dateString: date)
-            let timeInterval = nowDate.timeIntervalSince(notiDate as! Date)
-            if timeInterval > 0, isFinsh == false {
-                state = .ModelStatesOverdDate
-            }
-        } else {
-            //不存在
-            let editDate = NSDate.getNSDateFromDateString(dateString: self.editDate)
-            let timeInterval = nowDate.timeIntervalSince(editDate as! Date)
-            if timeInterval > threeDaySeconds {
-                state = .ModelStatesOverdDate
-            }
-        }
-    }
 }
 
 

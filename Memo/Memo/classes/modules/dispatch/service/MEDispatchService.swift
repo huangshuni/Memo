@@ -36,20 +36,17 @@ class MEDispatchService {
     //查询指定数据集合
     func getItem(index: MEMenuItem) -> Array<Any> {
         
-        let item1 = MEItemModel(title: "abc今晚要战斗", content: "今天是周五😁又到了每周一次的战斗了。。", imgList: ["Stars", "Stars"], editDate: "1487756989", notifyDate: nil, isTurnNotify: false, isFinsh: false, overDate: false, state: .ModelStatesWait)
-        let item2 = MEItemModel(title: "666周末洗衣服整理内务😁", content: "累啊累啊😁不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~不想做啊~", imgList: ["add", "back"], editDate: "1487756989", notifyDate: "1487756989", isTurnNotify: true, isFinsh: true, overDate: false, state: .ModelStatesFinsh)
-        let item3 = MEItemModel(title: "12345上山打老虎", content: "快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！快放假啊~快放假！", imgList: nil, editDate: "1487756989", notifyDate: nil, isTurnNotify: false, isFinsh: false, overDate: true, state: .ModelStatesOverdDate)
         var dataList: [Any] = []
         
         switch index {
         case .MenuAll:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase()//[item1, item2, item3]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, startSelectLine: 0)
         case .MenuWait:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase("state", value: "0")//[item1]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeWait, startSelectLine: 0)
         case .MenuFinsh:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase("isFinsh", value: "true")//[item2]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeFinish, startSelectLine: 0)
         case .MenuOverDate:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase("overDate", value: "true")//[item3]
+            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeOverdDate, startSelectLine: 0)
         default:
             dataList = []
         }

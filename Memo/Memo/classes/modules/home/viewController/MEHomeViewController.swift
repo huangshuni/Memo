@@ -42,8 +42,14 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
 //        MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: item!)
         
         //测试代码
-//       let arr = MEDataBase.defaultDB.selectModelArrayInDatabase()
-//        print(arr)
+//        let arr = MEDataBase.defaultDB.selectModelArrayInDatabase()
+//        
+//        for model in arr {
+//            var mod = model as! MEItemModel
+////           (model as! MEItemModel).content = "hello"
+//            mod.content = "hello"
+//            MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: mod)
+//        }
         
         //测试代码
 //        let arr = MEDataBase.defaultDB.selectModelArrayInDatabase("isFinsh", value: "1")

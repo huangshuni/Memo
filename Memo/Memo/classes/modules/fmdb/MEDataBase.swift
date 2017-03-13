@@ -26,6 +26,8 @@ public enum MESearchType: Int {
 
 public class MEDataBase {
     
+    let selectSize = 2 //每次搜索10行
+    
     private let MEItemTableName = "MEItemModel"
     private let id = "id"
     private let title = "title"
@@ -34,8 +36,6 @@ public class MEDataBase {
     private let editDate = "editDate"
     private let notifyDate = "notifyDate"
     private let isTurnNotify = "isTurnNotify"
-    private let isFinsh = "isFinsh"
-    private let overDate = "overDate"
     private let state = "state"
     
     //数据库操作队列（创建数据库）
@@ -66,7 +66,7 @@ public class MEDataBase {
             }
             if !(dataBase?.tableExists(self.MEItemTableName))! {
                 do{
-                    try dataBase?.executeUpdate("create table \(self.MEItemTableName)(\(self.id) text PRIMARY KEY, \(self.title) text, \(self.content) text, \(self.imgList) text, \(self.editDate) text, \(self.notifyDate) text, \(self.isTurnNotify) text, \(self.isFinsh) text, \(self.overDate) text, \(self.state) text);", values: nil)
+                    try dataBase?.executeUpdate("create table \(self.MEItemTableName)(\(self.id) text PRIMARY KEY, \(self.title) text, \(self.content) text, \(self.imgList) text, \(self.editDate) text, \(self.notifyDate) text, \(self.isTurnNotify) text, \(self.state) text);", values: nil)
                     
                 }catch{
                     log.error("creat memotable failed -- \(error)")
@@ -91,7 +91,7 @@ public class MEDataBase {
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
                 if (resultSet?.next())! {
                     //更新操作
-                    let updateStr = "update \(self.MEItemTableName) set \(self.title) = \"\(model.title!)\", \(self.content) = \"\(model.content ?? "")\", \(self.imgList) = \"\(model.imgList?.joined(separator: ",") ?? "")\", \(self.editDate) = \(model.editDate!), \(self.notifyDate) = \(model.notifyDate ?? ""), \(self.isTurnNotify) = \"\(model.isTurnNotify)\", \(self.isFinsh) = \"\(model.isFinsh)\", \(self.overDate) = \"\(model.overDate)\", \(self.state) = \"\(model.state.rawValue)\" where \(self.id) = \"\(model.id!)\" "
+                    let updateStr = "update \(self.MEItemTableName) set \(self.title) = \"\(model.title!)\", \(self.content) = \"\(model.content ?? "")\", \(self.imgList) = \"\(model.imgList?.joined(separator: ",") ?? "")\", \(self.editDate) = \(model.editDate!), \(self.notifyDate) = \(model.notifyDate ?? ""), \(self.isTurnNotify) = \"\(model.isTurnNotify)\", \(self.state) = \"\(model.state.rawValue)\" where \(self.id) = \"\(model.id!)\" "
                     print(updateStr)
                     do{
                         try dataBase?.executeUpdate(updateStr, values: nil)
@@ -101,8 +101,8 @@ public class MEDataBase {
                     
                 }else{                    
                     //插入操作
-                    let insertStr = "insert into \(self.MEItemTableName) (\(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.self.isFinsh),\(self.overDate),\(self.state)) values (?,?,?,?,?,?,?,?,?,?)"
-                    let values = [model.id,model.title,model.content ?? "",model.imgList?.joined(separator: ",") ?? "",model.editDate,model.notifyDate ?? "",model.isTurnNotify,model.isFinsh,model.overDate,model.state.rawValue] as [Any]
+                    let insertStr = "insert into \(self.MEItemTableName) (\(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state)) values (?,?,?,?,?,?,?,?)"
+                    let values = [model.id,model.title,model.content ?? "",model.imgList?.joined(separator: ",") ?? "",model.editDate,model.notifyDate ?? "",model.isTurnNotify,model.state.rawValue] as [Any]
                     do {
                         try dataBase?.executeUpdate(insertStr, values: values)
                     }catch{
@@ -157,7 +157,7 @@ public class MEDataBase {
     }
     
     //获取表中所有的数据
-    public func selectModelArrayInDatabase() -> Array<Any>{
+    private func selectModelArrayInDatabase() -> Array<Any>{
         
         var resultArr = Array<Any>()
         
@@ -167,7 +167,7 @@ public class MEDataBase {
                 return
             }
             
-            let selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.self.isFinsh),\(self.overDate),\(self.state) from \(self.MEItemTableName)"
+            let selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName)"
             do{
                 
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
@@ -179,11 +179,9 @@ public class MEDataBase {
                     let editDate = resultSet?.string(forColumn: self.editDate)
                     let notifyDate = resultSet?.string(forColumn: self.notifyDate)
                     let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
-                    let isFinsh = resultSet?.string(forColumn: self.isFinsh)
-                    let overDate = resultSet?.string(forColumn: self.overDate)
                     let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
             
-                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),isFinsh:(isFinsh != nil),overDate:(overDate != nil),state:state)
+                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
                     resultArr.append(model)
                 }
                 
@@ -200,7 +198,7 @@ public class MEDataBase {
     
     
     //获取表中指定属性的数据
-    public func selectModelArrayInDatabase(_ key: String, value:String) -> Array<Any>{
+    public func selectModelArrayInDatabase(_ key: String, value:String, startSelectLine: Int) -> Array<Any>{
         
         var resultArr = Array<Any>()
         
@@ -209,7 +207,8 @@ public class MEDataBase {
                 log.error("unable to open memoDB")
                 return
             }
-            let selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.self.isFinsh),\(self.overDate),\(self.state) from \(self.MEItemTableName) where \(key) = \"\(value)\""
+            let selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(key) = \"\(value)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(self.selectSize)"
+            log.debug(selectStr)
             do{
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
                 while (resultSet?.next())!{
@@ -220,16 +219,14 @@ public class MEDataBase {
                     let editDate = resultSet?.string(forColumn: self.editDate)
                     let notifyDate = resultSet?.string(forColumn: self.notifyDate)
                     let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
-                    let isFinsh = resultSet?.string(forColumn: self.isFinsh)
-                    let overDate = resultSet?.string(forColumn: self.overDate)
                     let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
                     
-                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),isFinsh:(isFinsh != nil),overDate:(overDate != nil),state:state)
+                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
                     resultArr.append(model)
                 }
                 
             }catch{
-                log.error("delete item in memo dailed -- \(error)")
+                log.error("select item in memo dailed -- \(error)")
             }
             dataBase?.close()
         })
@@ -237,44 +234,117 @@ public class MEDataBase {
     }
     
     // MARK: - 从分类中搜索数据
-    public func selectModelArrayInDatabase(_ type: MESearchType, keyword: String) -> Array<Any>{
-    
-        var arr = [Any]()
+    public func selectModelArrayInDatabase(_ type: MESearchType, startSelectLine: Int) -> Array<Any>{
+
+        var stateValue = ""
         switch type {
         case .MESearchTypeAll:
-            arr = selectModelArrayInDatabase()
+            
             break
         case .MESearchTypeWait:
-            arr = selectModelArrayInDatabase("state", value: "0")
+            stateValue = String(ModelStates.ModelStatesWait.rawValue)
             break
         case .MESearchTypeFinish:
-            arr = selectModelArrayInDatabase("isFinsh", value: "true")
+            stateValue = String(ModelStates.ModelStatesFinsh.rawValue)
             break
         case .MESearchTypeOverdDate:
-            arr = selectModelArrayInDatabase("overDate", value: "true")
+            stateValue = String(ModelStates.ModelStatesOverdDate.rawValue)
             break
         }
         
-        var resultArr = [Any]()
-        for model in arr {
-            if  (model as!MEItemModel).title.contains(keyword) {
-                resultArr.append(model)
-                continue
-            }
-            if  (model as!MEItemModel).editDate.contains(keyword) {
-                resultArr.append(model)
-                continue
-            }
-            if  ((model as!MEItemModel).notifyDate?.contains(keyword))! {
-                resultArr.append(model)
-                continue
-            }
-            if  ((model as!MEItemModel).content?.contains(keyword))! {
-                resultArr.append(model)
-                continue
-            }
+        var selectStr = ""
+        if type == .MESearchTypeAll {
+            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+        }else{
+            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize) "
         }
-        return resultArr
+        
+        var resultArr = Array<Any>()
+        dbQueue?.inDatabase({ (dataBase) in
+            guard (dataBase?.open())! else {
+                log.error("unable to open memoDB")
+                return
+            }
+            log.debug(selectStr)
+            do{
+                let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
+                while (resultSet?.next())!{
+                    let id = resultSet?.string(forColumn: self.id)
+                    let title = resultSet?.string(forColumn: self.title)
+                    let content = resultSet?.string(forColumn: self.content)
+                    let imgList = resultSet?.string(forColumn: self.imgList)
+                    let editDate = resultSet?.string(forColumn: self.editDate)
+                    let notifyDate = resultSet?.string(forColumn: self.notifyDate)
+                    let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
+                    let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
+                    
+                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
+                    resultArr.append(model)
+                }
+                
+            }catch{
+                log.error("select item in memo dailed -- \(error)")
+            }
+            dataBase?.close()
+        })
+        return resultArr;
     }
     
+      // MARK: - 分页返回搜索数据（从当前分类中)
+    public func selectModelArrayInDatabase(_ type: MESearchType, keyword: String, startSelectLine: Int) -> Array<Any>{
+        
+        var stateValue = ""
+        switch type {
+        case .MESearchTypeAll:
+            
+            break
+        case .MESearchTypeWait:
+            stateValue = String(ModelStates.ModelStatesWait.rawValue)
+            break
+        case .MESearchTypeFinish:
+            stateValue = String(ModelStates.ModelStatesFinsh.rawValue)
+            break
+        case .MESearchTypeOverdDate:
+            stateValue = String(ModelStates.ModelStatesOverdDate.rawValue)
+            break
+        }
+        
+        //提醒和编辑时间匹配待考究？
+        var selectStr = ""
+        if type == .MESearchTypeAll {
+            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\' order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+        }else{
+            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" and (\(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\') order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+        }
+        
+        var resultArr = Array<Any>()
+        dbQueue?.inDatabase({ (dataBase) in
+            guard (dataBase?.open())! else {
+                log.error("unable to open memoDB")
+                return
+            }
+            log.debug(selectStr)
+            do{
+                let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
+                while (resultSet?.next())!{
+                    let id = resultSet?.string(forColumn: self.id)
+                    let title = resultSet?.string(forColumn: self.title)
+                    let content = resultSet?.string(forColumn: self.content)
+                    let imgList = resultSet?.string(forColumn: self.imgList)
+                    let editDate = resultSet?.string(forColumn: self.editDate)
+                    let notifyDate = resultSet?.string(forColumn: self.notifyDate)
+                    let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
+                    let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
+                    
+                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
+                    resultArr.append(model)
+                }
+                
+            }catch{
+                log.error("select item in memo dailed -- \(error)")
+            }
+            dataBase?.close()
+        })
+        return resultArr;
+    }
 }

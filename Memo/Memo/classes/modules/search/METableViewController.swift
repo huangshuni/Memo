@@ -11,7 +11,6 @@ import UITableView_FDTemplateLayoutCell
 
 class METableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
-    
     var dataList: [MEItemModel] = [] {
         didSet {
             updateValue()
@@ -141,9 +140,11 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         searchViewController?.searchBar.setShowsCancelButton(false, animated: true)
     }
     
+      // 搜索
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-       resultList =  MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, keyword: searchBar.text!) as! [MEItemModel]
+        let arr1 = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, keyword: searchBar.text!, startSelectLine: 0) as! [MEItemModel]
+       resultList.append(contentsOf: arr1)
         tableView.reloadData()
     }
     
@@ -153,7 +154,7 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         log.debug("cell Finsh")
         tableView.setEditing(false, animated: true)
         var model = self.resultList[indexPath.row] 
-        model.isFinsh = true
+        model.state = .ModelStatesFinsh
         MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: model)
         self.resultList.remove(at: indexPath.row)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)

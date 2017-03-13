@@ -45,4 +45,17 @@ let setting_app_alertOKBtnTitle = "去更新"
 let setting_app_alertOKBtn2Title = "知道了"
 let setting_app_alertCancelBtnTitle = "下次再说"
 
+let addMemo_Title = "新增备忘录"
+let addMemo_Notification_noTitle = "您还没有添加标题"
+let addMemo_Notification_noContent = "您还没有添加内容"
+let addMemo_alert_title = "温馨提示"
+let addMemo_alert_cancle = "知道了"
+let addMemo_done_title = "完成"
+let addMemo_modify_title = "编辑"
+
+let addPhoto_alert_title = "请选择照片"
+let addPhoto_alert_camera = "相机"
+let addPhoto_alert_album = "相册"
+let addPhoto_alert_cancle = "取消"
+
 
