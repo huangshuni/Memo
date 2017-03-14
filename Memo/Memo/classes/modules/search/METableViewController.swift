@@ -109,7 +109,7 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         
         var list: [UITableViewRowAction] = []
         let model = resultList[indexPath.row]
-        if model.state.rawValue != ModelStates.ModelStatesWait.rawValue {
+        if model.state.rawValue != ModelStates.ModelStatesFinsh.rawValue {
             let finshRow = UITableViewRowAction.init(style: .default, title: row_Finsh, handler: cellFinsh)
             finshRow.backgroundColor = UIColor.getColor(rgb: greenColor)
             list.append(finshRow)

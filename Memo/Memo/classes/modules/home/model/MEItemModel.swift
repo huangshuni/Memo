@@ -48,7 +48,7 @@ public struct MEItemModel {
         self.editDate = editDate
         self.notifyDate = notifyDate
         self.isTurnNotify = isTurnNotify
-        self.state = .ModelStatesWait
+        self.state = state
     }
     
     static func getImagePath(imgName: String) -> String {

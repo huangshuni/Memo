@@ -167,24 +167,11 @@ public class MEDataBase {
                 return
             }
             
-            let selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName)"
+            let selectStr =  self.getAllColumnSql() + " from \(self.MEItemTableName)"
             do{
                 
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
-                while (resultSet?.next())!{
-                   let id = resultSet?.string(forColumn: self.id)
-                   let title = resultSet?.string(forColumn: self.title)
-                   let content = resultSet?.string(forColumn: self.content)
-                    let imgList = resultSet?.string(forColumn: self.imgList)
-                    let editDate = resultSet?.string(forColumn: self.editDate)
-                    let notifyDate = resultSet?.string(forColumn: self.notifyDate)
-                    let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
-                    let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
-            
-                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
-                    resultArr.append(model)
-                }
-                
+                resultArr = self.getModelFromeResult(resultSet)
                 
             }catch{
                 log.error("select item in memo dailed -- \(error)")
@@ -207,23 +194,11 @@ public class MEDataBase {
                 log.error("unable to open memoDB")
                 return
             }
-            let selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(key) = \"\(value)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(self.selectSize)"
+            let selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(key) = \"\(value)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(self.selectSize)"
             log.debug(selectStr)
             do{
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
-                while (resultSet?.next())!{
-                    let id = resultSet?.string(forColumn: self.id)
-                    let title = resultSet?.string(forColumn: self.title)
-                    let content = resultSet?.string(forColumn: self.content)
-                    let imgList = resultSet?.string(forColumn: self.imgList)
-                    let editDate = resultSet?.string(forColumn: self.editDate)
-                    let notifyDate = resultSet?.string(forColumn: self.notifyDate)
-                    let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
-                    let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
-                    
-                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
-                    resultArr.append(model)
-                }
+                resultArr = self.getModelFromeResult(resultSet)
                 
             }catch{
                 log.error("select item in memo dailed -- \(error)")
@@ -254,9 +229,9 @@ public class MEDataBase {
         
         var selectStr = ""
         if type == .MESearchTypeAll {
-            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
         }else{
-            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize) "
+            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize) "
         }
         
         var resultArr = Array<Any>()
@@ -268,19 +243,7 @@ public class MEDataBase {
             log.debug(selectStr)
             do{
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
-                while (resultSet?.next())!{
-                    let id = resultSet?.string(forColumn: self.id)
-                    let title = resultSet?.string(forColumn: self.title)
-                    let content = resultSet?.string(forColumn: self.content)
-                    let imgList = resultSet?.string(forColumn: self.imgList)
-                    let editDate = resultSet?.string(forColumn: self.editDate)
-                    let notifyDate = resultSet?.string(forColumn: self.notifyDate)
-                    let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
-                    let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
-                    
-                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
-                    resultArr.append(model)
-                }
+                resultArr = self.getModelFromeResult(resultSet)
                 
             }catch{
                 log.error("select item in memo dailed -- \(error)")
@@ -312,9 +275,9 @@ public class MEDataBase {
         //提醒和编辑时间匹配待考究？
         var selectStr = ""
         if type == .MESearchTypeAll {
-            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\' order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+            selectStr =  self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\' order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
         }else{
-            selectStr = "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state) from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" and (\(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\') order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" and (\(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\') order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
         }
         
         var resultArr = Array<Any>()
@@ -326,19 +289,7 @@ public class MEDataBase {
             log.debug(selectStr)
             do{
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
-                while (resultSet?.next())!{
-                    let id = resultSet?.string(forColumn: self.id)
-                    let title = resultSet?.string(forColumn: self.title)
-                    let content = resultSet?.string(forColumn: self.content)
-                    let imgList = resultSet?.string(forColumn: self.imgList)
-                    let editDate = resultSet?.string(forColumn: self.editDate)
-                    let notifyDate = resultSet?.string(forColumn: self.notifyDate)
-                    let isTurnNotify = resultSet?.string(forColumn: self.isTurnNotify)
-                    let state:ModelStates = ModelStates(rawValue: Int((resultSet?.string(forColumn: self.state))!)!)!
-                    
-                    let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state:state)
-                    resultArr.append(model)
-                }
+                resultArr = self.getModelFromeResult(resultSet)
                 
             }catch{
                 log.error("select item in memo dailed -- \(error)")
@@ -347,4 +298,30 @@ public class MEDataBase {
         })
         return resultArr;
     }
+    
+    //将结果转化为模型
+    private func getModelFromeResult(_ result: FMResultSet?) -> Array<Any> {
+        
+        var resultArr = Array<Any>()
+        while (result?.next())!{
+            let id = result?.string(forColumn: self.id)
+            let title = result?.string(forColumn: self.title)
+            let content = result?.string(forColumn: self.content)
+            let imgList = result?.string(forColumn: self.imgList)
+            let editDate = result?.string(forColumn: self.editDate)
+            let notifyDate = result?.string(forColumn: self.notifyDate)
+            let isTurnNotify = result?.string(forColumn: self.isTurnNotify)
+            let state:ModelStates = ModelStates(rawValue: Int((result?.string(forColumn: self.state))!)!)!
+            
+            let model = MEItemModel.init(id:id!, title:title!,content:content ,imgList: imgList?.components(separatedBy: ","),editDate:editDate!,notifyDate:notifyDate, isTurnNotify:(isTurnNotify != nil),state: state)
+            resultArr.append(model)
+        }
+        return resultArr
+    }
+    //获取选择所有列sql语句
+    private func getAllColumnSql() -> String {
+    
+        return "select \(self.id),\(self.title),\(self.content),\(self.imgList),\(self.editDate),\(self.notifyDate),\(self.isTurnNotify),\(self.state)"
+    }
+    
 }
