@@ -9,6 +9,9 @@
 import UIKit
 import RESideMenu
 
+//记录当前所在目录
+fileprivate var currentMenuItem: MEMenuItem = .MenuWait
+
 public class MEDispatchCenter: NSObject {
 
     static let sideMenu = {
@@ -19,6 +22,7 @@ public class MEDispatchCenter: NSObject {
     
     public static func dispatchContent(menuIndex: MEMenuItem) -> Void {
     
+        currentMenuItem = menuIndex
         let homeViewController = (sideMenu.contentViewController as! BaseNavigationController).viewControllers.first as! MEHomeViewController
         var title: String
         var dataList:[MEItemModel] = []
@@ -45,6 +49,12 @@ public class MEDispatchCenter: NSObject {
         }
         homeViewController.title = title
         sideMenu.hideViewController()
+    }
+    
+    //刷新当前分类的数据
+    public static func refreshCurrentData() -> Void {
+    
+        dispatchContent(menuIndex: currentMenuItem)
     }
     
     static func prepareShowSettings(homeViewController: MEHomeViewController) -> Void {

@@ -79,11 +79,15 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         log.debug(indexPath.row)
-        self.searchViewController?.searchBar.resignFirstResponder()
-        let vc = MEAddMemoViewController()
-        vc.memoModel = resultList[indexPath.row]
-//        vc.reloadMemoModel(resultList[indexPath.row])
-        navigationController?.pushViewController(vc, animated: true)
+        if searchViewController!.isActive {
+            self.searchViewController?.searchBar.resignFirstResponder()
+            self.tableView.reloadData()
+        } else {
+            let vc = MEAddMemoViewController()
+            vc.memoModel = resultList[indexPath.row]
+            //        vc.reloadMemoModel(resultList[indexPath.row])
+            navigationController?.pushViewController(vc, animated: true)
+        }
        
     }
     
@@ -105,7 +109,7 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         
         var list: [UITableViewRowAction] = []
         let model = resultList[indexPath.row]
-        if model.state != .ModelStatesFinsh {
+        if model.state.rawValue != ModelStates.ModelStatesWait.rawValue {
             let finshRow = UITableViewRowAction.init(style: .default, title: row_Finsh, handler: cellFinsh)
             finshRow.backgroundColor = UIColor.getColor(rgb: greenColor)
             list.append(finshRow)
@@ -122,15 +126,13 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
 
-//        if searchController.isActive {
-//            let result = dataList.filter { (str) -> Bool in
-//                return true
-//            }
-//            resultList = result
-//        } else {
-//            resultList = dataList
-//        }
-//        tableView.reloadData()
+        if searchController.isActive {
+            let arr1 = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, keyword: searchController.searchBar.text!, startSelectLine: 0) as! [MEItemModel]
+            resultList = arr1
+        } else {
+            resultList = dataList
+        }
+        tableView.reloadData()
     }
     
     // MARK: - UISearchBarDelegate
@@ -139,23 +141,13 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         searchBar.text = ""
         searchViewController?.searchBar.setShowsCancelButton(false, animated: true)
     }
-    
-      // 搜索
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        let arr1 = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, keyword: searchBar.text!, startSelectLine: 0) as! [MEItemModel]
-       resultList.append(contentsOf: arr1)
-        tableView.reloadData()
-    }
-    
     // MARK: - cell rowAction
     //完成
     private func cellFinsh(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
         log.debug("cell Finsh")
         tableView.setEditing(false, animated: true)
-        var model = self.resultList[indexPath.row] 
-        model.state = .ModelStatesFinsh
-        MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: model)
+        let model = self.resultList[indexPath.row]
+        MEDBManager.manager.updateItemState(identifier: model.id, state: .ModelStatesFinsh)
         self.resultList.remove(at: indexPath.row)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
@@ -165,14 +157,19 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         let alert = UIAlertController.init(title: "删除", message: "确认是否删除", preferredStyle: .alert)
         let okAction = UIAlertAction.init(title: "是", style: .default, handler: {action in
             alert.dismiss(animated: true, completion: nil)
-            MEDataBase.defaultDB.deleteModelInDatabase(model: self.resultList[indexPath.row])
+            //从数据中移除该数据
+            let model = self.resultList[indexPath.row]
+            MEDBManager.manager.delItem(identifier: model.id)
             self.resultList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            //移除该数据的通知
+            MENotifyCenter.center.removeNotification(identifier: model.id)
         })
         let cancelAction = UIAlertAction.init(title: "否", style: .cancel, handler: nil)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
+        
     }
     //编辑
     private func cellEdit(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
@@ -184,10 +181,4 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         vc.memoEditing = true
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        log.debug("move \(touches), \(event)")
-    }
-
 }

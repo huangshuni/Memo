@@ -70,20 +70,17 @@ class METableViewCell: UITableViewCell {
     //调整图片，为了适配第三方cell自动行高，必须明确是否有照片，无则置为nil
     private func adjustImage(imageList: [String]?) -> Void {
     
-        if imageList == nil || imageList?.count == 0 {
+        if imageList == nil || imageList?.count == 0 || imageList?.first == "" {
             imageView1.image = nil
             imageView2.image = nil
         } else {
             if imageList!.count > 0 {
-                imageView1.image = UIImage.init(contentsOfFile: YHFileManager.documentsPath.appending(photoDirectory).appending(imageList![0]))
+                imageView1.setLocalImage(path: MEItemModel.getImagePath(imgName: imageList![0]))
                 imageView2.image = nil
             }
             if imageList!.count > 1 {
-                imageView2.image = UIImage.init(contentsOfFile: YHFileManager.documentsPath.appending(photoDirectory).appending(imageList![1]))
+                imageView2.setLocalImage(path: MEItemModel.getImagePath(imgName: imageList![1]))
             }
         }
     }
-    
-    
-    
 }

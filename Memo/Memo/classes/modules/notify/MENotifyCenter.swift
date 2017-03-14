@@ -72,20 +72,20 @@ public class MENotifyCenter {
         var list: [UNNotificationAttachment] = []
         if model.imgList != nil, model.imgList!.count > 0 {
             
-            let path = Bundle.main.path(forResource: "Stars", ofType: ".png")
-            let attachment = try? UNNotificationAttachment.init(identifier: model.imgList!.first!, url: URL.init(fileURLWithPath: path!), options: nil)
+            let path = MEItemModel.getImagePath(imgName: model.imgList![0])
+            let attachment = try? UNNotificationAttachment.init(identifier: model.imgList!.first!, url: URL.init(fileURLWithPath: path), options: nil)
             list.append(attachment!)
             
             content.attachments = list
         }
-        /*
-         实际正确代码
-        let date = NSDate.getNSDateFromDateString(dateString: model.notifyDate!)!
+        //实际代码
+        let timeInterval =  Double(model.notifyDate!)!/1000.0
+        let dateStr = String(Int(timeInterval))
+        let date = NSDate.getNSDateFromDateString(dateString: dateStr)!
         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date as Date)
         let trigger = UNCalendarNotificationTrigger.init(dateMatching: dateComponents, repeats: false)
-        */
         //测试代码
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)
+        //let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)
         
         let identifier = model.id
         let request = UNNotificationRequest.init(identifier: identifier!, content: content, trigger: trigger)

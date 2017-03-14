@@ -51,6 +51,10 @@ public struct MEItemModel {
         self.state = .ModelStatesWait
     }
     
+    static func getImagePath(imgName: String) -> String {
+    
+        return YHFileManager.documentsPath.appending(photoDirectory).appending(imgName)
+    }
 }
 
 

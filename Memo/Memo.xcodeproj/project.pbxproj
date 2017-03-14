@@ -92,6 +92,8 @@
 		DBB7ACAC1E5D6B770049478D /* MESettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */; };
 		DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */; };
 		DBB7ACB01E5D7C360049478D /* MEItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */; };
+		DBC3C9171E778EDC0003F3BE /* MEImageView+load.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3C9161E778EDC0003F3BE /* MEImageView+load.swift */; };
+		DBC3C91B1E77DD790003F3BE /* MEDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3C91A1E77DD790003F3BE /* MEDBManager.swift */; };
 		DBC427CB1E63D67A002B2D6A /* MESettingSoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC427C91E63D67A002B2D6A /* MESettingSoundCell.swift */; };
 		DBC427CC1E63D67A002B2D6A /* MESettingSoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC427CA1E63D67A002B2D6A /* MESettingSoundCell.xib */; };
 		DBC427CF1E640038002B2D6A /* MESettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC427CD1E640038002B2D6A /* MESettingDetailViewController.swift */; };
@@ -203,6 +205,8 @@
 		DBB7ACAA1E5D6B770049478D /* MESettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsViewController.swift; sourceTree = "<group>"; };
 		DBB7ACAB1E5D6B770049478D /* MESettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingsViewController.xib; sourceTree = "<group>"; };
 		DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEItemModel.swift; sourceTree = "<group>"; };
+		DBC3C9161E778EDC0003F3BE /* MEImageView+load.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MEImageView+load.swift"; sourceTree = "<group>"; };
+		DBC3C91A1E77DD790003F3BE /* MEDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDBManager.swift; sourceTree = "<group>"; };
 		DBC427C91E63D67A002B2D6A /* MESettingSoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingSoundCell.swift; sourceTree = "<group>"; };
 		DBC427CA1E63D67A002B2D6A /* MESettingSoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingSoundCell.xib; sourceTree = "<group>"; };
 		DBC427CD1E640038002B2D6A /* MESettingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingDetailViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */,
+				DBC3C91A1E77DD790003F3BE /* MEDBManager.swift */,
 			);
 			path = fmdb;
 			sourceTree = "<group>";
@@ -682,6 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				DBC625FD1E5AC51300914197 /* UIColor_EMemoColor.swift */,
+				DBC3C9161E778EDC0003F3BE /* MEImageView+load.swift */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -973,6 +979,7 @@
 				DB22EAA11E58559400341E60 /* YHPictureBrowseCollectionDelegate.swift in Sources */,
 				DBC625EA1E5ABF6F00914197 /* AppDelegate_EAssit.swift in Sources */,
 				DB22EAAB1E58559400341E60 /* UIColor_EColor.swift in Sources */,
+				DBC3C91B1E77DD790003F3BE /* MEDBManager.swift in Sources */,
 				DB22EA7E1E58559400341E60 /* YHDispatchTimer.swift in Sources */,
 				DB22EA851E58559400341E60 /* YHFileManger.swift in Sources */,
 				DBC625F61E5AC23100914197 /* MELeftMenuViewController.swift in Sources */,
@@ -1003,6 +1010,7 @@
 				DBC427D31E6409D9002B2D6A /* MEAboutAppViewController.swift in Sources */,
 				DB22EA7F1E58559400341E60 /* FileDownloadDao.swift in Sources */,
 				DB22EA821E58559400341E60 /* FileDownloadManager.swift in Sources */,
+				DBC3C9171E778EDC0003F3BE /* MEImageView+load.swift in Sources */,
 				DB22EAA21E58559400341E60 /* YHPictureBrowseViewController.swift in Sources */,
 				DB22EA931E58559400341E60 /* YHPhotoBrowseViewController.swift in Sources */,
 				DB22EA8B1E58559400341E60 /* YHLoginServiceDB.swift in Sources */,

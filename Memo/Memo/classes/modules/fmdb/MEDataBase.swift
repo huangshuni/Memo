@@ -26,7 +26,7 @@ public enum MESearchType: Int {
 
 public class MEDataBase {
     
-    let selectSize = 2 //每次搜索10行
+    let selectSize = 10 //每次搜索10行
     
     private let MEItemTableName = "MEItemModel"
     private let id = "id"

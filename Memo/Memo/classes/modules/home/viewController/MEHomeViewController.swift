@@ -26,7 +26,9 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
         sideMenu.delegate = self
         addSearchTableViewController()
         addNavigationBarButton()
-    
+        MENotifyCenter.center.getNotificationAuth()
+        MENotifyCenter.center.checkNotificationAuth()
+        
         //测试代码
 //        MENotifyCenter.center.getNotificationAuth()
 //        MENotifyCenter.center.checkNotificationAuth()
@@ -60,6 +62,11 @@ class MEHomeViewController: BaseViewController, RESideMenuDelegate {
 //        let arr1 = MEDataBase.defaultDB.selectModelArrayInDatabase()
 //        MEDataBase.defaultDB.deleteModelInDatabase(model: arr1[0] as!MEItemModel)
 //        print(arr1)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+        MEDispatchCenter.refreshCurrentData()
     }
 
     func addSearchTableViewController() -> Void {

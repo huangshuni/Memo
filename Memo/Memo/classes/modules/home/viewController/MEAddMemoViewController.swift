@@ -117,12 +117,17 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
     public func reloadMemoModel(_ memoModel: MEItemModel) {
         titleTF.text = (memoModel.title)!
         contentTextView.text = (memoModel.content)!
+        DispatchQueue.global().async {
             for photoPath in (memoModel.imgList)! {
-                let path = YHFileManager.documentsPath.appending(photoDirectory).appending(photoPath)
+                let path = MEItemModel.getImagePath(imgName: photoPath)
                 let image = UIImage.init(contentsOfFile: path)
                 let item = YHPhotoResult.init(image, image)
-                imagesArr.append(item)
+                self.imagesArr.append(item)
             }
+            DispatchQueue.main.async {
+                self.photoCollectionView.reloadData()
+            }
+        }
         
         isTurnOnNotifySwitch.isOn = (memoModel.isTurnNotify)
         concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(dateStamp: memoModel.notifyDate!, formatter: "yyyy-MM-dd HH:mm:ss")
@@ -170,7 +175,7 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             return;
         }
         
-//        DispatchQueue.global().async {
+        DispatchQueue.global().async {
         
             var imagePathArr : Array<String> = []
             for item in self.imagesArr {
@@ -181,25 +186,37 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
                 let imagePath = id.appending(".png")
                 let image = (item as!YHPhotoResult).highImage
                 let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
-                let _ = imageData.write(toFile: path, atomically: true)
+                let flag = imageData.write(toFile: path, atomically: true)
+                log.debug("图片写入文件成功： \(flag) \n path: \(path)")
                 imagePathArr.append(imagePath)
             }
             
-            if memoModel != nil {
-                memoModel?.title = titleTF.text
-                memoModel?.content = contentTextView.text
-                memoModel?.imgList = imagePathArr
-                memoModel?.editDate = NSDate.getCurrentDateStamp()
-                memoModel?.notifyDate = NSDate.getDateStamp(dataPicker.date as NSDate)
-                memoModel?.isTurnNotify = isTurnOnNotifySwitch.isOn
-                MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: memoModel!)
+            var identifier: String!
+            var regModel: MEItemModel!
+            if self.memoModel != nil {
+                self.memoModel?.title = self.titleTF.text
+                self.memoModel?.content = self.contentTextView.text
+                self.memoModel?.imgList = imagePathArr
+                self.memoModel?.editDate = NSDate.getCurrentDateStamp()
+                self.memoModel?.notifyDate = NSDate.getDateStamp(self.dataPicker.date as NSDate)
+                self.memoModel?.isTurnNotify = self.isTurnOnNotifySwitch.isOn
+                MEDBManager.manager.saveItem(model: self.memoModel!)
+                identifier = self.memoModel?.id
+                regModel = self.memoModel!
             }else{
                 let modelId = NSDate.getCurrentDateStamp()
-                let model = MEItemModel.init(id:modelId,  title: titleTF.text!, content: contentTextView.text, imgList: imagePathArr, editDate: NSDate.getCurrentDateStamp(), notifyDate: NSDate.getDateStamp(dataPicker.date as NSDate), isTurnNotify: isTurnOnNotifySwitch.isOn)
-                MEDataBase.defaultDB.insertAndUpdateModelToDatabase(model: model)
+                let model = MEItemModel.init(id:modelId,  title: self.titleTF.text!, content: self.contentTextView.text, imgList: imagePathArr, editDate: NSDate.getCurrentDateStamp(), notifyDate: NSDate.getDateStamp(self.dataPicker.date as NSDate), isTurnNotify: self.isTurnOnNotifySwitch.isOn)
+                MEDBManager.manager.saveItem(model: model)
+                identifier = modelId
+                regModel = model
             }
-
-//        }
+            if self.isTurnOnNotifySwitch.isOn {
+                //注册或修改通知
+                //提醒时间可能修改，因此先移除旧通知，再添加新通知
+                MENotifyCenter.center.removeNotification(identifier: identifier)
+                MENotifyCenter.center.registerNotification(model: regModel)
+            }
+        }
           _ = self.navigationController?.popViewController(animated: true)
         
     }
