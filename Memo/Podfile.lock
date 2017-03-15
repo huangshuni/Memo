@@ -6,6 +6,7 @@ PODS:
   - IQKeyboardManagerSwift (4.0.6)
   - KeychainAccess (3.0.0)
   - Kingfisher (3.1.3)
+  - MJRefresh (3.1.12)
   - RESideMenu (4.0.7)
   - Spring (1.0.3)
   - SwiftyJSON (3.1.0)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 4.0.6)
   - KeychainAccess (= 3.0.0)
   - Kingfisher (= 3.1.3)
+  - MJRefresh (= 3.1.12)
   - RESideMenu (= 4.0.7)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwiftyJSON (= 3.1.0)
@@ -42,12 +44,13 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
   KeychainAccess: 412bf2650d9aebfc8135a58103b90ec38caad7f8
   Kingfisher: 007f5851c18c81e7cc106c9cbac1bafea1cce5dc
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
   UITableView+FDTemplateLayoutCell: 02b508ab1cb4cea16a8c17ac83d2cd1fd72124f9
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 472c53ad859d0bff1e91d80c5e2b4899308dc1a7
+PODFILE CHECKSUM: 95cc98f5aee6fdc685d29c8fa81cc187ae12acc0
 
 COCOAPODS: 1.1.0.rc.3

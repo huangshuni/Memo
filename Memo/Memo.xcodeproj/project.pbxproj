@@ -94,6 +94,7 @@
 		DBB7ACB01E5D7C360049478D /* MEItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */; };
 		DBC3C9171E778EDC0003F3BE /* MEImageView+load.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3C9161E778EDC0003F3BE /* MEImageView+load.swift */; };
 		DBC3C91B1E77DD790003F3BE /* MEDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3C91A1E77DD790003F3BE /* MEDBManager.swift */; };
+		DBC3C91E1E7924FA0003F3BE /* METableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3C91D1E7924FA0003F3BE /* METableViewData.swift */; };
 		DBC427CB1E63D67A002B2D6A /* MESettingSoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC427C91E63D67A002B2D6A /* MESettingSoundCell.swift */; };
 		DBC427CC1E63D67A002B2D6A /* MESettingSoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC427CA1E63D67A002B2D6A /* MESettingSoundCell.xib */; };
 		DBC427CF1E640038002B2D6A /* MESettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC427CD1E640038002B2D6A /* MESettingDetailViewController.swift */; };
@@ -207,6 +208,7 @@
 		DBB7ACAF1E5D7C360049478D /* MEItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEItemModel.swift; sourceTree = "<group>"; };
 		DBC3C9161E778EDC0003F3BE /* MEImageView+load.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MEImageView+load.swift"; sourceTree = "<group>"; };
 		DBC3C91A1E77DD790003F3BE /* MEDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDBManager.swift; sourceTree = "<group>"; };
+		DBC3C91D1E7924FA0003F3BE /* METableViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewData.swift; sourceTree = "<group>"; };
 		DBC427C91E63D67A002B2D6A /* MESettingSoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingSoundCell.swift; sourceTree = "<group>"; };
 		DBC427CA1E63D67A002B2D6A /* MESettingSoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MESettingSoundCell.xib; sourceTree = "<group>"; };
 		DBC427CD1E640038002B2D6A /* MESettingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingDetailViewController.swift; sourceTree = "<group>"; };
@@ -643,6 +645,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		DBC3C91C1E7924A90003F3BE /* service */ = {
+			isa = PBXGroup;
+			children = (
+				DBC3C91D1E7924FA0003F3BE /* METableViewData.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		DBC625EC1E5AC11F00914197 /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,6 +780,7 @@
 		DBFA7EF41E5C280E00BD9E00 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				DBC3C91C1E7924A90003F3BE /* service */,
 				DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */,
 				DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */,
 				DB8E83AC1E5D61C70080998A /* METableViewCell.swift */,
@@ -986,6 +997,7 @@
 				DB22EA801E58559400341E60 /* FileDownloadDBConstants.swift in Sources */,
 				DB22EA921E58559400341E60 /* YHPhotoBrowseCollectionViewDelegate.swift in Sources */,
 				DB22EA7D1E58559400341E60 /* YHDispatchGroup.swift in Sources */,
+				DBC3C91E1E7924FA0003F3BE /* METableViewData.swift in Sources */,
 				DB22EABC1E58582100341E60 /* String_EAssit.swift in Sources */,
 				DB22EA791E58559400341E60 /* BaseService.swift in Sources */,
 				DB22EA811E58559400341E60 /* FileDownloadDBUtil.swift in Sources */,

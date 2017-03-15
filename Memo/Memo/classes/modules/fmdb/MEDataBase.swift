@@ -24,9 +24,10 @@ public enum MESearchType: Int {
     case MESearchTypeAll = 0, MESearchTypeWait, MESearchTypeFinish, MESearchTypeOverdDate
 }
 
+let selectSize = 3 //每次搜索10行
+
 public class MEDataBase {
     
-    let selectSize = 10 //每次搜索10行
     
     private let MEItemTableName = "MEItemModel"
     private let id = "id"
@@ -194,7 +195,7 @@ public class MEDataBase {
                 log.error("unable to open memoDB")
                 return
             }
-            let selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(key) = \"\(value)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(self.selectSize)"
+            let selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(key) = \"\(value)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
             log.debug(selectStr)
             do{
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)

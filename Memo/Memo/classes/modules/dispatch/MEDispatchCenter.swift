@@ -25,23 +25,19 @@ public class MEDispatchCenter: NSObject {
         currentMenuItem = menuIndex
         let homeViewController = (sideMenu.contentViewController as! BaseNavigationController).viewControllers.first as! MEHomeViewController
         var title: String
-        var dataList:[MEItemModel] = []
+        let dataList:[MEItemModel] = service.getData(type: self.getCurrentSearchType(), index: 0) as! [MEItemModel]
         switch menuIndex {
         case .MenuAll:
             title = menu_All_Title
-            dataList = service.getAllItem()
             prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuWait:
             title = menu_Wait_Title
-            dataList = service.getWaitItem()
             prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuFinsh:
             title = menu_Finsh_Title
-            dataList = service.getFinshItem()
             prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuOverDate:
             title = menu_OverDate_Title
-            dataList = service.getOverDateItem()
             prepareShowList(homeViewController: homeViewController, dataList: dataList)
         case .MenuSetting:
             title = menu_Setting_Title
@@ -55,6 +51,10 @@ public class MEDispatchCenter: NSObject {
     public static func refreshCurrentData() -> Void {
     
         dispatchContent(menuIndex: currentMenuItem)
+    }
+    public static func getMoreData(index: Int) -> [MEItemModel] {
+    
+        return service.getData(type: self.getCurrentSearchType(), index: index) as! [MEItemModel]
     }
     
     static func prepareShowSettings(homeViewController: MEHomeViewController) -> Void {
@@ -78,6 +78,24 @@ public class MEDispatchCenter: NSObject {
             let searchTable = homeViewController.childViewControllers.first as! METableViewController
             searchTable.dataList = dataList
         }
+    }
+    
+    //将当前分类转化为对应的搜索分类
+    static func getCurrentSearchType() -> MESearchType {
+    
+        switch currentMenuItem {
+        case .MenuAll:
+            return .MESearchTypeAll
+        case .MenuWait:
+            return .MESearchTypeWait
+        case .MenuFinsh:
+            return .MESearchTypeFinish
+        case .MenuOverDate:
+            return .MESearchTypeOverdDate
+        default:
+            return .MESearchTypeWait
+        }
+
     }
 }
 

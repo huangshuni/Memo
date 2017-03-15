@@ -12,45 +12,11 @@ class MEDispatchService {
     
     static let service = MEDispatchService()
     private init() { }
+
+    //获取数据
+    func getData(type: MESearchType, index: Int) -> Array<Any> {
     
-    //返回所有项
-    func getAllItem() -> [MEItemModel] {
-        
-        return getItem(index: .MenuAll) as! [MEItemModel]
-    }
-    //返回完成项
-    func getWaitItem() -> [MEItemModel] {
-        
-        return getItem(index: .MenuWait) as! [MEItemModel]
-    }
-    //返回完成项
-    func getFinshItem() -> [MEItemModel] {
-        
-        return getItem(index: .MenuFinsh) as! [MEItemModel]
-    }
-    //返回过期项
-    func getOverDateItem() -> [MEItemModel] {
-        
-        return getItem(index: .MenuOverDate) as! [MEItemModel]
-    }
-    //查询指定数据集合
-    func getItem(index: MEMenuItem) -> Array<Any> {
-        
-        var dataList: [Any] = []
-        
-        switch index {
-        case .MenuAll:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, startSelectLine: 0)
-        case .MenuWait:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeWait, startSelectLine: 0)
-        case .MenuFinsh:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeFinish, startSelectLine: 0)
-        case .MenuOverDate:
-            dataList = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeOverdDate, startSelectLine: 0)
-        default:
-            dataList = []
-        }
-        return dataList
+        return MEDataBase.defaultDB.selectModelArrayInDatabase(type, startSelectLine: index)
     }
     
 }

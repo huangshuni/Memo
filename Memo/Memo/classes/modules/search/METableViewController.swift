@@ -8,6 +8,7 @@
 
 import UIKit
 import UITableView_FDTemplateLayoutCell
+import MJRefresh
 
 class METableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
@@ -18,16 +19,61 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     }
     var resultList: [MEItemModel] = []
     var searchViewController: UISearchController?
+    var keyboardIsShow: Bool = false
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.getColor(rgb: textBGColor)
         deploySearchViewController()
+        deploytableview()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow)
+            , name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide)
+            , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        searchViewController?.isActive = false
+    }
+    
+    //设置tableview
+    func deploytableview() -> Void {
+    
         tableView.register(UINib.init(nibName: "METableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.tableHeaderView = searchViewController?.searchBar
         tableView.separatorStyle = .none
+        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {[weak self] in
+            
+            var newList: [MEItemModel] = []
+            if self!.searchViewController!.searchBar.showsCancelButton {
+                //搜索的加载更多
+                newList = METableViewData.getSearchResult(key: self!.searchViewController!.searchBar.text!,index: self!.resultList.count)
+                self!.resultList.append(contentsOf: newList)
+                self!.tableView.reloadData()
+            } else {
+                //正常的加载更多
+                newList = MEDispatchCenter.getMoreData(index: self!.resultList.count)
+                self!.dataList.append(contentsOf: newList)
+            }
+            if newList.count < selectSize {
+                //无更多数据
+                self!.tableView.mj_footer.endRefreshingWithNoMoreData()
+            }
+            
+            if self!.tableView.mj_footer.isRefreshing() {
+                self!.tableView.mj_footer.endRefreshing()
+            }
+        })
     }
+    
     //设置搜索框
     func deploySearchViewController() -> Void {
     
@@ -60,6 +106,7 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         } else {
             tableView.backgroundView = nil
         }
+        tableView.mj_footer.resetNoMoreData()
         tableView.reloadData()
     }
     
@@ -80,15 +127,18 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         
         log.debug(indexPath.row)
         if searchViewController!.isActive {
-            self.searchViewController?.searchBar.resignFirstResponder()
-            self.tableView.reloadData()
+            if keyboardIsShow {
+                self.searchViewController?.searchBar.resignFirstResponder()
+            } else {
+                let vc = MEAddMemoViewController()
+                vc.memoModel = resultList[indexPath.row]
+                navigationController?.pushViewController(vc, animated: true)
+            }
         } else {
             let vc = MEAddMemoViewController()
             vc.memoModel = resultList[indexPath.row]
-            //vc.reloadMemoModel(resultList[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
         }
-       
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -99,12 +149,15 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         })
         
     }
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         log.debug("commit editing Style")
     }
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         var list: [UITableViewRowAction] = []
@@ -127,8 +180,9 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     func updateSearchResults(for searchController: UISearchController) {
 
         if searchController.isActive {
-            let arr1 = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeAll, keyword: searchController.searchBar.text!, startSelectLine: 0) as! [MEItemModel]
+            let arr1 = METableViewData.getSearchResult(key: searchViewController!.searchBar.text!, index: 0)
             resultList = arr1
+            tableView.mj_footer.resetNoMoreData()
         } else {
             resultList = dataList
         }
@@ -136,11 +190,11 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
     }
     
     // MARK: - UISearchBarDelegate
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         
-        searchBar.text = ""
-        searchViewController?.searchBar.setShowsCancelButton(false, animated: true)
+        searchViewController?.searchBar.setShowsCancelButton(true, animated: true)
     }
+    
     // MARK: - cell rowAction
     //完成
     private func cellFinsh(rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void {
@@ -180,5 +234,12 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         vc.memoModel = self.resultList[indexPath.row]
         vc.memoEditing = true
         navigationController?.pushViewController(vc, animated: true)
+    }
+    // MARK: - 监视键盘事件
+    func keyboardShow() -> Void {
+        keyboardIsShow = true
+    }
+    func keyboardHide() -> Void {
+        keyboardIsShow = false
     }
 }
