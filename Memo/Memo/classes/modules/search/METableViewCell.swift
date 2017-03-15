@@ -75,11 +75,14 @@ class METableViewCell: UITableViewCell {
             imageView2.image = nil
         } else {
             if imageList!.count > 0 {
-                imageView1.setLocalImage(path: MEItemModel.getImagePath(imgName: imageList![0]))
+//                imageView1.setLocalImage(path: MEItemModel.getImagePath(imgName: imageList![0]))
+                imageView1.image = UIImage.init(contentsOfFile: MEItemModel.getImagePath(imgName: imageList![0]))
                 imageView2.image = nil
+            
             }
             if imageList!.count > 1 {
-                imageView2.setLocalImage(path: MEItemModel.getImagePath(imgName: imageList![1]))
+//                imageView2.setLocalImage(path: MEItemModel.getImagePath(imgName: imageList![1]))
+                imageView2.image = UIImage.init(contentsOfFile: MEItemModel.getImagePath(imgName: imageList![1]))
             }
         }
     }

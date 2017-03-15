@@ -73,12 +73,13 @@ public class MENotifyCenter {
         if model.imgList != nil, model.imgList!.count > 0 {
             
             let path = MEItemModel.getImagePath(imgName: model.imgList![0])
-            let attachment = try? UNNotificationAttachment.init(identifier: model.imgList!.first!, url: URL.init(fileURLWithPath: path), options: nil)
+            let imgPath = self.copyFileToCache(path: path, name: model.imgList![0]) ?? ""
+            let attachment = try? UNNotificationAttachment.init(identifier: model.imgList!.first!, url: URL.init(fileURLWithPath: imgPath), options: nil)
             if attachment == nil {
+                log.error("通知初始化资源失败：attachment = nil")
                 return
             }
             list.append(attachment!)
-            
             content.attachments = list
         }
         //实际代码
@@ -132,5 +133,17 @@ public class MENotifyCenter {
         }()
         UNUserNotificationCenter.current().setNotificationCategories([category])
     }
+    //复制文件从document到caches目录下，并返回caches目录下文件路径
+    private func copyFileToCache(path: String, name: String) -> String? {
     
+        let manager = FileManager.default
+        let targetPath = YHFileManager.cachePath.appending("/\(name)")
+        do {
+            try manager.copyItem(atPath: path, toPath: targetPath)
+        } catch {
+            log.error("复制文件失败：\(error)")
+            return nil
+        }
+        return targetPath
+    }
 }
