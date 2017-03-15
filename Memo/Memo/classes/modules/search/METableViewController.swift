@@ -85,7 +85,7 @@ class METableViewController: UITableViewController, UISearchResultsUpdating, UIS
         } else {
             let vc = MEAddMemoViewController()
             vc.memoModel = resultList[indexPath.row]
-            //        vc.reloadMemoModel(resultList[indexPath.row])
+            //vc.reloadMemoModel(resultList[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
         }
        

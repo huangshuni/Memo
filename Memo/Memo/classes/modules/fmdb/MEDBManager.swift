@@ -29,6 +29,7 @@ class MEDBManager {
     func delItem(identifier: String) -> Void {
     
         db.deleteModelInDatabase("id", value: identifier)
+        
     }
     
     //插入或更新模型

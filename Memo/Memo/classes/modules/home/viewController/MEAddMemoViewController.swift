@@ -100,6 +100,12 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             }
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+    }
 
       // MARK: - 屏幕手势
     func tapAction() -> Void {
@@ -121,16 +127,19 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             for photoPath in (memoModel.imgList)! {
                 let path = MEItemModel.getImagePath(imgName: photoPath)
                 let image = UIImage.init(contentsOfFile: path)
-                let item = YHPhotoResult.init(image, image)
-                self.imagesArr.append(item)
+                if image != nil{
+                    let item = YHPhotoResult.init(image, image)
+                    self.imagesArr.append(item)
+                }
             }
+         }
             DispatchQueue.main.async {
                 self.photoCollectionView.reloadData()
             }
-        }
         
         isTurnOnNotifySwitch.isOn = (memoModel.isTurnNotify)
         concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(dateStamp: memoModel.notifyDate!, formatter: "yyyy-MM-dd HH:mm:ss")
+         
     }
     
       // MARK: - 转变界面的编辑状态
@@ -181,14 +190,31 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             for item in self.imagesArr {
                 var path = YHFileManager.documentsPath.appending(photoDirectory)
                 let _ = YHFileManager.directoryIsExist(path)
-                let id = NSDate.getCurrentDateStamp()
-                path = path.appending(id).appending(".png")
-                let imagePath = id.appending(".png")
                 let image = (item as!YHPhotoResult).highImage
-                let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
-                let flag = imageData.write(toFile: path, atomically: true)
-                log.debug("图片写入文件成功： \(flag) \n path: \(path)")
-                imagePathArr.append(imagePath)
+                
+                var imageData: NSData?
+                var imagePath: String?
+                if UIImagePNGRepresentation(image!) != nil{
+                    /* 返回为png图像 */
+                    imageData = UIImagePNGRepresentation(image!)! as NSData?
+                    imagePath = NSDate.getCurrentDateStamp().appending(".png")
+                }else{
+                    /* 返回为JPEG图像 */
+                    imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
+                    imagePath = NSDate.getCurrentDateStamp().appending(".jpeg")
+                }
+//                 imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
+                
+                path = path.appending(imagePath!)
+                
+                
+                if (imageData?.length)! > 0{
+                    var flag = imageData?.write(toFile: path, atomically: true)
+                    log.debug("图片写入文件成功： \(flag) \n path: \(path)")
+                    flag = YHFileManager.fileIsExist(path)
+                    log.debug("图片路径是否存在：\(flag)")
+                    imagePathArr.append(imagePath!)
+                }
             }
             
             var identifier: String!

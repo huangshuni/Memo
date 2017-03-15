@@ -74,6 +74,9 @@ public class MENotifyCenter {
             
             let path = MEItemModel.getImagePath(imgName: model.imgList![0])
             let attachment = try? UNNotificationAttachment.init(identifier: model.imgList!.first!, url: URL.init(fileURLWithPath: path), options: nil)
+            if attachment == nil {
+                return
+            }
             list.append(attachment!)
             
             content.attachments = list
