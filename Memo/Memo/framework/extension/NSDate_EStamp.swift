@@ -49,7 +49,7 @@ import UIKit
 
 extension NSDate {
 
-    //获取当前时间戳
+    //获取当前时间戳，毫秒级整数
     static func getCurrentDateStamp() -> String {
 
         return getDateStamp(NSDate())
@@ -59,7 +59,7 @@ extension NSDate {
     
         return getFormatterDateTime(date: NSDate(), formatter: formatter)
     }
-    //获取指定时间的时间戳
+    //获取指定时间的时间戳，毫秒级整数
     static func getDateStamp(_ date: NSDate) -> String {
     
         let seconds = Int(date.timeIntervalSince1970 * 1_000)
@@ -107,5 +107,18 @@ extension NSDate {
         let calendar = Calendar.current
         let dateCompent = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date as Date)
         return (dateCompent.year!, dateCompent.month!, dateCompent.day!, dateCompent.hour!, dateCompent.second!, dateCompent.month!)
+    }
+    //比较两个日期大小
+    static func compareDate(_ date1: NSDate, _ date2: NSDate) -> Double {
+        
+        let timerInterval1 = date1.timeIntervalSince1970
+        let timerInterval2 = date2.timeIntervalSince1970
+        return timerInterval1 - timerInterval2
+    }
+    //根据时间戳获取时间
+    static func getDateFromDateStamp(dateStamp: String) -> NSDate {
+        
+        let seconds = Double(dateStamp)! / 1_000
+        return NSDate.init(timeIntervalSince1970: seconds)
     }
 }

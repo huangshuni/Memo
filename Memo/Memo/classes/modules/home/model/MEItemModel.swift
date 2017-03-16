@@ -50,10 +50,31 @@ public struct MEItemModel {
         self.isTurnNotify = isTurnNotify
         self.state = state
     }
-    
+    //获取图片存储路径
     static func getImagePath(imgName: String) -> String {
     
         return YHFileManager.documentsPath.appending(photoDirectory).appending(imgName)
+    }
+    //自检状态
+    func checkStatusIsOverDate() -> Bool {
+        
+        if state.rawValue == ModelStates.ModelStatesFinsh.rawValue || state.rawValue == ModelStates.ModelStatesOverdDate.rawValue {
+            return false
+        }
+        if notifyDate != nil && notifyDate!.characters.count > 0 {
+            //存在提醒但未做任何处理的
+            let result = NSDate.compareDate(NSDate.getDateFromDateStamp(dateStamp: notifyDate!), NSDate())
+            if result > 0 {
+                return false
+            }
+        } else {
+            //不存在提醒且超过编辑日期三天的
+            let result = NSDate.compareDate(NSDate.getDateFromDateStamp(dateStamp: editDate), NSDate())
+            if result < threeDaySeconds {
+                return false
+            }
+        }
+        return true
     }
 }
 

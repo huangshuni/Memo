@@ -56,8 +56,10 @@ class MENotificationHandler: NSObject, UNUserNotificationCenterDelegate {
             MEDBManager.manager.updateItemState(identifier: identifier, state: .ModelStatesOverdDate)
         } else {
             //default
+            MEDBManager.manager.updateItemState(identifier: identifier, state: .ModelStatesFinsh)
             entryFromNotification(identifier: identifier)
         }
+        MEDispatchCenter.refreshCurrentData()
     }
     
 }

@@ -51,5 +51,23 @@ extension AppDelegate {
     
         YHLogger.logger.startLog()
     }
-    
+    //自检模型状态
+    public func checkStatus() -> Void {
+        
+        let result = MEDataBase.defaultDB.selectModelArrayInDatabase(.MESearchTypeWait, startSelectLine: 0) as! [MEItemModel]
+        for model in result {
+            if model.checkStatusIsOverDate() {
+                MEDBManager.manager.updateItemState(identifier: model.id, state: .ModelStatesOverdDate)
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
