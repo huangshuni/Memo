@@ -195,7 +195,12 @@ public class MEDataBase {
                 log.error("unable to open memoDB")
                 return
             }
-            let selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(key) = \"\(value)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+            
+            var selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(key) = \"\(value)\" order by \(self.notifyDate) DESC"
+            if startSelectLine != Int.max{
+                selectStr.append(" limit \(startSelectLine),\(selectSize)")
+            }
+
             log.debug(selectStr)
             do{
                 let resultSet = try dataBase?.executeQuery(selectStr, values: nil)
@@ -230,9 +235,12 @@ public class MEDataBase {
         
         var selectStr = ""
         if type == .MESearchTypeAll {
-            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) order by \(self.notifyDate) DESC"
         }else{
-            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize) "
+            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" order by \(self.notifyDate) DESC"
+        }
+        if startSelectLine != Int.max{
+            selectStr.append(" limit \(startSelectLine),\(selectSize)")
         }
         
         var resultArr = Array<Any>()
@@ -276,9 +284,13 @@ public class MEDataBase {
         //提醒和编辑时间匹配待考究？
         var selectStr = ""
         if type == .MESearchTypeAll {
-            selectStr =  self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\' order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+            selectStr =  self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\' order by \(self.notifyDate) DESC"
         }else{
-            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" and (\(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\') order by \(self.notifyDate) DESC limit \(startSelectLine),\(selectSize)"
+            selectStr = self.getAllColumnSql() + " from \(self.MEItemTableName) where \(self.state) = \"\(stateValue)\" and (\(self.title) like \'%\(keyword)%\' or \(self.editDate) like \'%\(keyword)%\' or \(self.notifyDate) like \'%\(keyword)%\' or \(self.content) like \'%\(keyword)%\') order by \(self.notifyDate) DESC"
+        }
+        
+        if startSelectLine != Int.max{
+            selectStr.append(" limit \(startSelectLine),\(selectSize)")
         }
         
         var resultArr = Array<Any>()

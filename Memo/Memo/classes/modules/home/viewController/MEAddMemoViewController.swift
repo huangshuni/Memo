@@ -62,8 +62,6 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         title = addMemo_Title
         scrollView.contentSize = CGSize.init(width: UIView.screenWidth, height: scrollViewContentSizeHeight)
         scrollView.showsVerticalScrollIndicator = false
-//        scrollView.isPagingEnabled = false
-//        scrollView.isScrollEnabled = false
         
         photoCollectionView.register(UINib.init(nibName: "MEAddMemoPhotoCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         
@@ -80,6 +78,8 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(date: dataPicker.date as NSDate, formatter: "yyyy-MM-dd HH:mm:ss")
         
         notifiyDateLblHeight.constant = addMemoConcreteDateLblHeight
+        
+//        dataPicker.minimumDate = NSDate.getNSDateFromDateString(dateString: NSDate.getCurrentDateStamp()) as Date?
         
     }
     
@@ -155,7 +155,6 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         }else{
             notifiyDateLblHeight.constant = 0
         }
-//        showDatePicker = true
     }
     
       // MARK: - 展示dataPick
@@ -203,16 +202,13 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
                     imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
                     imagePath = NSDate.getCurrentDateStamp().appending(".jpeg")
                 }
-//                 imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
                 
                 path = path.appending(imagePath!)
                 
                 
                 if (imageData?.length)! > 0{
-                    var flag = imageData?.write(toFile: path, atomically: true)
+                    let flag = imageData?.write(toFile: path, atomically: true)
                     log.debug("图片写入文件成功： \(flag) \n path: \(path)")
-                    flag = YHFileManager.fileIsExist(path)
-                    log.debug("图片路径是否存在：\(flag)")
                     imagePathArr.append(imagePath!)
                 }
             }
@@ -267,6 +263,8 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
     
       // MARK: - 选择照片
     func addPhoto() -> Void {
+        
+        view.endEditing(true)
         
         firstInThisView = false
         

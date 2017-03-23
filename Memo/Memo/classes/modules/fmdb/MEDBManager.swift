@@ -28,6 +28,14 @@ class MEDBManager {
     //删除模型
     func delItem(identifier: String) -> Void {
     
+        //删除沙盒图片
+        let model = getItem(identifier: identifier)
+        if (model?.imgList?.count)! > 0 {
+            for imagePath in (model?.imgList!)! {
+               let path = MEItemModel.getImagePath(imgName: imagePath)
+                YHFileManager.deleteFile(path)
+            }
+        }
         db.deleteModelInDatabase("id", value: identifier)
         
     }
@@ -48,4 +56,5 @@ class MEDBManager {
         }
         return model
     }
+    
 }
