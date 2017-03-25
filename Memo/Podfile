@@ -14,5 +14,6 @@ pod 'FMDB', '2.6.2'
 pod 'RESideMenu', '4.0.7'
 pod 'UITableView+FDTemplateLayoutCell', '1.5.beta'
 pod 'MJRefresh', '3.1.12'
+pod 'MBProgressHUD', '1.0.0'
 
 end
