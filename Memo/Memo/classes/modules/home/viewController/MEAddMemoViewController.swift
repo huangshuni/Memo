@@ -8,10 +8,11 @@
 
 import UIKit
 
+
 public let photoDirectory = "/addMemo/"
 
 class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIGestureRecognizerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
-
+    
     let maxPhotoCount = 3
     let addMemoNotifiyDateLblHeight:CGFloat = 200.0
     let addMemoConcreteDateLblHeight:CGFloat = 40.0
@@ -41,13 +42,13 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
     var showDatePicker = false
     
     
-      // MARK: - life cycle
+    // MARK: - life cycle
     
     convenience init() {
         self.init(nibName: "MEAddMemoViewController", bundle: nil)
     }
     
-   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -75,11 +76,18 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         rightBarButtonItem = UIBarButtonItem.init(title: addMemo_done_title, style: .plain, target: self, action: #selector(addMemoAction))
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
-        concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(date: dataPicker.date as NSDate, formatter: "yyyy-MM-dd HH:mm:ss")
-        
         notifiyDateLblHeight.constant = addMemoConcreteDateLblHeight
         
-//        dataPicker.minimumDate = NSDate.getNSDateFromDateString(dateString: NSDate.getCurrentDateStamp()) as Date?
+        //设置选择的最小时间
+        let date = NSDate.init();
+        let time = date.timeIntervalSince1970
+        let nowDate = Date.init(timeIntervalSince1970: time);
+        dataPicker.date = Date.init(timeIntervalSince1970: (time + (15*60)))
+        dataPicker.minimumDate = nowDate
+        //        dataPicker.maximumDate = Date.init(timeIntervalSince1970: (time + (5*24*3600)))
+        
+        concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(date: dataPicker.date as NSDate, formatter: dateFormatStr)
+        
         
     }
     
@@ -106,8 +114,8 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         
         
     }
-
-      // MARK: - 屏幕手势
+    
+    // MARK: - 屏幕手势
     func tapAction() -> Void {
         view.endEditing(true)
     }
@@ -119,7 +127,7 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         return true
     }
     
-      // MARK: - 给模型赋值
+    // MARK: - 给模型赋值
     public func reloadMemoModel(_ memoModel: MEItemModel) {
         titleTF.text = (memoModel.title)!
         contentTextView.text = (memoModel.content)!
@@ -132,17 +140,18 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
                     self.imagesArr.append(item)
                 }
             }
-         }
-            DispatchQueue.main.async {
-                self.photoCollectionView.reloadData()
-            }
+        }
+        DispatchQueue.main.async {
+            self.photoCollectionView.reloadData()
+        }
         
         isTurnOnNotifySwitch.isOn = (memoModel.isTurnNotify)
-        concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(dateStamp: memoModel.notifyDate!, formatter: "yyyy-MM-dd HH:mm:ss")
-         
+        concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(dateStamp: memoModel.notifyDate!, formatter: dateFormatStr)
+        dataPicker.date = NSDate.getNSDateFromDateString(dateString: String(Double(memoModel.notifyDate!)! / 1000)) as! Date
+        
     }
     
-      // MARK: - 转变界面的编辑状态
+    // MARK: - 转变界面的编辑状态
     public func reloadUI(allowEditing: Bool){
         titleTF.isUserInteractionEnabled = allowEditing
         contentTextView.isUserInteractionEnabled = allowEditing
@@ -157,14 +166,14 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         }
     }
     
-      // MARK: - 展示dataPick
+    // MARK: - 展示dataPick
     func showDatePickerAction() {
         showDatePicker = !showDatePicker
         notifiyDateLblHeight.constant = (showDatePicker == true ? addMemoNotifiyDateLblHeight : addMemoConcreteDateLblHeight)
         notifyTwoChangeLineViewLeading.constant = (showDatePicker == true ? addMemoLineViewLeading : 0)
     }
     
-      // MARK: - 完成按钮
+    // MARK: - 完成按钮
     @IBAction func addMemoAction(_ sender: UIButton) {
         
         if rightBarButtonItem?.title == addMemo_modify_title {
@@ -174,76 +183,88 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             return
         }
         
+        //        showIndicator()
+        
         if titleTF.text?.length == 0 {
             alertAction(addMemo_Notification_noTitle)
+            hideIndicator()
             return;
         }
         if contentTextView.text?.length == 0 {
             alertAction(addMemo_Notification_noContent)
+            hideIndicator()
             return;
         }
         
-        DispatchQueue.global().async {
         
-            var imagePathArr : Array<String> = []
-            for item in self.imagesArr {
-                var path = YHFileManager.documentsPath.appending(photoDirectory)
-                let _ = YHFileManager.directoryIsExist(path)
-                let image = (item as!YHPhotoResult).highImage
-                
-                var imageData: NSData?
-                var imagePath: String?
-                if UIImagePNGRepresentation(image!) != nil{
-                    /* 返回为png图像 */
-                    imageData = UIImagePNGRepresentation(image!)! as NSData?
-                    imagePath = NSDate.getCurrentDateStamp().appending(".png")
-                }else{
-                    /* 返回为JPEG图像 */
-                    imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
-                    imagePath = NSDate.getCurrentDateStamp().appending(".jpeg")
-                }
-                
-                path = path.appending(imagePath!)
-                
-                
-                if (imageData?.length)! > 0{
-                    let flag = imageData?.write(toFile: path, atomically: true)
-                    log.debug("图片写入文件成功： \(flag) \n path: \(path)")
-                    imagePathArr.append(imagePath!)
-                }
+        //        DispatchQueue.global().async {
+        
+        var imagePathArr : Array<String> = []
+        for item in self.imagesArr {
+            var path = YHFileManager.documentsPath.appending(photoDirectory)
+            let _ = YHFileManager.directoryIsExist(path)
+            let image = (item as!YHPhotoResult).highImage
+            
+            var imageData: NSData?
+            var imagePath: String?
+            if UIImagePNGRepresentation(image!) != nil{
+                /* 返回为png图像 */
+                imageData = UIImagePNGRepresentation(image!)! as NSData?
+                imagePath = NSDate.getCurrentDateStamp().appending(".png")
+            }else{
+                /* 返回为JPEG图像 */
+                imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
+                imagePath = NSDate.getCurrentDateStamp().appending(".jpeg")
             }
             
-            var identifier: String!
-            var regModel: MEItemModel!
-            if self.memoModel != nil {
-                self.memoModel?.title = self.titleTF.text
-                self.memoModel?.content = self.contentTextView.text
-                self.memoModel?.imgList = imagePathArr
-                self.memoModel?.editDate = NSDate.getCurrentDateStamp()
-                self.memoModel?.notifyDate = NSDate.getDateStamp(self.dataPicker.date as NSDate)
-                self.memoModel?.isTurnNotify = self.isTurnOnNotifySwitch.isOn
-                MEDBManager.manager.saveItem(model: self.memoModel!)
-                identifier = self.memoModel?.id
-                regModel = self.memoModel!
-            }else{
-                let modelId = NSDate.getCurrentDateStamp()
-                let model = MEItemModel.init(id:modelId,  title: self.titleTF.text!, content: self.contentTextView.text, imgList: imagePathArr, editDate: NSDate.getCurrentDateStamp(), notifyDate: NSDate.getDateStamp(self.dataPicker.date as NSDate), isTurnNotify: self.isTurnOnNotifySwitch.isOn)
-                MEDBManager.manager.saveItem(model: model)
-                identifier = modelId
-                regModel = model
-            }
-            if self.isTurnOnNotifySwitch.isOn {
-                //注册或修改通知
-                //提醒时间可能修改，因此先移除旧通知，再添加新通知
-                MENotifyCenter.center.removeNotification(identifier: identifier)
-                MENotifyCenter.center.registerNotification(model: regModel)
+            path = path.appending(imagePath!)
+            
+            
+            if (imageData?.length)! > 0{
+                let flag = imageData?.write(toFile: path, atomically: true)
+                log.debug("图片写入文件成功： \(flag) \n path: \(path)")
+                imagePathArr.append(imagePath!)
             }
         }
-          _ = self.navigationController?.popViewController(animated: true)
+        
+        var identifier: String!
+        var regModel: MEItemModel!
+        if self.memoModel != nil {
+            self.memoModel?.title = self.titleTF.text
+            self.memoModel?.content = self.contentTextView.text
+            self.memoModel?.imgList = imagePathArr
+            self.memoModel?.editDate = NSDate.getCurrentDateStamp()
+            self.memoModel?.notifyDate = NSDate.getDateStamp(self.dataPicker.date as NSDate)
+            self.memoModel?.isTurnNotify = self.isTurnOnNotifySwitch.isOn
+            MEDBManager.manager.saveItem(model: self.memoModel!)
+            identifier = self.memoModel?.id
+            regModel = self.memoModel!
+        }else{
+            let modelId = NSDate.getCurrentDateStamp()
+            let model = MEItemModel.init(id:modelId,  title: self.titleTF.text!, content: self.contentTextView.text, imgList: imagePathArr, editDate: NSDate.getCurrentDateStamp(), notifyDate: NSDate.getDateStamp(self.dataPicker.date as NSDate), isTurnNotify: self.isTurnOnNotifySwitch.isOn)
+            MEDBManager.manager.saveItem(model: model)
+            identifier = modelId
+            regModel = model
+        }
+        if self.isTurnOnNotifySwitch.isOn {
+            //注册或修改通知
+            //提醒时间可能修改，因此先移除旧通知，再添加新通知
+            MENotifyCenter.center.removeNotification(identifier: identifier)
+            MENotifyCenter.center.registerNotification(model: regModel)
+        }
+        //        }
+        
+        //          _ = self.navigationController?.popViewController(animated: true)
+        //         hideIndicator()
+        
+        //        UserDefaults.standard.set("MESetFontStyle_simpleChinese", forKey: "MESetFontStyle")
+        //        UserDefaults.standard.set("MESetFontSize_middleFontSize", forKey: "MESetFontSize")
+        //        UserDefaults.standard.set(true, forKey: "MESetNotifyVoice")
+        //        UserDefaults.standard.synchronize()
         
     }
     
-      // MARK: - 是否提醒
+    // MARK: - 是否提醒
     @IBAction func isNotifySwitchAction(_ sender: UISwitch) {
         if sender.isOn {
             notifiyDateLblHeight.constant = self.addMemoConcreteDateLblHeight
@@ -255,13 +276,13 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         }
     }
     
-      // MARK: - 时间选择器值改变
+    // MARK: - 时间选择器值改变
     @IBAction func dataPickerValueChange(_ sender: UIDatePicker) {
         
-       concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(date: sender.date as NSDate, formatter: "yyyy-MM-dd HH:mm:ss")
+        concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(date: sender.date as NSDate, formatter: dateFormatStr)
     }
     
-      // MARK: - 选择照片
+    // MARK: - 选择照片
     func addPhoto() -> Void {
         
         view.endEditing(true)
@@ -282,7 +303,7 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         present(alert, animated: true, completion: nil)
     }
     
-      // MARK: -从相机选择
+    // MARK: -从相机选择
     func selectPhotoFromCamera(){
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) && UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.rear) {
@@ -294,7 +315,7 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         }
     }
     
-      // MARK: -从相册选择
+    // MARK: -从相册选择
     func selectPhotoFromAlbum(){
         let picker = YHPhotoPickManagerViewController.init()
         picker.selectCount = (maxPhotoCount - self.imagesArr.count) < 0 ? 0 : (maxPhotoCount - self.imagesArr.count)
@@ -307,7 +328,7 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         present(picker, animated: true, completion: nil)
     }
     
-      // MARK: - 工具类
+    // MARK: - 工具类
     func alertAction(_ message: String) {
         let alert =  UIAlertController.init(title: addMemo_alert_title, message: message, preferredStyle: .alert)
         let cancleAction = UIAlertAction.init(title: addMemo_alert_cancle, style: .cancel) { (action) in
@@ -330,16 +351,16 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             self.photoCollectionView.reloadData()
         }
     }
-
     
-      // MARK: - UICollectionViewDeleaget/DataSourse/Flowlayout
+    
+    // MARK: - UICollectionViewDeleaget/DataSourse/Flowlayout
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         var num = 0
         if (memoModel != nil && memoEditing == false) {
             num = imagesArr.count == maxPhotoCount ? maxPhotoCount : imagesArr.count
         }else{
-             num = imagesArr.count == maxPhotoCount ? maxPhotoCount : (imagesArr.count + 1)
+            num = imagesArr.count == maxPhotoCount ? maxPhotoCount : (imagesArr.count + 1)
         }
         return num
     }
@@ -378,9 +399,29 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         }
     }
     
+    // MARK: - 小菊花
+    func showIndicator() {
+        //小菊花
+        let indicatorView = UIActivityIndicatorView.init(frame: CGRect.init(x: (UIView.screenWidth - 70)/2, y: (UIView.screenHeight - 70 - 64 - 100)/2, width: 70, height: 70))
+        indicatorView.backgroundColor = UIColor.black
+        indicatorView.alpha = 0.6
+        indicatorView.tag = 1
+        indicatorView.isHidden = true
+        view.addSubview(indicatorView)
+        view.bringSubview(toFront: indicatorView)
+        indicatorView.startAnimating()
+    }
+    
+    func hideIndicator() {
+        
+        let indicatorView = view.viewWithTag(1) as? UIActivityIndicatorView
+        indicatorView?.stopAnimating()
+        indicatorView?.removeFromSuperview()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
