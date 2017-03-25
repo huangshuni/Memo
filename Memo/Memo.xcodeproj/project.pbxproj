@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		2A172C491E6ABFD100642EB5 /* MEAddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A172C471E6ABFD100642EB5 /* MEAddMemoViewController.swift */; };
 		2A172C4A1E6ABFD100642EB5 /* MEAddMemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A172C481E6ABFD100642EB5 /* MEAddMemoViewController.xib */; };
-		2A172C4D1E6C024200642EB5 /* MEAddMemoPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A172C4B1E6C024200642EB5 /* MEAddMemoPhotoCell.swift */; };
-		2A172C4E1E6C024200642EB5 /* MEAddMemoPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A172C4C1E6C024200642EB5 /* MEAddMemoPhotoCell.xib */; };
-		2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E8C391E584F4900226C56 /* Assets.xcassets */; };
+		2A1AED6D1E863D7300ABE734 /* MEAddMemoPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AED6B1E863D7300ABE734 /* MEAddMemoPhotoCell.swift */; };
+		2A1AED6E1E863D7300ABE734 /* MEAddMemoPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1AED6C1E863D7300ABE734 /* MEAddMemoPhotoCell.xib */; };
+		2A1AED701E863D8000ABE734 /* MEAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AED6F1E863D8000ABE734 /* MEAlertView.swift */; };
+		2A1AED721E863FE900ABE734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1AED711E863FE900ABE734 /* Assets.xcassets */; };
 		2AEA7CEB1E615E8C00B6F041 /* MEDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */; };
 		B9214B9919D1A90FE03C9188 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */; };
 		DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA211E58559400341E60 /* BaseNavigationController.swift */; };
@@ -121,10 +122,11 @@
 /* Begin PBXFileReference section */
 		2A172C471E6ABFD100642EB5 /* MEAddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAddMemoViewController.swift; sourceTree = "<group>"; };
 		2A172C481E6ABFD100642EB5 /* MEAddMemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MEAddMemoViewController.xib; sourceTree = "<group>"; };
-		2A172C4B1E6C024200642EB5 /* MEAddMemoPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MEAddMemoPhotoCell.swift; path = Memo/classes/modules/home/viewController/MEAddMemoPhotoCell.swift; sourceTree = SOURCE_ROOT; };
-		2A172C4C1E6C024200642EB5 /* MEAddMemoPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MEAddMemoPhotoCell.xib; path = Memo/classes/modules/home/viewController/MEAddMemoPhotoCell.xib; sourceTree = SOURCE_ROOT; };
+		2A1AED6B1E863D7300ABE734 /* MEAddMemoPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAddMemoPhotoCell.swift; sourceTree = "<group>"; };
+		2A1AED6C1E863D7300ABE734 /* MEAddMemoPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MEAddMemoPhotoCell.xib; sourceTree = "<group>"; };
+		2A1AED6F1E863D8000ABE734 /* MEAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAlertView.swift; sourceTree = "<group>"; };
+		2A1AED711E863FE900ABE734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A9E8C2F1E584F4900226C56 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A9E8C391E584F4900226C56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDataBase.swift; sourceTree = "<group>"; };
 		8512E6FB682B4573DF69D19D /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF334D1011817B8C4215D870 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
@@ -594,9 +596,9 @@
 		DB22EAB81E5855EE00341E60 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A1AED711E863FE900ABE734 /* Assets.xcassets */,
 				DB9F6F7C1E5FE1010027B063 /* Stars.png */,
 				DB6617BD1E5B21A200375D84 /* font */,
-				2A9E8C391E584F4900226C56 /* Assets.xcassets */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -680,8 +682,8 @@
 		DBC625EE1E5AC18200914197 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				2A172C4B1E6C024200642EB5 /* MEAddMemoPhotoCell.swift */,
-				2A172C4C1E6C024200642EB5 /* MEAddMemoPhotoCell.xib */,
+				2A1AED6B1E863D7300ABE734 /* MEAddMemoPhotoCell.swift */,
+				2A1AED6C1E863D7300ABE734 /* MEAddMemoPhotoCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -689,6 +691,7 @@
 		DBC625EF1E5AC18600914197 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				2A1AED6F1E863D8000ABE734 /* MEAlertView.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -866,6 +869,7 @@
 				DB22EA941E58559400341E60 /* YHPhotoBrowseViewController.xib in Resources */,
 				DB22EAA31E58559400341E60 /* YHPictureBrowseViewController.xib in Resources */,
 				DB22EAA01E58559400341E60 /* YHPictureBrowseCell.xib in Resources */,
+				2A1AED721E863FE900ABE734 /* Assets.xcassets in Resources */,
 				DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */,
 				DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */,
 				DBC625FB1E5AC24A00914197 /* MEHomeViewController.xib in Resources */,
@@ -875,11 +879,10 @@
 				DB8E83AF1E5D61C70080998A /* METableViewCell.xib in Resources */,
 				DBC626001E5AD6B600914197 /* Main.storyboard in Resources */,
 				DB6617C51E5B2B3B00375D84 /* MEFont.plist in Resources */,
-				2A9E8C3A1E584F4900226C56 /* Assets.xcassets in Resources */,
 				2A172C4A1E6ABFD100642EB5 /* MEAddMemoViewController.xib in Resources */,
 				DB22EA961E58559400341E60 /* YHPhotoHighImageCell.xib in Resources */,
 				DB22EAC41E585D2E00341E60 /* Info.plist in Resources */,
-				2A172C4E1E6C024200642EB5 /* MEAddMemoPhotoCell.xib in Resources */,
+				2A1AED6E1E863D7300ABE734 /* MEAddMemoPhotoCell.xib in Resources */,
 				DB9F6F7D1E5FE1010027B063 /* Stars.png in Resources */,
 				DB22EA9E1E58559400341E60 /* YHPhotoThumbnailCell.xib in Resources */,
 				DB22EA9B1E58559400341E60 /* YHPhotoPickViewController.xib in Resources */,
@@ -949,7 +952,6 @@
 				DBC427CB1E63D67A002B2D6A /* MESettingSoundCell.swift in Sources */,
 				DB22EAAC1E58559400341E60 /* UIImage_ELoad.swift in Sources */,
 				DBB7ACA51E5D6A020049478D /* MEDispatchCenter.swift in Sources */,
-				2A172C4D1E6C024200642EB5 /* MEAddMemoPhotoCell.swift in Sources */,
 				DB22EA991E58559400341E60 /* YHPhotoPickThroughDelegate.swift in Sources */,
 				DB22EA781E58559400341E60 /* BaseViewController.swift in Sources */,
 				DBC625FE1E5AC51300914197 /* UIColor_EMemoColor.swift in Sources */,
@@ -981,6 +983,7 @@
 				DB22EAB01E58559400341E60 /* YHWaterFallLayout.swift in Sources */,
 				DB22EAB11E58559400341E60 /* YHPageControl.swift in Sources */,
 				DB22EA7A1E58559400341E60 /* HttpBaseService.swift in Sources */,
+				2A1AED701E863D8000ABE734 /* MEAlertView.swift in Sources */,
 				DB22EAB31E58559400341E60 /* YHTextView.swift in Sources */,
 				DB22EA831E58559400341E60 /* FileDownloadOperation.swift in Sources */,
 				DB22EA8A1E58559400341E60 /* YHLoginService.swift in Sources */,
@@ -1022,6 +1025,7 @@
 				DBC427D31E6409D9002B2D6A /* MEAboutAppViewController.swift in Sources */,
 				DB22EA7F1E58559400341E60 /* FileDownloadDao.swift in Sources */,
 				DB22EA821E58559400341E60 /* FileDownloadManager.swift in Sources */,
+				2A1AED6D1E863D7300ABE734 /* MEAddMemoPhotoCell.swift in Sources */,
 				DBC3C9171E778EDC0003F3BE /* MEImageView+load.swift in Sources */,
 				DB22EAA21E58559400341E60 /* YHPictureBrowseViewController.swift in Sources */,
 				DB22EA931E58559400341E60 /* YHPhotoBrowseViewController.swift in Sources */,

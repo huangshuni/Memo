@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 
 public let photoDirectory = "/addMemo/"
@@ -56,6 +57,10 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -89,6 +94,7 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         concreteNotifyDateLbl.text = NSDate.getFormatterDateTime(date: dataPicker.date as NSDate, formatter: dateFormatStr)
         
         
+        NotificationCenter.default.addObserver(self, selector: #selector(back), name: NSNotification.Name(rawValue: "11"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -126,6 +132,17 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         }
         return true
     }
+    
+      // MARK: - 返回上一层
+    func back() {
+        
+        DispatchQueue.main.async {
+            
+            MEAlertView.hideAlertView(view: self.view)
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     
     // MARK: - 给模型赋值
     public func reloadMemoModel(_ memoModel: MEItemModel) {
@@ -183,21 +200,19 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             return
         }
         
-        //        showIndicator()
         
         if titleTF.text?.length == 0 {
             alertAction(addMemo_Notification_noTitle)
-            hideIndicator()
             return;
         }
         if contentTextView.text?.length == 0 {
             alertAction(addMemo_Notification_noContent)
-            hideIndicator()
             return;
         }
         
+        MEAlertView.showAlertView(view: view)
         
-        //        DispatchQueue.global().async {
+                DispatchQueue.global().async {
         
         var imagePathArr : Array<String> = []
         for item in self.imagesArr {
@@ -219,12 +234,12 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             
             path = path.appending(imagePath!)
             
-            
             if (imageData?.length)! > 0{
                 let flag = imageData?.write(toFile: path, atomically: true)
                 log.debug("图片写入文件成功： \(flag) \n path: \(path)")
                 imagePathArr.append(imagePath!)
             }
+          
         }
         
         var identifier: String!
@@ -252,15 +267,11 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
             MENotifyCenter.center.removeNotification(identifier: identifier)
             MENotifyCenter.center.registerNotification(model: regModel)
         }
-        //        }
+                    
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "11"), object: nil)
+                    
+    }
         
-        //          _ = self.navigationController?.popViewController(animated: true)
-        //         hideIndicator()
-        
-        //        UserDefaults.standard.set("MESetFontStyle_simpleChinese", forKey: "MESetFontStyle")
-        //        UserDefaults.standard.set("MESetFontSize_middleFontSize", forKey: "MESetFontSize")
-        //        UserDefaults.standard.set(true, forKey: "MESetNotifyVoice")
-        //        UserDefaults.standard.synchronize()
         
     }
     
@@ -399,25 +410,6 @@ class MEAddMemoViewController: BaseViewController,UICollectionViewDelegate,UICol
         }
     }
     
-    // MARK: - 小菊花
-    func showIndicator() {
-        //小菊花
-        let indicatorView = UIActivityIndicatorView.init(frame: CGRect.init(x: (UIView.screenWidth - 70)/2, y: (UIView.screenHeight - 70 - 64 - 100)/2, width: 70, height: 70))
-        indicatorView.backgroundColor = UIColor.black
-        indicatorView.alpha = 0.6
-        indicatorView.tag = 1
-        indicatorView.isHidden = true
-        view.addSubview(indicatorView)
-        view.bringSubview(toFront: indicatorView)
-        indicatorView.startAnimating()
-    }
-    
-    func hideIndicator() {
-        
-        let indicatorView = view.viewWithTag(1) as? UIActivityIndicatorView
-        indicatorView?.stopAnimating()
-        indicatorView?.removeFromSuperview()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
