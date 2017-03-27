@@ -12,7 +12,6 @@
 		2A1AED6D1E863D7300ABE734 /* MEAddMemoPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AED6B1E863D7300ABE734 /* MEAddMemoPhotoCell.swift */; };
 		2A1AED6E1E863D7300ABE734 /* MEAddMemoPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1AED6C1E863D7300ABE734 /* MEAddMemoPhotoCell.xib */; };
 		2A1AED701E863D8000ABE734 /* MEAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AED6F1E863D8000ABE734 /* MEAlertView.swift */; };
-		2A1AED721E863FE900ABE734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1AED711E863FE900ABE734 /* Assets.xcassets */; };
 		2AEA7CEB1E615E8C00B6F041 /* MEDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */; };
 		B9214B9919D1A90FE03C9188 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADAC388AB0FD9730340DA51 /* Pods_Memo.framework */; };
 		DB22EA771E58559400341E60 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB22EA211E58559400341E60 /* BaseNavigationController.swift */; };
@@ -114,6 +113,7 @@
 		DBC6260E1E5AEA2C00914197 /* MESettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */; };
 		DBD183361E5EDD73006E8CB0 /* MENotifyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */; };
 		DBD183381E5EE46C006E8CB0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD183371E5EE46C006E8CB0 /* UserNotifications.framework */; };
+		DBE5C40A1E89102900D25E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE5C4091E89102900D25E63 /* Assets.xcassets */; };
 		DBE88B071E5EC78300FEEC7A /* MEDispatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE88B061E5EC78300FEEC7A /* MEDispatchService.swift */; };
 		DBFA7EF71E5C28F900BD9E00 /* METableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */; };
 		DBFA7EF81E5C28F900BD9E00 /* METableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */; };
@@ -125,7 +125,6 @@
 		2A1AED6B1E863D7300ABE734 /* MEAddMemoPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAddMemoPhotoCell.swift; sourceTree = "<group>"; };
 		2A1AED6C1E863D7300ABE734 /* MEAddMemoPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MEAddMemoPhotoCell.xib; sourceTree = "<group>"; };
 		2A1AED6F1E863D8000ABE734 /* MEAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEAlertView.swift; sourceTree = "<group>"; };
-		2A1AED711E863FE900ABE734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A9E8C2F1E584F4900226C56 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEA7CEA1E615E8C00B6F041 /* MEDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDataBase.swift; sourceTree = "<group>"; };
 		8512E6FB682B4573DF69D19D /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +228,7 @@
 		DBC6260D1E5AEA2C00914197 /* MESettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESettingsModel.swift; sourceTree = "<group>"; };
 		DBD183351E5EDD73006E8CB0 /* MENotifyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MENotifyCenter.swift; sourceTree = "<group>"; };
 		DBD183371E5EE46C006E8CB0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		DBE5C4091E89102900D25E63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBE88B061E5EC78300FEEC7A /* MEDispatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEDispatchService.swift; sourceTree = "<group>"; };
 		DBFA7EF51E5C28F900BD9E00 /* METableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = METableViewController.swift; sourceTree = "<group>"; };
 		DBFA7EF61E5C28F900BD9E00 /* METableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = METableViewController.xib; sourceTree = "<group>"; };
@@ -596,7 +596,7 @@
 		DB22EAB81E5855EE00341E60 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				2A1AED711E863FE900ABE734 /* Assets.xcassets */,
+				DBE5C4091E89102900D25E63 /* Assets.xcassets */,
 				DB9F6F7C1E5FE1010027B063 /* Stars.png */,
 				DB6617BD1E5B21A200375D84 /* font */,
 			);
@@ -869,7 +869,7 @@
 				DB22EA941E58559400341E60 /* YHPhotoBrowseViewController.xib in Resources */,
 				DB22EAA31E58559400341E60 /* YHPictureBrowseViewController.xib in Resources */,
 				DB22EAA01E58559400341E60 /* YHPictureBrowseCell.xib in Resources */,
-				2A1AED721E863FE900ABE734 /* Assets.xcassets in Resources */,
+				DBE5C40A1E89102900D25E63 /* Assets.xcassets in Resources */,
 				DBB7ACAD1E5D6B770049478D /* MESettingsViewController.xib in Resources */,
 				DBC625F71E5AC23100914197 /* MELeftMenuViewController.xib in Resources */,
 				DBC625FB1E5AC24A00914197 /* MEHomeViewController.xib in Resources */,
