@@ -1140,8 +1140,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yhsn.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "75f642a4-8d88-476d-a5f9-b9ba8e3160f2";
-				PROVISIONING_PROFILE_SPECIFIER = memoDevelop;
+				PROVISIONING_PROFILE = "69bac035-92cf-4c91-beaa-5126b88cbb84";
+				PROVISIONING_PROFILE_SPECIFIER = memoDev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1159,8 +1159,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yhsn.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c67bda5f-aacc-45a8-9eba-aa2950e4fab1";
-				PROVISIONING_PROFILE_SPECIFIER = memoDistribution;
+				PROVISIONING_PROFILE = "3b097e3f-9525-462f-9a71-d8f01e3b2695";
+				PROVISIONING_PROFILE_SPECIFIER = memoDis;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
